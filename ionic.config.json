@@ -1,0 +1,7 @@
+{
+  "name": "ana-mob",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}
