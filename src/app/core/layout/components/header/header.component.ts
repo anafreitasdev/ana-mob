@@ -3,7 +3,7 @@ import { IonHeader, IonToolbar } from '@ionic/angular/standalone';
 
 const styled = {
   headerContainer: 'bg-surface text-text-primary shadow-sm',
-  headerInner: 'max-w-6xl mx-auto flex items-center justify-between py-3',
+  headerInner: 'max-w-7xl mx-auto flex items-center justify-between py-3',
   brand: 'text-primary font-semibold text-lg tracking-tight',
   navListDesktop: 'hidden md:flex items-center gap-8',
   navItemDesktop:

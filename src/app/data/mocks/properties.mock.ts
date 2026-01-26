@@ -13,9 +13,9 @@ export const PROPERTIES_MOCK: Property[] = [
     },
     featured: true,
     images: [
-      'https://example.com/imagem1.jpg',
-      'https://example.com/imagem2.jpg',
-      'https://example.com/imagem3.jpg',
+      'https://images.unsplash.com/photo-1505693416388-ac5ce068fe85',
+      'https://images.unsplash.com/photo-1522708323590-d24dbb6b0267',
+      'https://images.unsplash.com/photo-1493809842364-78817add7ffb',
     ],
   },
   {
@@ -30,7 +30,7 @@ export const PROPERTIES_MOCK: Property[] = [
     },
     featured: false,
     images: [
-      'https://example.com/imagem4.jpg',
+      'https://images.unsplash.com/photo-1600585154340-be6161a56a0c',
       'https://example.com/imagem5.jpg',
       'https://example.com/imagem6.jpg',
     ],
@@ -38,7 +38,8 @@ export const PROPERTIES_MOCK: Property[] = [
   {
     id: 3,
     title: 'Apartamento com vista para o mar',
-    description: 'Apartamento alto padrão com varanda e vista panorâmica para o mar.',
+    description:
+      'Apartamento alto padrão com varanda e vista panorâmica para o mar.',
     type: 'apartment',
     price: 480000,
     location: {
@@ -47,14 +48,15 @@ export const PROPERTIES_MOCK: Property[] = [
     },
     featured: true,
     images: [
-      'https://example.com/imagem7.jpg',
-      'https://example.com/imagem8.jpg',
+      'https://images.unsplash.com/photo-1484154218962-a197022b5858',
+      'https://images.unsplash.com/photo-1545324418-cc1a3fa10c00',
     ],
   },
   {
     id: 4,
     title: 'Casa térrea com quintal',
-    description: 'Casa térrea com amplo quintal, ideal para família com crianças e pets.',
+    description:
+      'Casa térrea com amplo quintal, ideal para família com crianças e pets.',
     type: 'house',
     price: 420000,
     location: {
@@ -63,14 +65,15 @@ export const PROPERTIES_MOCK: Property[] = [
     },
     featured: false,
     images: [
-      'https://example.com/imagem9.jpg',
-      'https://example.com/imagem10.jpg',
+      'https://images.unsplash.com/photo-1502005229762-cf1b2da7c5d6',
+      'https://images.unsplash.com/photo-1502673530728-f79b4cab31b1',
     ],
   },
   {
     id: 5,
     title: 'Sala comercial no centro',
-    description: 'Sala comercial pronta para uso em edifício moderno no centro.',
+    description:
+      'Sala comercial pronta para uso em edifício moderno no centro.',
     type: 'commercial',
     price: 310000,
     location: {
@@ -79,8 +82,8 @@ export const PROPERTIES_MOCK: Property[] = [
     },
     featured: false,
     images: [
-      'https://example.com/imagem11.jpg',
-      'https://example.com/imagem12.jpg',
+      'https://images.unsplash.com/photo-1497366216548-37526070297c?w=1600&auto=format&fit=crop&q=80',
+      'https://images.unsplash.com/photo-1524758631624-e2822e304c36?w=1600&auto=format&fit=crop&q=80',
     ],
   },
   {
@@ -95,15 +98,14 @@ export const PROPERTIES_MOCK: Property[] = [
     },
     featured: true,
     images: [
-      'https://example.com/imagem13.jpg',
-      'https://example.com/imagem14.jpg',
-      'https://example.com/imagem15.jpg',
+      'https://images.unsplash.com/photo-1613977257592-4871e5fcd7c4?w=1600&auto=format&fit=crop&q=80',
     ],
   },
   {
     id: 7,
     title: 'Casa em condomínio fechado',
-    description: 'Casa em condomínio fechado com segurança 24h e área de lazer completa.',
+    description:
+      'Casa em condomínio fechado com segurança 24h e área de lazer completa.',
     type: 'house',
     price: 690000,
     location: {
@@ -112,14 +114,14 @@ export const PROPERTIES_MOCK: Property[] = [
     },
     featured: true,
     images: [
-      'https://example.com/imagem16.jpg',
-      'https://example.com/imagem17.jpg',
+      'https://images.unsplash.com/photo-1605276373954-0c4a0dac5b12?w=1600&auto=format&fit=crop&q=80',
     ],
   },
   {
     id: 8,
     title: 'Loja de rua em ponto movimentado',
-    description: 'Loja térrea em avenida comercial com grande fluxo de pedestres.',
+    description:
+      'Loja térrea em avenida comercial com grande fluxo de pedestres.',
     type: 'commercial',
     price: 530000,
     location: {
@@ -128,14 +130,15 @@ export const PROPERTIES_MOCK: Property[] = [
     },
     featured: false,
     images: [
-      'https://example.com/imagem18.jpg',
-      'https://example.com/imagem19.jpg',
+      'https://images.unsplash.com/photo-1508919801845-fc2ae1bc2a28?w=1600&auto=format&fit=crop&q=80',
+      'https://images.unsplash.com/photo-1555529771-835f59fc5efe?w=1600&auto=format&fit=crop&q=80',
     ],
   },
   {
     id: 9,
     title: 'Studio compacto mobiliado',
-    description: 'Studio mobiliado próximo a universidades e estações de metrô.',
+    description:
+      'Studio mobiliado próximo a universidades e estações de metrô.',
     type: 'apartment',
     price: 210000,
     location: {
@@ -144,14 +147,15 @@ export const PROPERTIES_MOCK: Property[] = [
     },
     featured: false,
     images: [
-      'https://example.com/imagem20.jpg',
-      'https://example.com/imagem21.jpg',
+      'https://images.unsplash.com/photo-1502673530728-f79b4cab31b1?w=1600&auto=format&fit=crop&q=80',
+      'https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=1600&auto=format&fit=crop&q=80',
     ],
   },
   {
     id: 10,
     title: 'Chácara para lazer',
-    description: 'Chácara com área verde, piscina e espaço para eventos de fim de semana.',
+    description:
+      'Chácara com área verde, piscina e espaço para eventos de fim de semana.',
     type: 'house',
     price: 560000,
     location: {
@@ -160,8 +164,7 @@ export const PROPERTIES_MOCK: Property[] = [
     },
     featured: true,
     images: [
-      'https://example.com/imagem22.jpg',
-      'https://example.com/imagem23.jpg',
+      'https://images.unsplash.com/photo-1470770841072-f978cf4d019e?w=1600&auto=format&fit=crop&q=80',
     ],
   },
 ];

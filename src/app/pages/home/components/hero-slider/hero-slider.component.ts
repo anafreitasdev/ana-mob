@@ -1,0 +1,104 @@
+import { NgFor, NgIf } from '@angular/common';
+import { AfterViewInit, Component, ElementRef, OnDestroy, ViewChild } from '@angular/core';
+import { PROPERTIES_MOCK } from '@/app/data/mocks/properties.mock';
+import { Property } from '@/app/types/property';
+
+@Component({
+  selector: 'app-hero-slider',
+  templateUrl: './hero-slider.component.html',
+  styleUrls: ['./hero-slider.component.scss'],
+  standalone: true,
+  imports: [NgFor, NgIf],
+})
+export class HeroSliderComponent implements AfterViewInit, OnDestroy {
+  @ViewChild('track', { static: false })
+  private readonly trackRef?: ElementRef<HTMLDivElement>;
+
+  readonly featuredProperties: Property[] = PROPERTIES_MOCK.filter(
+    (property) => property.featured,
+  );
+
+  activeIndex = 0;
+
+  private resizeObserver?: ResizeObserver;
+  private rafId?: number;
+
+  ngAfterViewInit(): void {
+    const track = this.trackRef?.nativeElement;
+    if (!track) return;
+
+    if (typeof ResizeObserver === 'undefined') return;
+
+    this.resizeObserver = new ResizeObserver(() => {
+      this.scrollToIndex(this.activeIndex, false);
+    });
+    this.resizeObserver.observe(track);
+  }
+
+  ngOnDestroy(): void {
+    if (this.rafId) {
+      cancelAnimationFrame(this.rafId);
+    }
+
+    this.resizeObserver?.disconnect();
+  }
+
+  onTrackScroll(): void {
+    const track = this.trackRef?.nativeElement;
+    if (!track) return;
+
+    if (this.rafId) {
+      cancelAnimationFrame(this.rafId);
+    }
+
+    this.rafId = requestAnimationFrame(() => {
+      const width = track.clientWidth;
+      if (width === 0) return;
+
+      const nextIndex = Math.round(track.scrollLeft / width);
+      this.activeIndex = Math.min(
+        Math.max(nextIndex, 0),
+        Math.max(this.featuredProperties.length - 1, 0),
+      );
+    });
+  }
+
+  goToIndex(index: number): void {
+    const nextIndex = this.getLoopedIndex(index);
+    this.activeIndex = nextIndex;
+    this.scrollToIndex(nextIndex, true);
+  }
+
+  goToPrevious(): void {
+    this.goToIndex(this.activeIndex - 1);
+  }
+
+  goToNext(): void {
+    this.goToIndex(this.activeIndex + 1);
+  }
+
+  trackByPropertyId(_: number, property: Property): number {
+    return property.id;
+  }
+
+  private scrollToIndex(index: number, smooth: boolean): void {
+    const track = this.trackRef?.nativeElement;
+    if (!track) return;
+
+    const width = track.clientWidth;
+    track.scrollTo({
+      left: width * index,
+      behavior: smooth ? 'smooth' : 'auto',
+    });
+  }
+
+  private getLoopedIndex(index: number): number {
+    const count = this.featuredProperties.length;
+    if (count === 0) return 0;
+
+    if (index < 0) return count - 1;
+    if (index >= count) return 0;
+    return index;
+  }
+
+}
