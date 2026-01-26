@@ -28,7 +28,8 @@ export class PropertyService {
   filterPropertiesByTypeAndLocationAndPrice(
     type: string,
     location: PropertyLocation,
-    price: number,
+    priceMin: number,
+    priceMax: number,
   ) {
     let properties = this.properties;
     if (type) {
@@ -46,8 +47,12 @@ export class PropertyService {
       );
     }
 
-    if (price) {
-      properties = properties.filter((property) => property.price <= price);
+    if (priceMin) {
+      properties = properties.filter((property) => property.price >= priceMin);
+    }
+
+    if (priceMax) {
+      properties = properties.filter((property) => property.price <= priceMax);
     }
 
     return properties;

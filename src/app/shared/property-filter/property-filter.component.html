@@ -1,0 +1,147 @@
+<section aria-label="Property filters" class="bg-background px-4 py-8">
+  <div class="mx-auto w-full max-w-7xl">
+    <div class="rounded-2xl border border-border bg-surface shadow-sm">
+      <div class="px-4 py-5 sm:px-6">
+        <div class="flex flex-col gap-1">
+          <h2 class="text-lg font-semibold text-text-primary">
+            Filtrar imóveis
+          </h2>
+          <p class="text-sm text-text-secondary">
+            Refine sua busca por tipo, localização e faixa de preço.
+          </p>
+        </div>
+
+        <div class="mt-6 grid grid-cols-1 gap-4 md:grid-cols-12 md:items-end">
+          <div class="md:col-span-3">
+            <label
+              id="propertyTypeLabel"
+              class="block text-sm font-medium text-text-secondary"
+            >
+              Tipo do imóvel
+            </label>
+            <ion-select
+              class="mt-2 w-full"
+              fill="outline"
+              placeholder="Selecione o tipo"
+              aria-labelledby="propertyTypeLabel"
+            >
+              <ion-select-option value="house">Casa</ion-select-option>
+              <ion-select-option value="apartment"
+                >Apartamento</ion-select-option
+              >
+              <ion-select-option value="commercial"
+                >Comercial</ion-select-option
+              >
+            </ion-select>
+          </div>
+
+          <div class="md:col-span-4">
+            <div class="mt-2 grid grid-cols-1 gap-4 sm:grid-cols-2">
+              <div>
+                <label
+                  id="stateLabel"
+                  class="block text-sm font-medium text-text-secondary"
+                >
+                  Estado
+                </label>
+                <ion-select
+                  class="mt-2 w-full"
+                  fill="outline"
+                  placeholder="Selecione o estado"
+                  aria-labelledby="stateLabel"
+                  [(ngModel)]="selectedStateCode"
+                  (ngModelChange)="onSelectedStateCodeChange($event)"
+                >
+                  @for (state of stateOptions; track state.code) {
+                    <ion-select-option [value]="state.code">
+                      {{ state.code }}
+                    </ion-select-option>
+                  }
+                </ion-select>
+              </div>
+
+              <div>
+                <label
+                  id="cityLabel"
+                  class="block text-sm font-medium text-text-secondary"
+                >
+                  Cidade
+                </label>
+                <ion-select
+                  class="mt-2 w-full"
+                  fill="outline"
+                  [placeholder]="
+                    selectedStateCode
+                      ? 'Selecione a cidade'
+                      : 'Selecione um estado primeiro'
+                  "
+                  aria-labelledby="cityLabel"
+                  [(ngModel)]="selectedCityName"
+                  [disabled]="!selectedStateCode"
+                >
+                  @for (city of cityOptions; track city) {
+                    <ion-select-option [value]="city">
+                      {{ city }}
+                    </ion-select-option>
+                  }
+                </ion-select>
+              </div>
+            </div>
+          </div>
+
+          <div class="md:col-span-3">
+            <div class="mt-2 grid grid-cols-1 gap-4 sm:grid-cols-2">
+              <div>
+                <label
+                  id="minPriceLabel"
+                  class="block text-sm font-medium text-text-secondary"
+                >
+                  Valor Mín.
+                </label>
+                <ion-input
+                  class="mt-2 w-full"
+                  fill="outline"
+                  type="number"
+                  inputmode="numeric"
+                  placeholder="0"
+                  mask="separator.2"
+                  prefix="R$"
+                  aria-labelledby="minPriceLabel"
+                ></ion-input>
+              </div>
+
+              <div>
+                <label
+                  id="maxPriceLabel"
+                  class="block text-sm font-medium text-text-secondary"
+                >
+                  Valor Máx.
+                </label>
+                <ion-input
+                  class="mt-2 w-full"
+                  fill="outline"
+                  type="number"
+                  inputmode="numeric"
+                  placeholder="1000000"
+                  mask="separator.2"
+                  prefix="R$"
+                  aria-labelledby="maxPriceLabel"
+                ></ion-input>
+              </div>
+            </div>
+          </div>
+
+          <div class="md:col-span-2">
+            <ion-button
+              type="button"
+              class="mt-2 w-full text-white [--border-radius:0.75rem] [--background:var(--color-primary)] [--background-hover:var(--color-secondary)] [--background-activated:var(--color-secondary)]"
+              expand="block"
+            >
+              Aplicar filtros
+            </ion-button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
