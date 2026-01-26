@@ -9,9 +9,11 @@
  * https://ionicframework.com/docs/layout/global-stylesheets
  */
 
-@use "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-@theme {
+:root {
   --color-primary: #1e3a8a;
   --color-secondary: #2563eb;
   --color-accent: #16a34a;

@@ -1,0 +1,127 @@
+<ion-header [translucent]="false" [class]="styled.headerContainer">
+  <ion-toolbar
+    [style.--background]="'var(--color-surface)'"
+    [style.--color]="'var(--color-text-primary)'"
+  >
+    <div [class]="styled.headerInner">
+      <a href="#inicio" class="flex items-center gap-2">
+        <span [class]="styled.brand">Ana Imóveis</span>
+      </a>
+
+      <!-- Navegação desktop -->
+      <nav [class]="styled.navListDesktop">
+        <a
+          href="#inicio"
+          [class]="styled.navItemDesktop"
+          (click)="scrollTo('inicio', $event)"
+        >
+          Início
+        </a>
+        <a
+          href="#imoveis"
+          [class]="styled.navItemDesktop"
+          (click)="scrollTo('imoveis', $event)"
+        >
+          Imóveis
+        </a>
+        <a
+          href="#contato"
+          [class]="styled.navItemDesktop"
+          (click)="scrollTo('contato', $event)"
+        >
+          Contato
+        </a>
+      </nav>
+
+      <!-- Ações / menu mobile -->
+      <button
+        type="button"
+        [class]="styled.mobileToggleButton"
+        aria-label="Abrir menu de navegação"
+        [attr.aria-expanded]="mobileMenuOpen"
+        aria-controls="mobile-menu"
+        (click)="toggleMobileMenu()"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          class="size-6"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+          />
+        </svg>
+      </button>
+    </div>
+  </ion-toolbar>
+
+  <div
+    [class]="styled.mobileOverlay"
+    [class.opacity-0]="!mobileMenuOpen"
+    [class.pointer-events-none]="!mobileMenuOpen"
+    (click)="closeMobileMenu()"
+  ></div>
+
+  <aside
+    id="mobile-menu"
+    [class]="styled.mobilePanel"
+    [class.translate-x-full]="!mobileMenuOpen"
+    role="dialog"
+    aria-modal="true"
+    aria-label="Menu de navegação"
+  >
+    <div [class]="styled.mobilePanelHeader">
+      <span class="font-semibold text-primary">Ana Imóveis</span>
+      <button
+        type="button"
+        [class]="styled.mobileCloseButton"
+        aria-label="Fechar menu"
+        (click)="closeMobileMenu()"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          class="size-6"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M6 18 18 6M6 6l12 12"
+          />
+        </svg>
+      </button>
+    </div>
+
+    <nav [class]="styled.navListMobile">
+      <button
+        type="button"
+        [class]="styled.navItemMobile"
+        (click)="scrollTo('inicio', $event)"
+      >
+        Início
+      </button>
+      <button
+        type="button"
+        [class]="styled.navItemMobile"
+        (click)="scrollTo('imoveis', $event)"
+      >
+        Imóveis
+      </button>
+      <button
+        type="button"
+        [class]="styled.navItemMobile"
+        (click)="scrollTo('contato', $event)"
+      >
+        Contato
+      </button>
+    </nav>
+  </aside>
+</ion-header>
