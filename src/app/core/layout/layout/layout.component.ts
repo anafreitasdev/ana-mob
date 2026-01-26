@@ -1,9 +1,6 @@
 import { Component } from '@angular/core';
-import {
-  IonContent,
-  IonFooter,
-  IonRouterOutlet,
-} from '@ionic/angular/standalone';
+import { RouterOutlet } from '@angular/router';
+import { IonContent } from '@ionic/angular/standalone';
 import { HeaderComponent } from '@/app/core/layout/components/header/header.component';
 import { FooterComponent } from '@/app/core/layout/components/footer/footer.component';
 
@@ -16,8 +13,7 @@ import { FooterComponent } from '@/app/core/layout/components/footer/footer.comp
     HeaderComponent,
     FooterComponent,
     IonContent,
-    IonFooter,
-    IonRouterOutlet,
+    RouterOutlet,
   ],
 })
 export class LayoutComponent {
