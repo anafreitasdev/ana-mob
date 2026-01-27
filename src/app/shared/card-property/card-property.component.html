@@ -1,0 +1,98 @@
+@if (loading) {
+  <ion-card
+    class="flex h-full w-full flex-col overflow-hidden rounded-2xl border border-border bg-surface shadow-sm"
+  >
+    <div class="flex min-h-[280px] flex-1 items-center justify-center px-4">
+      <ion-spinner
+        name="dots"
+        color="primary"
+        aria-label="Carregando"
+      ></ion-spinner>
+    </div>
+  </ion-card>
+} @else if (property) {
+  <ion-card
+    class="flex h-full w-full flex-col overflow-hidden rounded-2xl border border-border bg-surface shadow-sm"
+  >
+    <div class="relative aspect-[16/9] w-full overflow-hidden bg-background">
+      @if (resolvedImageUrl) {
+        <img
+          [src]="resolvedImageUrl"
+          [alt]="property.title"
+          class="h-full w-full object-cover"
+          loading="lazy"
+          decoding="async"
+        />
+      } @else {
+        <div
+          class="flex h-full w-full flex-col items-center justify-center gap-2 text-sm text-text-secondary"
+        >
+          <ion-text class="text-sm text-text-secondary"
+            >Nenhuma imagem disponível</ion-text
+          >
+        </div>
+      }
+    </div>
+
+    <ion-card-header class="px-4 pb-0 pt-4 sm:px-5 sm:pt-5">
+      <ion-card-title
+        class="text-base sm:text-lg font-semibold text-text-primary"
+      >
+        {{ property.title }}
+      </ion-card-title>
+      <p
+        class="property-card-clamp-2 mb-2 mt-1 min-h-[2.5rem] text-sm text-text-secondary"
+      >
+        {{ property.description }}
+      </p>
+    </ion-card-header>
+
+    <ion-card-content class="px-4 pb-4 pt-4 sm:px-5 sm:pb-5">
+      <div class="flex flex-col gap-2">
+        <div class="inline-flex items-center gap-2 text-primary">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            class="size-6"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M12 6v12m-3-2.818.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 12.219 12.768 12 12 12c-.725 0-1.45-.22-2.003-.659-1.106-.879-1.106-2.303 0-3.182s2.9-.879 4.006 0l.415.33M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+            />
+          </svg>
+
+          <span class="text-base font-bold">{{ formattedPrice }}</span>
+        </div>
+
+        <div class="inline-flex items-center gap-2 text-text-secondary">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            class="size-5"
+            aria-hidden="true"
+            focusable="false"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"
+            />
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z"
+            />
+          </svg>
+          <span class="text-sm">{{ resolvedCity }}, {{ resolvedState }}</span>
+        </div>
+      </div>
+    </ion-card-content>
+  </ion-card>
+}

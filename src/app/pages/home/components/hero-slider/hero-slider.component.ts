@@ -1,6 +1,12 @@
 import { NgFor, NgIf } from '@angular/common';
-import { AfterViewInit, Component, ElementRef, OnDestroy, ViewChild } from '@angular/core';
-import { PROPERTIES_MOCK } from '@/app/data/mocks/properties.mock';
+import {
+  AfterViewInit,
+  Component,
+  ElementRef,
+  OnDestroy,
+  ViewChild,
+} from '@angular/core';
+import { PROPERTIES_MOCK } from '@/app/data/properties.data';
 import { Property } from '@/app/types/property';
 
 @Component({
@@ -14,9 +20,7 @@ export class HeroSliderComponent implements AfterViewInit, OnDestroy {
   @ViewChild('track', { static: false })
   private readonly trackRef?: ElementRef<HTMLDivElement>;
 
-  readonly featuredProperties: Property[] = PROPERTIES_MOCK.filter(
-    (property) => property.featured,
-  );
+  readonly featuredProperties: Property[] = PROPERTIES_MOCK;
 
   activeIndex = 0;
 
@@ -100,5 +104,4 @@ export class HeroSliderComponent implements AfterViewInit, OnDestroy {
     if (index >= count) return 0;
     return index;
   }
-
 }

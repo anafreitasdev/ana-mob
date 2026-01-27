@@ -1,0 +1,25 @@
+<section aria-label="Properties list" class="w-full">
+  @if (loading) {
+    <div
+      class="grid items-stretch grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3"
+    >
+      @for (item of loadingItems; track $index) {
+        <app-card-property [loading]="true"></app-card-property>
+      }
+    </div>
+  } @else if (!properties?.length) {
+    <div class="flex min-h-[220px] items-center justify-center px-4">
+      <p class="text-sm text-text-secondary text-center">
+        Nenhuma propriedade encontrada
+      </p>
+    </div>
+  } @else {
+    <div
+      class="grid items-stretch grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3"
+    >
+      @for (property of properties; track property.id) {
+        <app-card-property [property]="property"></app-card-property>
+      }
+    </div>
+  }
+</section>
