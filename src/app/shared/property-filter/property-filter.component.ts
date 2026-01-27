@@ -1,5 +1,4 @@
-import { NgFor } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output, inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import {
   IonButton,
@@ -7,29 +6,33 @@ import {
   IonSelect,
   IonSelectOption,
 } from '@ionic/angular/standalone';
-import { PROPERTIES_MOCK } from '@/app/data/mocks/properties.mock';
+import { PROPERTIES_MOCK } from '@/app/data/properties.data';
+import { PropertyService } from '@/app/core/services/property.service';
+import { Property } from '@/app/types/property';
+import {
+  formatPtBrMoney,
+  parsePtBrMoneyToNumber,
+} from '@/app/utils/format-numbers.util';
 
 @Component({
   selector: 'app-property-filter',
   templateUrl: './property-filter.component.html',
   styleUrls: ['./property-filter.component.scss'],
   standalone: true,
-  imports: [
-    NgFor,
-    FormsModule,
-    IonSelect,
-    IonSelectOption,
-    IonInput,
-    IonButton,
-  ],
+  imports: [FormsModule, IonSelect, IonSelectOption, IonInput, IonButton],
 })
 export class PropertyFilterComponent {
-  constructor() {}
+  private readonly propertyService = inject(PropertyService);
 
   readonly stateOptions = this.buildStateOptions();
 
+  @Output() readonly filtersApplied = new EventEmitter<Property[]>();
+
+  selectedType = '';
   selectedStateCode = '';
   selectedCityName = '';
+  priceMinRaw = '';
+  priceMaxRaw = '';
 
   get cityOptions(): string[] {
     const state = this.stateOptions.find(
@@ -41,6 +44,57 @@ export class PropertyFilterComponent {
   onSelectedStateCodeChange(nextStateCode: string): void {
     this.selectedStateCode = nextStateCode;
     this.selectedCityName = '';
+  }
+
+  applyFilters(): void {
+    const priceMin = parsePtBrMoneyToNumber(this.priceMinRaw);
+    const priceMax = parsePtBrMoneyToNumber(this.priceMaxRaw);
+
+    const filtered =
+      this.propertyService.filterPropertiesByTypeAndLocationAndPrice(
+        this.selectedType,
+        { city: this.selectedCityName, state: this.selectedStateCode },
+        priceMin,
+        priceMax,
+      );
+
+    this.filtersApplied.emit(filtered);
+  }
+
+  onPriceMinInput(event: Event): void {
+    const nextValue =
+      (event as CustomEvent<{ value?: string | null }>).detail?.value ?? '';
+    this.priceMinRaw = formatPtBrMoney(nextValue);
+  }
+
+  onPriceMaxInput(event: Event): void {
+    const nextValue =
+      (event as CustomEvent<{ value?: string | null }>).detail?.value ?? '';
+    this.priceMaxRaw = formatPtBrMoney(nextValue);
+  }
+
+  onOnlyDigitsKeyDown(event: KeyboardEvent): void {
+    const allowedKeys = [
+      'Backspace',
+      'Delete',
+      'ArrowLeft',
+      'ArrowRight',
+      'Tab',
+      'Home',
+      'End',
+    ];
+
+    if (allowedKeys.includes(event.key)) {
+      return;
+    }
+
+    if ((event.ctrlKey || event.metaKey) && /^[acvxz]$/i.test(event.key)) {
+      return;
+    }
+
+    if (!/^\d$/.test(event.key)) {
+      event.preventDefault();
+    }
   }
 
   private buildStateOptions(): Array<{ code: string; cities: string[] }> {

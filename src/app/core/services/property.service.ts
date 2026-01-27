@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { PROPERTIES_MOCK } from '../../data/mocks/properties.mock';
+import { PROPERTIES_MOCK } from '../../data/properties.data';
 import { PropertyLocation } from '@/app/types/property';
 
 @Injectable({
