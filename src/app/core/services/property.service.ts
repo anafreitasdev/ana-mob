@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { PROPERTIES_MOCK } from '../../data/mocks/properties.mock';
+import { PROPERTIES_MOCK } from '../../data/properties.data';
 import { PropertyLocation } from '@/app/types/property';
 
 @Injectable({
@@ -28,7 +28,8 @@ export class PropertyService {
   filterPropertiesByTypeAndLocationAndPrice(
     type: string,
     location: PropertyLocation,
-    price: number,
+    priceMin: number,
+    priceMax: number,
   ) {
     let properties = this.properties;
     if (type) {
@@ -46,8 +47,12 @@ export class PropertyService {
       );
     }
 
-    if (price) {
-      properties = properties.filter((property) => property.price <= price);
+    if (priceMin) {
+      properties = properties.filter((property) => property.price >= priceMin);
+    }
+
+    if (priceMax) {
+      properties = properties.filter((property) => property.price <= priceMax);
     }
 
     return properties;
