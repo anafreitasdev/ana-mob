@@ -1,5 +1,6 @@
 import { Component, HostListener, OnDestroy } from '@angular/core';
 import { IonHeader, IonToolbar } from '@ionic/angular/standalone';
+import { TranslateModule } from '@ngx-translate/core';
 
 const styled = {
   headerContainer: 'bg-surface text-text-primary shadow-sm',
@@ -28,7 +29,7 @@ const styled = {
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss'],
   standalone: true,
-  imports: [IonHeader, IonToolbar],
+  imports: [IonHeader, IonToolbar, TranslateModule],
 })
 export class HeaderComponent implements OnDestroy {
   readonly styled = styled;

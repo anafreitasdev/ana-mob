@@ -1,0 +1,22 @@
+{
+  "APP": {
+    "NAME": "Ana Imóveis"
+  },
+  "COMMON": {
+    "SEND": "Enviar",
+    "LOADING": "Carregando"
+  },
+  "CHAT": {
+    "PLACEHOLDER": "Digite uma mensagem",
+    "ARIA_INPUT": "Campo de mensagem",
+    "ARIA_SEND": "Enviar mensagem",
+    "TYPING": "Bot digitando"
+  },
+  "HEADER": {
+    "NAV": {
+      "HOME": "Início",
+      "PROPERTIES": "Imóveis",
+      "CONTACT": "Contato"
+    }
+  }
+}

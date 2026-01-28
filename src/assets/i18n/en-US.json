@@ -1,0 +1,22 @@
+{
+  "APP": {
+    "NAME": "Ana Real Estate"
+  },
+  "COMMON": {
+    "SEND": "Send",
+    "LOADING": "Loading"
+  },
+  "CHAT": {
+    "PLACEHOLDER": "Type a message",
+    "ARIA_INPUT": "Message input",
+    "ARIA_SEND": "Send message",
+    "TYPING": "Bot typing"
+  },
+  "HEADER": {
+    "NAV": {
+      "HOME": "Home",
+      "PROPERTIES": "Properties",
+      "CONTACT": "Contact"
+    }
+  }
+}
