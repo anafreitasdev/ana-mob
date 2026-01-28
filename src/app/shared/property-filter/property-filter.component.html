@@ -89,11 +89,7 @@
                 <ion-select
                   class="mt-2 w-full"
                   fill="outline"
-                  [placeholder]="
-                    selectedStateCode
-                      ? 'Selecione a cidade'
-                      : 'Selecione um estado primeiro'
-                  "
+                  [placeholder]="'Selecione a cidade'"
                   aria-labelledby="cityLabel"
                   [(ngModel)]="selectedCityName"
                   [disabled]="!selectedStateCode"

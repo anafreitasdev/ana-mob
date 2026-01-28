@@ -1,0 +1,90 @@
+<div class="flex h-full flex-col bg-surface text-text-primary">
+  <ion-content
+    class="flex-1 [--padding-bottom:12px]"
+    [style.--background]="'var(--color-surface)'"
+    [style.--color]="'var(--color-text-primary)'"
+  >
+    <div class="flex flex-col gap-3 p-3" role="log" aria-label="Chat messages">
+      @for (message of messages; track trackByMessageId($index, message)) {
+        <div
+          class="flex"
+          [class.justify-end]="message.author === 'user'"
+          [class.justify-start]="message.author === 'bot'"
+        >
+          <div
+            class="max-w-[80%] rounded-2xl px-3 py-2"
+            [class.bg-primary]="message.author === 'bot'"
+            [class.text-white]="message.author === 'bot'"
+            [class.bg-background]="message.author === 'user'"
+            [class.text-text-primary]="message.author === 'user'"
+            [class.border]="message.author === 'user'"
+            [class.border-border]="message.author === 'user'"
+          >
+            <div class="break-words">
+              {{ message.message.trim() }}
+            </div>
+            <time class="mt-1 block text-xs opacity-85">
+              {{ formatTime(message.timestamp) }}
+            </time>
+          </div>
+        </div>
+      }
+
+      @if (isBotTyping) {
+        <div class="flex justify-start">
+          <div
+            class="max-w-[80%] rounded-2xl border border-border bg-background px-3 py-2"
+          >
+            <div
+              class="inline-flex items-center gap-1"
+              role="status"
+              aria-label="Bot digitando"
+            >
+              <span class="typing-dot typing-dot--1"></span>
+              <span class="typing-dot typing-dot--2"></span>
+              <span class="typing-dot typing-dot--3"></span>
+            </div>
+          </div>
+        </div>
+      }
+    </div>
+  </ion-content>
+
+  <div class="shrink-0 border-t border-border bg-surface p-3">
+    <div class="flex items-center gap-2">
+      <ion-input
+        class="flex-1"
+        fill="outline"
+        [value]="draftMessage"
+        placeholder="Digite uma mensagem"
+        inputmode="text"
+        (ionInput)="onDraftInput($event)"
+        (keydown.enter)="onSubmit()"
+        aria-label="Campo de mensagem"
+      ></ion-input>
+      <ion-button
+        type="button"
+        (click)="onSubmit()"
+        [disabled]="!canSubmit"
+        aria-label="Enviar mensagem"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          class="size-6"
+          aria-hidden="true"
+          focusable="false"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M6 12 3.269 3.125A59.769 59.769 0 0 1 21.485 12 59.768 59.768 0 0 1 3.27 20.875L5.999 12Zm0 0h7.5"
+          />
+        </svg>
+      </ion-button>
+    </div>
+  </div>
+</div>
