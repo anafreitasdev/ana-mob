@@ -4,10 +4,23 @@
     [style.--background]="'var(--color-surface)'"
     [style.--color]="'var(--color-text-primary)'"
   >
+    @if (activeDateLabel) {
+      <div class="sticky top-0 z-10 flex justify-center px-3 pt-3">
+        <span
+          class="rounded-full border border-border bg-background px-3 py-1 text-xs font-medium text-text-secondary shadow-sm"
+          aria-live="polite"
+        >
+          {{ activeDateLabel }}
+        </span>
+      </div>
+    }
+
     <div class="flex flex-col gap-3 p-3" role="log" aria-label="Chat messages">
       @for (message of messages; track trackByMessageId($index, message)) {
         <div
           class="flex"
+          data-chat-message="true"
+          [attr.data-date-key]="dateKey(message.timestamp)"
           [class.justify-end]="message.author === 'user'"
           [class.justify-start]="message.author === 'bot'"
         >
@@ -38,7 +51,7 @@
             <div
               class="inline-flex items-center gap-1"
               role="status"
-              aria-label="Bot digitando"
+              [attr.aria-label]="'CHAT.TYPING' | translate"
             >
               <span class="typing-dot typing-dot--1"></span>
               <span class="typing-dot typing-dot--2"></span>
@@ -56,17 +69,17 @@
         class="flex-1"
         fill="outline"
         [value]="draftMessage"
-        placeholder="Digite uma mensagem"
+        [placeholder]="'CHAT.PLACEHOLDER' | translate"
         inputmode="text"
         (ionInput)="onDraftInput($event)"
         (keydown.enter)="onSubmit()"
-        aria-label="Campo de mensagem"
+        [attr.aria-label]="'CHAT.ARIA_INPUT' | translate"
       ></ion-input>
       <ion-button
         type="button"
         (click)="onSubmit()"
         [disabled]="!canSubmit"
-        aria-label="Enviar mensagem"
+        [attr.aria-label]="'CHAT.ARIA_SEND' | translate"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"

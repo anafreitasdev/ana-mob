@@ -1,4 +1,5 @@
 import {
+  AfterViewInit,
   ChangeDetectionStrategy,
   ChangeDetectorRef,
   Component,
@@ -11,19 +12,21 @@ import { IonButton, IonContent, IonInput } from '@ionic/angular/standalone';
 import { ChatBotService } from '@/app/core/services/chat-bot.service';
 import { ChatMessage } from '@/app/types/chat-message';
 import { formatTime } from '@/app/utils/date.util';
+import { TranslateModule, TranslateService as NgxTranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-chat-bot',
   templateUrl: './chat-bot.component.html',
   styleUrls: ['./chat-bot.component.scss'],
   standalone: true,
-  imports: [IonContent, IonInput, IonButton],
+  imports: [IonContent, IonInput, IonButton, TranslateModule],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class ChatBotComponent {
+export class ChatBotComponent implements AfterViewInit {
   private readonly chatBotService = inject(ChatBotService);
   private readonly destroyRef = inject(DestroyRef);
   private readonly cdr = inject(ChangeDetectorRef);
+  private readonly ngxTranslate = inject(NgxTranslateService);
   private isDestroyed = false;
 
   @ViewChild(IonContent) private readonly content?: IonContent;
@@ -36,9 +39,44 @@ export class ChatBotComponent {
   private pendingBotResponses = 0;
   isBotTyping = false;
 
+  activeDateLabel = '';
+  private activeDateKey: string | null = null;
+  private scrollElement?: HTMLElement;
+  private messageElements: HTMLElement[] = [];
+  private scrollRafId: number | null = null;
+
   constructor() {
     this.destroyRef.onDestroy(() => {
       this.isDestroyed = true;
+      if (this.scrollRafId != null) {
+        cancelAnimationFrame(this.scrollRafId);
+      }
+      if (this.scrollElement) {
+        this.scrollElement.removeEventListener('scroll', this.onScroll);
+      }
+    });
+
+    this.ngxTranslate.onLangChange
+      .pipe(takeUntilDestroyed(this.destroyRef))
+      .subscribe(() => {
+        if (!this.activeDateKey) {
+          return;
+        }
+        this.activeDateLabel = this.formatConversationDayLabel(
+          this.fromDateKey(this.activeDateKey),
+        );
+        this.requestRender();
+      });
+  }
+
+  ngAfterViewInit(): void {
+    this.content?.getScrollElement().then((scrollEl) => {
+      this.scrollElement = scrollEl;
+      this.scrollElement.addEventListener('scroll', this.onScroll, {
+        passive: true,
+      });
+
+      this.scheduleReindexAndDateRefresh();
     });
   }
 
@@ -67,6 +105,7 @@ export class ChatBotComponent {
     this.draftMessage = '';
     this.requestRender();
     this.scrollToBottom();
+    this.scheduleReindexAndDateRefresh();
 
     this.pendingBotResponses += 1;
     this.isBotTyping = true;
@@ -80,6 +119,7 @@ export class ChatBotComponent {
           this.messages = this.withStoredMessages([...this.messages, botMessage]);
           this.requestRender();
           this.scrollToBottom();
+          this.scheduleReindexAndDateRefresh();
           this.onBotResponseFinished();
         },
         error: () => {
@@ -94,6 +134,13 @@ export class ChatBotComponent {
 
   formatTime(date: Date): string {
     return formatTime(date);
+  }
+
+  dateKey(date: Date): string {
+    const year = date.getFullYear();
+    const month = String(date.getMonth() + 1).padStart(2, '0');
+    const day = String(date.getDate()).padStart(2, '0');
+    return `${year}-${month}-${day}`;
   }
 
   private onBotResponseFinished(): void {
@@ -189,5 +236,93 @@ export class ChatBotComponent {
     } catch {
       return;
     }
+  }
+
+  private readonly onScroll = (): void => {
+    if (this.scrollRafId != null) {
+      return;
+    }
+
+    this.scrollRafId = requestAnimationFrame(() => {
+      this.scrollRafId = null;
+      this.updateActiveDateFromScroll();
+    });
+  };
+
+  private scheduleReindexAndDateRefresh(): void {
+    setTimeout(() => {
+      this.reindexMessageElements();
+      this.updateActiveDateFromScroll();
+    }, 0);
+  }
+
+  private reindexMessageElements(): void {
+    if (!this.scrollElement) {
+      return;
+    }
+
+    this.messageElements = Array.from(
+      this.scrollElement.querySelectorAll<HTMLElement>('[data-chat-message="true"]'),
+    );
+  }
+
+  private updateActiveDateFromScroll(): void {
+    if (!this.scrollElement || this.messageElements.length === 0) {
+      if (this.activeDateKey !== null || this.activeDateLabel !== '') {
+        this.activeDateKey = null;
+        this.activeDateLabel = '';
+        this.requestRender();
+      }
+      return;
+    }
+
+    const scrollTop = this.scrollElement.scrollTop;
+    const threshold = 24;
+
+    let activeEl: HTMLElement | undefined;
+    for (const el of this.messageElements) {
+      if (el.offsetTop <= scrollTop + threshold) {
+        activeEl = el;
+      } else {
+        break;
+      }
+    }
+
+    activeEl ??= this.messageElements[0];
+    const nextKey = activeEl.dataset['dateKey'] ?? null;
+    if (!nextKey || nextKey === this.activeDateKey) {
+      return;
+    }
+
+    this.activeDateKey = nextKey;
+    this.activeDateLabel = this.formatConversationDayLabel(this.fromDateKey(nextKey));
+    this.requestRender();
+  }
+
+  private fromDateKey(key: string): Date {
+    const [y, m, d] = key.split('-').map((value) => Number(value));
+    return new Date(y, Math.max(0, m - 1), d);
+  }
+
+  private formatConversationDayLabel(date: Date): string {
+    const now = new Date();
+    const todayKey = this.dateKey(now);
+    const yesterday = new Date(now.getFullYear(), now.getMonth(), now.getDate() - 1);
+    const yesterdayKey = this.dateKey(yesterday);
+    const key = this.dateKey(date);
+
+    if (key === todayKey) {
+      return this.ngxTranslate.instant('COMMON.TODAY');
+    }
+    if (key === yesterdayKey) {
+      return this.ngxTranslate.instant('COMMON.YESTERDAY');
+    }
+
+    const locale = this.ngxTranslate.currentLang || this.ngxTranslate.defaultLang || 'pt-BR';
+    return new Intl.DateTimeFormat(locale, {
+      day: '2-digit',
+      month: '2-digit',
+      year: 'numeric',
+    }).format(date);
   }
 }
