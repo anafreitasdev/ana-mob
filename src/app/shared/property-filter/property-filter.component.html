@@ -1,5 +1,12 @@
-<section  [attr.aria-label]="'HOME.FILTER.ARIA.SECTION' | translate" class="px-4 py-8 z-10" [ngClass]="{'relative-container': !absolute}" >
-  <div class="mx-auto w-full max-w-7xl"  [ngClass]="{'property-absolute': absolute}">
+<section
+  [attr.aria-label]="'HOME.FILTER.ARIA.SECTION' | translate"
+  class="px-4 py-8 z-10"
+  [ngClass]="{ 'relative-container': !absolute }"
+>
+  <div
+    class="mx-auto w-full max-w-7xl"
+    [ngClass]="{ 'property-absolute': absolute }"
+  >
     <div class="rounded-2xl border border-border bg-surface shadow-sm">
       <div class="px-4 py-5 sm:px-6">
         <div class="flex flex-col gap-1">
@@ -22,36 +29,40 @@
                 d="M12 3c2.755 0 5.455.232 8.083.678.533.09.917.556.917 1.096v1.044a2.25 2.25 0 0 1-.659 1.591l-5.432 5.432a2.25 2.25 0 0 0-.659 1.591v2.927a2.25 2.25 0 0 1-1.244 2.013L9.75 21v-6.568a2.25 2.25 0 0 0-.659-1.591L3.659 7.409A2.25 2.25 0 0 1 3 5.818V4.774c0-.54.384-1.006.917-1.096A48.32 48.32 0 0 1 12 3Z"
               />
             </svg>
-            {{ 'HOME.FILTER.TITLE' | translate }}
+            {{ "HOME.FILTER.TITLE" | translate }}
           </h2>
           <p class="text-sm text-text-secondary">
-            {{ 'HOME.FILTER.SUBTITLE' | translate }}
+            {{ "HOME.FILTER.SUBTITLE" | translate }}
           </p>
         </div>
 
         <div class="mt-6 grid grid-cols-1 gap-4 md:grid-cols-12 md:items-end">
-          <div class="md:col-span-2">
+          <div class="md:col-span-4">
             <label
               id="propertyTypeLabel"
               class="block text-sm font-medium text-text-secondary"
             >
-              {{ 'HOME.FILTER.LABEL.PROPERTY_TYPE' | translate }}
+              {{ "HOME.FILTER.LABEL.PROPERTY_TYPE" | translate }}
             </label>
             <ion-select
               class="mt-2 w-full"
               fill="outline"
               interface="popover"
-              [placeholder]="'HOME.FILTER.PLACEHOLDER.PROPERTY_TYPE' | translate"
+              [placeholder]="
+                'HOME.FILTER.PLACEHOLDER.PROPERTY_TYPE' | translate
+              "
               aria-labelledby="propertyTypeLabel"
               [(ngModel)]="selectedType"
             >
-              <ion-select-option value="house">{{ 'HOME.FILTER.TYPE.HOUSE' | translate }}</ion-select-option>
-              <ion-select-option value="apartment"
-                >{{ 'HOME.FILTER.TYPE.APARTMENT' | translate }}</ion-select-option
-              >
-              <ion-select-option value="commercial"
-                >{{ 'HOME.FILTER.TYPE.COMMERCIAL' | translate }}</ion-select-option
-              >
+              <ion-select-option value="house">{{
+                "HOME.FILTER.TYPE.HOUSE" | translate
+              }}</ion-select-option>
+              <ion-select-option value="apartment">{{
+                "HOME.FILTER.TYPE.APARTMENT" | translate
+              }}</ion-select-option>
+              <ion-select-option value="commercial">{{
+                "HOME.FILTER.TYPE.COMMERCIAL" | translate
+              }}</ion-select-option>
             </ion-select>
           </div>
 
@@ -62,7 +73,7 @@
                   id="stateLabel"
                   class="block text-sm font-medium text-text-secondary"
                 >
-                  {{ 'HOME.FILTER.LABEL.STATE' | translate }}
+                  {{ "HOME.FILTER.LABEL.STATE" | translate }}
                 </label>
                 <ion-select
                   class="mt-2 w-full"
@@ -86,7 +97,7 @@
                   id="cityLabel"
                   class="block text-sm font-medium text-text-secondary"
                 >
-                  {{ 'HOME.FILTER.LABEL.CITY' | translate }}
+                  {{ "HOME.FILTER.LABEL.CITY" | translate }}
                 </label>
                 <ion-select
                   class="mt-2 w-full"
@@ -118,7 +129,7 @@
                   id="minPriceLabel"
                   class="block text-sm font-medium text-text-secondary"
                 >
-                  {{ 'HOME.FILTER.LABEL.MIN_PRICE' | translate }}
+                  {{ "HOME.FILTER.LABEL.MIN_PRICE" | translate }}
                 </label>
                 <ion-input
                   class="mt-2 w-full"
@@ -126,7 +137,9 @@
                   type="text"
                   inputmode="numeric"
                   pattern="\\d*"
-                  [placeholder]="'HOME.FILTER.PLACEHOLDER.MIN_PRICE' | translate"
+                  [placeholder]="
+                    'HOME.FILTER.PLACEHOLDER.MIN_PRICE' | translate
+                  "
                   aria-labelledby="minPriceLabel"
                   [value]="priceMinRaw"
                   (ionInput)="onPriceMinInput($event)"
@@ -139,7 +152,7 @@
                   id="maxPriceLabel"
                   class="block text-sm font-medium text-text-secondary"
                 >
-                  {{ 'HOME.FILTER.LABEL.MAX_PRICE' | translate }}
+                  {{ "HOME.FILTER.LABEL.MAX_PRICE" | translate }}
                 </label>
                 <ion-input
                   class="mt-2 w-full"
@@ -147,7 +160,9 @@
                   type="text"
                   inputmode="numeric"
                   pattern="\\d*"
-                  [placeholder]="'HOME.FILTER.PLACEHOLDER.MAX_PRICE' | translate"
+                  [placeholder]="
+                    'HOME.FILTER.PLACEHOLDER.MAX_PRICE' | translate
+                  "
                   aria-labelledby="maxPriceLabel"
                   [value]="priceMaxRaw"
                   (ionInput)="onPriceMaxInput($event)"
@@ -156,47 +171,63 @@
               </div>
             </div>
           </div>
-
-          <div class="md:col-span-2">
-            <div class="mt-2 grid grid-cols-1 gap-2">
-              <ion-button
-                type="button"
-                fill="outline"
-                class="w-full [--border-radius:0.75rem]"
-                expand="block"
-                (click)="clearFilters()"
+        </div>
+        <div class="mt-6 flex flex-col gap-2 sm:flex-row sm:justify-end">
+          <ion-button
+            type="button"
+            fill="outline"
+            class="w-full sm:w-auto [--border-radius:0.75rem]"
+            expand="block"
+            (click)="handleClearFilters()"
+            [disabled]="notHasFilters"
+          >
+            <span class="inline-flex items-center justify-center gap-2">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                class="size-6"
+                aria-hidden="true"
+                focusable="false"
               >
-                {{ 'HOME.FILTER.CLEAR' | translate }}
-              </ion-button>
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M6 18 18 6M6 6l12 12"
+                />
+              </svg>
+              {{ "HOME.FILTER.CLEAR" | translate }}
+            </span>
+          </ion-button>
 
-              <ion-button
-                type="button"
-              class="mt-2 w-full text-white [--border-radius:0.75rem] [--background:var(--color-accent)] [--background-hover:var(--color-secondary)] [--background-activated:var(--color-secondary)]"
-                expand="block"
-                (click)="applyFilters()"
+          <ion-button
+            type="button"
+            class="w-full sm:w-auto text-white [--border-radius:0.75rem] [--background:var(--color-primary)] [--background-hover:var(--color-secondary)] [--background-activated:var(--color-secondary)]"
+            expand="block"
+            (click)="applyFilters()"
+          >
+            <span class="inline-flex items-center justify-center gap-2">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                class="size-6"
+                aria-hidden="true"
+                focusable="false"
               >
-                <span class="inline-flex items-center justify-center gap-2">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke-width="1.5"
-                    stroke="currentColor"
-                    class="size-6"
-                    aria-hidden="true"
-                    focusable="false"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z"
-                    />
-                  </svg>
-                  {{ 'HOME.FILTER.APPLY' | translate }}
-                </span>
-              </ion-button>
-            </div>
-          </div>
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z"
+                />
+              </svg>
+              {{ "HOME.FILTER.APPLY" | translate }}
+            </span>
+          </ion-button>
         </div>
       </div>
     </div>
