@@ -2,6 +2,20 @@
   display: flex;
   flex-direction: column;
   height: 100%;
+  --chat-bg: #0b1220;
+  --chat-surface: #111b2e;
+  --chat-border: rgba(148, 163, 184, 0.22);
+  --chat-text: #e2e8f0;
+  --chat-text-muted: #94a3b8;
+  --chat-user-bubble: rgba(255, 255, 255, 0.06);
+}
+
+ion-input {
+  --background: var(--chat-surface);
+  --color: var(--chat-text);
+  --placeholder-color: var(--chat-text-muted);
+  --highlight-color-focused: var(--color-secondary);
+  --border-color: var(--chat-border);
 }
 
 .typing-dot {

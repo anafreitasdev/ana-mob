@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { HeroSliderComponent } from './components/hero-slider/hero-slider.component';
 import { PropertyFilterComponent } from '@/app/shared/property-filter/property-filter.component';
 import { ListPropertyComponent } from '@/app/shared/list-property/list-property.component';
@@ -19,6 +19,8 @@ import { Property } from '@/app/types/property';
   ],
 })
 export class HomePage {
+  @ViewChild(ChatBotComponent) private chatBot?: ChatBotComponent;
+
   readonly featuredProperties = PROPERTIES_MOCK.filter(
     (property) => property.featured,
   );
@@ -35,5 +37,10 @@ export class HomePage {
 
   toggleChat(): void {
     this.isChatOpen = !this.isChatOpen;
+    if (this.isChatOpen) {
+      setTimeout(() => {
+        this.chatBot?.scrollToLatest();
+      }, 0);
+    }
   }
 }

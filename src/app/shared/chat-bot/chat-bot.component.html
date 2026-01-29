@@ -1,13 +1,13 @@
-<div class="flex h-full flex-col bg-surface text-text-primary">
+<div class="flex h-full flex-col bg-[var(--chat-bg)] text-[var(--chat-text)]">
   <ion-content
     class="flex-1 [--padding-bottom:12px]"
-    [style.--background]="'var(--color-surface)'"
-    [style.--color]="'var(--color-text-primary)'"
+    [style.--background]="'var(--chat-bg)'"
+    [style.--color]="'var(--chat-text)'"
   >
     @if (activeDateLabel) {
       <div class="sticky top-0 z-10 flex justify-center px-3 pt-3">
         <span
-          class="rounded-full border border-border bg-background px-3 py-1 text-xs font-medium text-text-secondary shadow-sm"
+          class="rounded-full border border-[var(--chat-border)] bg-[var(--chat-surface)] px-3 py-1 text-xs font-medium text-[var(--chat-text-muted)] shadow-sm"
           aria-live="polite"
         >
           {{ activeDateLabel }}
@@ -25,37 +25,83 @@
           [class.justify-start]="message.author === 'bot'"
         >
           <div
-            class="max-w-[80%] rounded-2xl px-3 py-2"
-            [class.bg-primary]="message.author === 'bot'"
-            [class.text-white]="message.author === 'bot'"
-            [class.bg-background]="message.author === 'user'"
-            [class.text-text-primary]="message.author === 'user'"
-            [class.border]="message.author === 'user'"
-            [class.border-border]="message.author === 'user'"
+            class="flex max-w-[95%] items-end gap-2"
+            [class.flex-row-reverse]="message.author === 'user'"
           >
-            <div class="break-words">
-              {{ message.message.trim() }}
+            @if (message.author === "bot") {
+              <img
+                src="assets/icon/favicon_ai.png"
+                alt=""
+                class="h-6 w-6 shrink-0 rounded-md bg-white p-0.5"
+                aria-hidden="true"
+                loading="lazy"
+                decoding="async"
+              />
+            } @else {
+              <span
+                class="inline-flex h-6 w-6 shrink-0 items-center justify-center text-[var(--chat-text-muted)]"
+                aria-hidden="true"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="size-6"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M17.982 18.725A7.488 7.488 0 0 0 12 15.75a7.488 7.488 0 0 0-5.982 2.975m11.963 0a9 9 0 1 0-11.963 0m11.963 0A8.966 8.966 0 0 1 12 21a8.966 8.966 0 0 1-5.982-2.275M15 9.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"
+                  />
+                </svg>
+              </span>
+            }
+
+            <div
+              class="max-w-[80%] rounded-2xl px-3 py-2"
+              [class.bg-secondary]="message.author === 'bot'"
+              [class.text-white]="message.author === 'bot'"
+              [class.bg-[var(--chat-user-bubble)]]="message.author === 'user'"
+              [class.text-[var(--chat-text)]]="message.author === 'user'"
+              [class.border]="message.author === 'user'"
+              [class.border-[var(--chat-border)]]="message.author === 'user'"
+            >
+              <div class="break-words">
+                {{ message.message.trim() }}
+              </div>
+              <time class="mt-1 block text-xs opacity-85">
+                {{ formatTime(message.timestamp) }}
+              </time>
             </div>
-            <time class="mt-1 block text-xs opacity-85">
-              {{ formatTime(message.timestamp) }}
-            </time>
           </div>
         </div>
       }
 
       @if (isBotTyping) {
         <div class="flex justify-start">
-          <div
-            class="max-w-[80%] rounded-2xl border border-border bg-background px-3 py-2"
-          >
+          <div class="flex items-end gap-2">
+            <img
+              src="assets/icon/favicon_ai.png"
+              alt=""
+              class="h-6 w-6 shrink-0 rounded-md bg-white p-0.5"
+              aria-hidden="true"
+              loading="lazy"
+              decoding="async"
+            />
             <div
-              class="inline-flex items-center gap-1"
-              role="status"
-              [attr.aria-label]="'CHAT.TYPING' | translate"
+              class="max-w-[80%] rounded-2xl border border-[var(--chat-border)] bg-[var(--chat-surface)] px-3 py-2"
             >
-              <span class="typing-dot typing-dot--1"></span>
-              <span class="typing-dot typing-dot--2"></span>
-              <span class="typing-dot typing-dot--3"></span>
+              <div
+                class="inline-flex items-center gap-1"
+                role="status"
+                [attr.aria-label]="'CHAT.TYPING' | translate"
+              >
+                <span class="typing-dot typing-dot--1"></span>
+                <span class="typing-dot typing-dot--2"></span>
+                <span class="typing-dot typing-dot--3"></span>
+              </div>
             </div>
           </div>
         </div>
@@ -63,7 +109,9 @@
     </div>
   </ion-content>
 
-  <div class="shrink-0 border-t border-border bg-surface p-3">
+  <div
+    class="shrink-0 border-t border-[var(--chat-border)] bg-[var(--chat-surface)] p-3"
+  >
     <div class="flex items-center gap-2">
       <ion-input
         class="flex-1"
@@ -80,6 +128,7 @@
         (click)="onSubmit()"
         [disabled]="!canSubmit"
         [attr.aria-label]="'CHAT.ARIA_SEND' | translate"
+        color="secondary"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"

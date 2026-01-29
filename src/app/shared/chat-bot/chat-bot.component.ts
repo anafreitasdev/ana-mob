@@ -28,6 +28,7 @@ export class ChatBotComponent implements AfterViewInit {
   private readonly cdr = inject(ChangeDetectorRef);
   private readonly ngxTranslate = inject(NgxTranslateService);
   private isDestroyed = false;
+  private didInitialAutoScroll = false;
 
   @ViewChild(IonContent) private readonly content?: IonContent;
 
@@ -77,7 +78,16 @@ export class ChatBotComponent implements AfterViewInit {
       });
 
       this.scheduleReindexAndDateRefresh();
+      this.scrollToLatest();
     });
+  }
+
+  scrollToLatest(): void {
+    this.scrollToBottom();
+    setTimeout(() => {
+      this.scrollToBottom();
+      this.scheduleReindexAndDateRefresh();
+    }, 150);
   }
 
   get canSubmit(): boolean {
@@ -150,6 +160,10 @@ export class ChatBotComponent implements AfterViewInit {
   }
 
   private scrollToBottom(): void {
+    if (!this.didInitialAutoScroll) {
+      this.didInitialAutoScroll = true;
+      setTimeout(() => this.scrollToBottom(), 400);
+    }
     setTimeout(() => {
       this.content?.scrollToBottom(200);
     }, 0);
