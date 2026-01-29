@@ -1,4 +1,7 @@
-<section aria-label="Property filters" class="bg-background px-4 py-8">
+<section
+  [attr.aria-label]="'HOME.FILTER.ARIA.SECTION' | translate"
+  class="bg-background px-4 py-8"
+>
   <div class="mx-auto w-full max-w-7xl">
     <div class="rounded-2xl border border-border bg-surface shadow-sm">
       <div class="px-4 py-5 sm:px-6">
@@ -22,10 +25,10 @@
                 d="M12 3c2.755 0 5.455.232 8.083.678.533.09.917.556.917 1.096v1.044a2.25 2.25 0 0 1-.659 1.591l-5.432 5.432a2.25 2.25 0 0 0-.659 1.591v2.927a2.25 2.25 0 0 1-1.244 2.013L9.75 21v-6.568a2.25 2.25 0 0 0-.659-1.591L3.659 7.409A2.25 2.25 0 0 1 3 5.818V4.774c0-.54.384-1.006.917-1.096A48.32 48.32 0 0 1 12 3Z"
               />
             </svg>
-            Filtrar imóveis
+            {{ 'HOME.FILTER.TITLE' | translate }}
           </h2>
           <p class="text-sm text-text-secondary">
-            Refine sua busca por tipo, localização e faixa de preço.
+            {{ 'HOME.FILTER.SUBTITLE' | translate }}
           </p>
         </div>
 
@@ -35,21 +38,21 @@
               id="propertyTypeLabel"
               class="block text-sm font-medium text-text-secondary"
             >
-              Tipo do imóvel
+              {{ 'HOME.FILTER.LABEL.PROPERTY_TYPE' | translate }}
             </label>
             <ion-select
               class="mt-2 w-full"
               fill="outline"
-              placeholder="Selecione o tipo"
+              [placeholder]="'HOME.FILTER.PLACEHOLDER.PROPERTY_TYPE' | translate"
               aria-labelledby="propertyTypeLabel"
               [(ngModel)]="selectedType"
             >
-              <ion-select-option value="house">Casa</ion-select-option>
+              <ion-select-option value="house">{{ 'HOME.FILTER.TYPE.HOUSE' | translate }}</ion-select-option>
               <ion-select-option value="apartment"
-                >Apartamento</ion-select-option
+                >{{ 'HOME.FILTER.TYPE.APARTMENT' | translate }}</ion-select-option
               >
               <ion-select-option value="commercial"
-                >Comercial</ion-select-option
+                >{{ 'HOME.FILTER.TYPE.COMMERCIAL' | translate }}</ion-select-option
               >
             </ion-select>
           </div>
@@ -61,12 +64,12 @@
                   id="stateLabel"
                   class="block text-sm font-medium text-text-secondary"
                 >
-                  Estado
+                  {{ 'HOME.FILTER.LABEL.STATE' | translate }}
                 </label>
                 <ion-select
                   class="mt-2 w-full"
                   fill="outline"
-                  placeholder="Selecione o estado"
+                  [placeholder]="'HOME.FILTER.PLACEHOLDER.STATE' | translate"
                   aria-labelledby="stateLabel"
                   [(ngModel)]="selectedStateCode"
                   (ngModelChange)="onSelectedStateCodeChange($event)"
@@ -84,15 +87,15 @@
                   id="cityLabel"
                   class="block text-sm font-medium text-text-secondary"
                 >
-                  Cidade
+                  {{ 'HOME.FILTER.LABEL.CITY' | translate }}
                 </label>
                 <ion-select
                   class="mt-2 w-full"
                   fill="outline"
                   [placeholder]="
                     selectedStateCode
-                      ? 'Selecione a cidade'
-                      : 'Selecione um estado primeiro'
+                      ? ('HOME.FILTER.PLACEHOLDER.CITY' | translate)
+                      : ('HOME.FILTER.PLACEHOLDER.CITY_STATE_FIRST' | translate)
                   "
                   aria-labelledby="cityLabel"
                   [(ngModel)]="selectedCityName"
@@ -115,7 +118,7 @@
                   id="minPriceLabel"
                   class="block text-sm font-medium text-text-secondary"
                 >
-                  Valor Mín.
+                  {{ 'HOME.FILTER.LABEL.MIN_PRICE' | translate }}
                 </label>
                 <ion-input
                   class="mt-2 w-full"
@@ -123,7 +126,7 @@
                   type="text"
                   inputmode="numeric"
                   pattern="\\d*"
-                  placeholder="0"
+                  [placeholder]="'HOME.FILTER.PLACEHOLDER.MIN_PRICE' | translate"
                   aria-labelledby="minPriceLabel"
                   [value]="priceMinRaw"
                   (ionInput)="onPriceMinInput($event)"
@@ -136,7 +139,7 @@
                   id="maxPriceLabel"
                   class="block text-sm font-medium text-text-secondary"
                 >
-                  Valor Máx.
+                  {{ 'HOME.FILTER.LABEL.MAX_PRICE' | translate }}
                 </label>
                 <ion-input
                   class="mt-2 w-full"
@@ -144,7 +147,7 @@
                   type="text"
                   inputmode="numeric"
                   pattern="\\d*"
-                  placeholder="1000000"
+                  [placeholder]="'HOME.FILTER.PLACEHOLDER.MAX_PRICE' | translate"
                   aria-labelledby="maxPriceLabel"
                   [value]="priceMaxRaw"
                   (ionInput)="onPriceMaxInput($event)"
@@ -178,7 +181,7 @@
                     d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z"
                   />
                 </svg>
-                Aplicar
+                {{ 'HOME.FILTER.APPLY' | translate }}
               </span>
             </ion-button>
           </div>

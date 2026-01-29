@@ -18,5 +18,100 @@
       "PROPERTIES": "Imóveis",
       "CONTACT": "Contato"
     }
+  },
+  "FOOTER": {
+    "RIGHTS_RESERVED": "Todos os direitos reservados."
+  },
+  "HOME": {
+    "HERO_SLIDER": {
+      "ARIA": {
+        "BANNER": "Destaques de imóveis",
+        "PREVIOUS_SLIDE": "Slide anterior",
+        "NEXT_SLIDE": "Próximo slide",
+        "GO_TO_SLIDE": "Ir para o slide {{index}}"
+      },
+      "ALT": {
+        "FEATURED_IMAGE_SUFFIX": " - imagem em destaque"
+      }
+    },
+    "FILTER": {
+      "ARIA": {
+        "SECTION": "Filtros de imóveis"
+      },
+      "TITLE": "Filtrar imóveis",
+      "SUBTITLE": "Refine sua busca por tipo, localização e faixa de preço.",
+      "APPLY": "Aplicar",
+      "LABEL": {
+        "PROPERTY_TYPE": "Tipo do imóvel",
+        "STATE": "Estado",
+        "CITY": "Cidade",
+        "MIN_PRICE": "Valor Mín.",
+        "MAX_PRICE": "Valor Máx."
+      },
+      "PLACEHOLDER": {
+        "PROPERTY_TYPE": "Selecione o tipo",
+        "STATE": "Selecione o estado",
+        "CITY": "Selecione a cidade",
+        "CITY_STATE_FIRST": "Selecione um estado primeiro",
+        "MIN_PRICE": "0",
+        "MAX_PRICE": "1000000"
+      },
+      "TYPE": {
+        "HOUSE": "Casa",
+        "APARTMENT": "Apartamento",
+        "COMMERCIAL": "Comercial"
+      }
+    },
+    "CONTACT": {
+      "TITLE": "Contato",
+      "DESCRIPTION": "Fale com nossa equipe para agendar visitas ou tirar dúvidas sobre qualquer imóvel.",
+      "PHONE_LABEL": "Telefone:",
+      "EMAIL_LABEL": "E-mail:"
+    },
+    "FEATURED": {
+      "TITLE": "Imóveis em destaque"
+    },
+    "PROPERTIES": {
+      "P1": {
+        "TITLE": "Apartamento em São Paulo",
+        "DESCRIPTION": "Um apartamento moderno na cidade de São Paulo."
+      },
+      "P2": {
+        "TITLE": "Casa em Rio de Janeiro",
+        "DESCRIPTION": "Uma casa espaçosa na cidade do Rio de Janeiro."
+      },
+      "P3": {
+        "TITLE": "Apartamento com vista para o mar",
+        "DESCRIPTION": "Apartamento alto padrão com varanda e vista panorâmica para o mar."
+      },
+      "P4": {
+        "TITLE": "Casa térrea com quintal",
+        "DESCRIPTION": "Casa térrea com amplo quintal, ideal para família com crianças e pets."
+      },
+      "P5": {
+        "TITLE": "Sala comercial no centro",
+        "DESCRIPTION": "Sala comercial pronta para uso em edifício moderno no centro."
+      },
+      "P6": {
+        "TITLE": "Cobertura duplex",
+        "DESCRIPTION": "Cobertura duplex com área gourmet e piscina privativa."
+      },
+      "P7": {
+        "TITLE": "Casa em condomínio fechado",
+        "DESCRIPTION": "Casa em condomínio fechado com segurança 24h e área de lazer completa."
+      },
+      "P8": {
+        "TITLE": "Loja de rua em ponto movimentado",
+        "DESCRIPTION": "Loja térrea em avenida comercial com grande fluxo de pedestres."
+      },
+      "P9": {
+        "TITLE": "Studio compacto mobiliado",
+        "DESCRIPTION": "Studio mobiliado próximo a universidades e estações de metrô."
+      },
+      "P10": {
+        "TITLE": "Chácara para lazer",
+        "DESCRIPTION": "Chácara com área verde, piscina e espaço para eventos de fim de semana."
+      }
+    }
   }
 }
