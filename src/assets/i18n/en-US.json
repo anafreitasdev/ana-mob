@@ -114,6 +114,26 @@
       "P10": {
         "TITLE": "Country house for leisure",
         "DESCRIPTION": "Country house with green area, swimming pool, and space for weekend events."
+      },
+      "P11": {
+        "TITLE": "Apartment in Campinas",
+        "DESCRIPTION": "Modern apartment in Campinas, with great location and excellent infrastructure."
+      },
+      "P12": {
+        "TITLE": "House in Jundiaí",
+        "DESCRIPTION": "Spacious house in Jundiaí, perfect for families who value space and security."
+      },
+      "P13": {
+        "TITLE": "Commercial Property in São Paulo",
+        "DESCRIPTION": "Commercial property in São Paulo, ideal for offices, retail spaces, or investment."
+      },
+      "P14": {
+        "TITLE": "Apartment in Sorocaba",
+        "DESCRIPTION": "Comfortable apartment in Sorocaba, with easy access to the main areas of the city."
+      },
+      "P15": {
+        "TITLE": "House in Campos do Jordão",
+        "DESCRIPTION": "High-end house in Campos do Jordão, surrounded by nature with a mountain atmosphere."
       }
     }
   }

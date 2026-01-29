@@ -114,6 +114,30 @@
       "P10": {
         "TITLE": "Chácara para lazer",
         "DESCRIPTION": "Chácara com área verde, piscina e espaço para eventos de fim de semana."
+      },
+      "P10": {
+        "TITLE": "Casa em Atibaia",
+        "DESCRIPTION": "Casa ampla em Atibaia, ideal para quem busca conforto, tranquilidade e qualidade de vida."
+      },
+      "P11": {
+        "TITLE": "Apartamento em Campinas",
+        "DESCRIPTION": "Apartamento moderno em Campinas, com excelente localização e ótima infraestrutura."
+      },
+      "P12": {
+        "TITLE": "Casa em Jundiaí",
+        "DESCRIPTION": "Casa espaçosa em Jundiaí, perfeita para famílias que valorizam espaço e segurança."
+      },
+      "P13": {
+        "TITLE": "Imóvel Comercial em São Paulo",
+        "DESCRIPTION": "Imóvel comercial em São Paulo, ideal para escritórios, lojas ou investimentos."
+      },
+      "P14": {
+        "TITLE": "Apartamento em Sorocaba",
+        "DESCRIPTION": "Apartamento confortável em Sorocaba, com fácil acesso aos principais pontos da cidade."
+      },
+      "P15": {
+        "TITLE": "Casa em Campos do Jordão",
+        "DESCRIPTION": "Casa de alto padrão em Campos do Jordão, cercada pela natureza e com clima de montanha."
       }
     }
   }

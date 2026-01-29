@@ -10,6 +10,7 @@ import { BreakpointObserver } from '@angular/cdk/layout';
 import { distinctUntilChanged, map } from 'rxjs/operators';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { CommonModule } from '@angular/common';
+import { RealBestateBinBrazilComponent } from './components/real-bestate-bin-brazil/real-bestate-bin-brazil.component';
 
 @Component({
   selector: 'app-home',
@@ -22,6 +23,7 @@ import { CommonModule } from '@angular/common';
     PropertyFilterComponent,
     ListPropertyComponent,
      ChatBotComponent,
+    RealBestateBinBrazilComponent,
     CommonModule,
 ],
 })
@@ -54,6 +56,11 @@ export class HomePage implements OnInit {
   onFiltersApplied(properties: Property[]): void {
     this.filteredProperties = properties;
     this.hasSearched = true;
+  }
+
+  onClearFilters(): void {
+    this.filteredProperties = [];
+    this.hasSearched = false;
   }
 
   toggleChat(): void {
