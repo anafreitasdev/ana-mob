@@ -3,8 +3,8 @@ import { Property } from '@/app/types/property';
 export const PROPERTIES_MOCK: Property[] = [
   {
     id: 1,
-    title: 'Apartamento em São Paulo',
-    description: 'Um apartamento moderno na cidade de São Paulo.',
+    title: 'HOME.PROPERTIES.P1.TITLE',
+    description: 'HOME.PROPERTIES.P1.DESCRIPTION',
     type: 'apartment',
     price: 250000,
     location: {
@@ -20,8 +20,8 @@ export const PROPERTIES_MOCK: Property[] = [
   },
   {
     id: 2,
-    title: 'Casa em Rio de Janeiro',
-    description: 'Uma casa espaçosa na cidade do Rio de Janeiro.',
+    title: 'HOME.PROPERTIES.P2.TITLE',
+    description: 'HOME.PROPERTIES.P2.DESCRIPTION',
     type: 'house',
     price: 350000,
     location: {
@@ -37,16 +37,15 @@ export const PROPERTIES_MOCK: Property[] = [
   },
   {
     id: 3,
-    title: 'Apartamento com vista para o mar',
-    description:
-      'Apartamento alto padrão com varanda e vista panorâmica para o mar.',
+    title: 'HOME.PROPERTIES.P3.TITLE',
+    description: 'HOME.PROPERTIES.P3.DESCRIPTION',
     type: 'apartment',
     price: 480000,
     location: {
       city: 'Florianópolis',
       state: 'SC',
     },
-    featured: true,
+    featured: false,
     images: [
       'https://images.unsplash.com/photo-1484154218962-a197022b5858',
       'https://images.unsplash.com/photo-1545324418-cc1a3fa10c00',
@@ -54,9 +53,8 @@ export const PROPERTIES_MOCK: Property[] = [
   },
   {
     id: 4,
-    title: 'Casa térrea com quintal',
-    description:
-      'Casa térrea com amplo quintal, ideal para família com crianças e pets.',
+    title: 'HOME.PROPERTIES.P4.TITLE',
+    description: 'HOME.PROPERTIES.P4.DESCRIPTION',
     type: 'house',
     price: 420000,
     location: {
@@ -71,9 +69,8 @@ export const PROPERTIES_MOCK: Property[] = [
   },
   {
     id: 5,
-    title: 'Sala comercial no centro',
-    description:
-      'Sala comercial pronta para uso em edifício moderno no centro.',
+    title: 'HOME.PROPERTIES.P5.TITLE',
+    description: 'HOME.PROPERTIES.P5.DESCRIPTION',
     type: 'commercial',
     price: 310000,
     location: {
@@ -88,8 +85,8 @@ export const PROPERTIES_MOCK: Property[] = [
   },
   {
     id: 6,
-    title: 'Cobertura duplex',
-    description: 'Cobertura duplex com área gourmet e piscina privativa.',
+    title: 'HOME.PROPERTIES.P6.TITLE',
+    description: 'HOME.PROPERTIES.P6.DESCRIPTION',
     type: 'apartment',
     price: 780000,
     location: {
@@ -103,9 +100,8 @@ export const PROPERTIES_MOCK: Property[] = [
   },
   {
     id: 7,
-    title: 'Casa em condomínio fechado',
-    description:
-      'Casa em condomínio fechado com segurança 24h e área de lazer completa.',
+    title: 'HOME.PROPERTIES.P7.TITLE',
+    description: 'HOME.PROPERTIES.P7.DESCRIPTION',
     type: 'house',
     price: 690000,
     location: {
@@ -119,9 +115,8 @@ export const PROPERTIES_MOCK: Property[] = [
   },
   {
     id: 8,
-    title: 'Loja de rua em ponto movimentado',
-    description:
-      'Loja térrea em avenida comercial com grande fluxo de pedestres.',
+    title: 'HOME.PROPERTIES.P8.TITLE',
+    description: 'HOME.PROPERTIES.P8.DESCRIPTION',
     type: 'commercial',
     price: 530000,
     location: {
@@ -136,9 +131,8 @@ export const PROPERTIES_MOCK: Property[] = [
   },
   {
     id: 9,
-    title: 'Studio compacto mobiliado',
-    description:
-      'Studio mobiliado próximo a universidades e estações de metrô.',
+    title: 'HOME.PROPERTIES.P9.TITLE',
+    description: 'HOME.PROPERTIES.P9.DESCRIPTION',
     type: 'apartment',
     price: 210000,
     location: {
@@ -153,9 +147,8 @@ export const PROPERTIES_MOCK: Property[] = [
   },
   {
     id: 10,
-    title: 'Chácara para lazer',
-    description:
-      'Chácara com área verde, piscina e espaço para eventos de fim de semana.',
+    title: 'HOME.PROPERTIES.P10.TITLE',
+    description: 'HOME.PROPERTIES.P10.DESCRIPTION',
     type: 'house',
     price: 560000,
     location: {

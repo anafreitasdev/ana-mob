@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output, inject } from '@angular/core';
+import { Component, EventEmitter, Input, Output, inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import {
   IonButton,
@@ -6,6 +6,7 @@ import {
   IonSelect,
   IonSelectOption,
 } from '@ionic/angular/standalone';
+import { TranslateModule } from '@ngx-translate/core';
 import { PROPERTIES_MOCK } from '@/app/data/properties.data';
 import { PropertyService } from '@/app/core/services/property.service';
 import { Property } from '@/app/types/property';
@@ -13,13 +14,14 @@ import {
   formatPtBrMoney,
   parsePtBrMoneyToNumber,
 } from '@/app/utils/format-numbers.util';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-property-filter',
   templateUrl: './property-filter.component.html',
   styleUrls: ['./property-filter.component.scss'],
   standalone: true,
-  imports: [FormsModule, IonSelect, IonSelectOption, IonInput, IonButton],
+  imports: [FormsModule, IonSelect, IonSelectOption, IonInput, IonButton, CommonModule, TranslateModule],
 })
 export class PropertyFilterComponent {
   private readonly propertyService = inject(PropertyService);
@@ -27,6 +29,7 @@ export class PropertyFilterComponent {
   readonly stateOptions = this.buildStateOptions();
 
   @Output() readonly filtersApplied = new EventEmitter<Property[]>();
+  @Input() absolute: false | true = false;
 
   selectedType = '';
   selectedStateCode = '';
@@ -59,6 +62,16 @@ export class PropertyFilterComponent {
       );
 
     this.filtersApplied.emit(filtered);
+  }
+
+  clearFilters(): void {
+    this.selectedType = '';
+    this.selectedStateCode = '';
+    this.selectedCityName = '';
+    this.priceMinRaw = '';
+    this.priceMaxRaw = '';
+
+    this.filtersApplied.emit(this.propertyService.getAllProperties());
   }
 
   onPriceMinInput(event: Event): void {

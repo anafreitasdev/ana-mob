@@ -14,18 +14,20 @@
 @tailwind utilities;
 
 :root {
-  --color-primary: #1e3a8a;
-  --color-secondary: #2563eb;
-  --color-accent: #16a34a;
+  --color-primary: #2b3a8c;
+  --color-secondary: #296ca6;
+  --color-accent: #29b9d9;
 
-  --color-background: #f8fafc;
+  --color-background: #080f36;
   --color-surface: #ffffff;
 
   --color-text-primary: #0f172a;
   --color-text-secondary: #475569;
+  --color-text-white: #ffffff;
+   --color-text-accent: #29b9d9;
 
   --color-border: #e2e8f0;
-  --color-highlight: #f59e0b;
+  --color-highlight: #29a7d9;
 }
 
 /* Core CSS required for Ionic components to work properly */

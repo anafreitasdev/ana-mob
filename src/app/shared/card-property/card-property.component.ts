@@ -7,6 +7,7 @@ import {
   IonSpinner,
   IonText,
 } from '@ionic/angular/standalone';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-card-property',
@@ -20,6 +21,7 @@ import {
     IonCardTitle,
     IonSpinner,
     IonText,
+    TranslateModule,
   ],
 })
 export class CardPropertyComponent {

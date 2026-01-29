@@ -1,6 +1,6 @@
 <section
   id="inicio"
-  aria-label="Featured properties banner"
+  [attr.aria-label]="'HOME.HERO_SLIDER.ARIA.BANNER' | translate"
   class="relative w-full max-w-full overflow-x-hidden"
 >
   <div *ngIf="featuredProperties.length > 0" class="relative w-full max-w-full">
@@ -20,7 +20,7 @@
           <img
             class="absolute inset-0 h-full w-full max-w-full object-cover object-center"
             [src]="property.images[0]"
-            [alt]="property.title + ' - featured image'"
+            [alt]="property.title + ('HOME.HERO_SLIDER.ALT.FEATURED_IMAGE_SUFFIX' | translate)"
             loading="lazy"
           />
 
@@ -29,14 +29,15 @@
           ></div>
 
           <div
-            class="absolute inset-x-0 bottom-0 px-4 pb-12 pt-16 sm:pb-14 md:pb-16"
+            class="absolute inset-16 bottom-0 px-4 pb-12 pt-16 sm:pb-14 md:pb-16"
+             [ngClass]="{'inset-48': !isMobile}"
           >
             <div class="mx-auto w-full max-w-5xl text-center">
               <h2 class="text-2xl font-semibold text-white md:text-4xl">
-                {{ property.title }}
+                {{ property.title | translate }}
               </h2>
               <p class="mt-2 text-sm text-white/90 md:text-base">
-                {{ property.description }}
+                {{ property.description | translate }}
               </p>
             </div>
           </div>
@@ -47,7 +48,7 @@
     <button
       type="button"
       class="absolute left-3 top-1/2 z-10 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full bg-black/40 text-white transition-colors duration-300 hover:bg-primary focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-black/20 md:h-12 md:w-12"
-      aria-label="Previous slide"
+      [attr.aria-label]="'HOME.HERO_SLIDER.ARIA.PREVIOUS_SLIDE' | translate"
       (click)="goToPrevious()"
     >
       <svg
@@ -67,7 +68,7 @@
     <button
       type="button"
       class="absolute right-3 top-1/2 z-10 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full bg-black/40 text-white transition-colors duration-300 hover:bg-primary focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-black/20 md:h-12 md:w-12"
-      aria-label="Next slide"
+      [attr.aria-label]="'HOME.HERO_SLIDER.ARIA.NEXT_SLIDE' | translate"
       (click)="goToNext()"
     >
       <svg
@@ -84,7 +85,7 @@
       </svg>
     </button>
 
-    <div class="pointer-events-none absolute inset-x-0 bottom-4">
+    <div class="pointer-events-none absolute inset-x-0 bottom-4" [ngClass]="{'inset-y-[75%]': !isMobile}">
       <div
         class="mx-auto flex max-w-7xl items-center justify-center gap-2 px-4"
       >
@@ -98,7 +99,7 @@
           class="pointer-events-auto h-2.5 w-2.5 rounded-full transition-colors duration-300"
           [class.bg-primary]="i === activeIndex"
           [class.bg-white/60]="i !== activeIndex"
-          [attr.aria-label]="'Go to slide ' + (i + 1)"
+          [attr.aria-label]="'HOME.HERO_SLIDER.ARIA.GO_TO_SLIDE' | translate: { index: i + 1 }"
           (click)="goToIndex(i)"
         ></button>
       </div>
