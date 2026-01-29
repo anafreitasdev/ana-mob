@@ -11,6 +11,7 @@ import { distinctUntilChanged, map } from 'rxjs/operators';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { CommonModule } from '@angular/common';
 import { RealBestateBinBrazilComponent } from './components/real-bestate-bin-brazil/real-bestate-bin-brazil.component';
+import { IonButton, IonSpinner } from '@ionic/angular/standalone';
 
 @Component({
   selector: 'app-home',
@@ -25,6 +26,8 @@ import { RealBestateBinBrazilComponent } from './components/real-bestate-bin-bra
      ChatBotComponent,
     RealBestateBinBrazilComponent,
     CommonModule,
+    IonButton,
+    IonSpinner
 ],
 })
 export class HomePage implements OnInit {
@@ -43,6 +46,7 @@ export class HomePage implements OnInit {
   filteredProperties: Property[] = [];
   hasSearched = false;
   absoluteFilter = true;
+  seeMore = false;
 
   ngOnInit() {
     this.bo
@@ -70,5 +74,12 @@ export class HomePage implements OnInit {
         this.chatBot?.scrollToLatest();
       }, 0);
     }
+  }
+  loadMoreProperties(): void {
+    this.seeMore = true;
+    setTimeout(() => {
+      this.seeMore = false;
+      // Logic to load more properties can be added here
+    }, 2000); // Simulate a 2-second loading time
   }
 }

@@ -30,9 +30,10 @@
 .content-main {
   margin-top: -4rem;;
   position: relative;
-  background-image:  url('https://images.unsplash.com/photo-1703319961241-c9296db91e72?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDE5fHx8ZW58MHx8fHx8');
+  background-image:  url('https://www.trisul-sa.com.br/blog/wp-content/uploads/2022/10/design-de-interiores-de-luxo.jpeg');
   background-size:cover;
   background-repeat:no-repeat;
+  background-position: top center;
   section{
     position: relative;
     z-index: 1;
@@ -44,6 +45,26 @@
   position: absolute;
   inset: 0;
   background: #080f36c9;
+  z-index: 0 ;
+}
+
+.contact{
+  position: relative;
+  background-image: url('https://img.freepik.com/fotos-gratis/fone-de-ouvido-de-audio-usado-por-agentes-de-call-center-para-atender-clientes-e-fazer-telecomunicacoes-com-tecnologia-estacao-de-trabalho-de-atendimento-ao-cliente-vazia-com-fones-de-ouvido-computadores-e-aparelhos-modernos_482257-40834.jpg?semt=ais_se_enriched&w=740&q=80');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 25rem;
+  display: flex;
+  align-items: center;
+  justify-content:flex-start;
+}
+
+.contact::before{
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: #01083058;
   z-index: 0 ;
 }
 

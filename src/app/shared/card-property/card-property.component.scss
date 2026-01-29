@@ -9,3 +9,9 @@
   -webkit-line-clamp: 2;
   overflow: hidden;
 }
+
+ion-card:hover {
+ cursor: pointer;
+box-shadow: #29b9d940 0px 54px 55px,#29b9d940 0px -12px 30px, #29b9d940 0px 4px 6px, #29b9d940 0px 12px 13px,#29b9d940 0px -3px 5px;
+}
+
