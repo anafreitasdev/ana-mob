@@ -6,6 +6,7 @@ import {
   OnDestroy,
   ViewChild,
 } from '@angular/core';
+import { TranslateModule } from '@ngx-translate/core';
 import { PROPERTIES_MOCK } from '@/app/data/properties.data';
 import { Property } from '@/app/types/property';
 
@@ -14,7 +15,7 @@ import { Property } from '@/app/types/property';
   templateUrl: './hero-slider.component.html',
   styleUrls: ['./hero-slider.component.scss'],
   standalone: true,
-  imports: [NgFor, NgIf],
+  imports: [NgFor, NgIf, TranslateModule],
 })
 export class HeroSliderComponent implements AfterViewInit, OnDestroy {
   @ViewChild('track', { static: false })

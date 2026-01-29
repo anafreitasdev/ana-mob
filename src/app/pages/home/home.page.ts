@@ -1,4 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
+import { TranslateModule } from '@ngx-translate/core';
 import { HeroSliderComponent } from './components/hero-slider/hero-slider.component';
 import { PropertyFilterComponent } from '@/app/shared/property-filter/property-filter.component';
 import { ListPropertyComponent } from '@/app/shared/list-property/list-property.component';
@@ -12,6 +13,7 @@ import { Property } from '@/app/types/property';
   styleUrls: ['home.page.scss'],
   standalone: true,
   imports: [
+    TranslateModule,
     HeroSliderComponent,
     PropertyFilterComponent,
     ListPropertyComponent,
