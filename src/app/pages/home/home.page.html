@@ -12,18 +12,20 @@
     <section class="px-4">
       <div class="max-w-7xl mx-auto">
         <div
-          class="flex flex-col gap-1 mb-4"
-          [ngClass]="{'pt-16': isMobile, 'pt-32': !isMobile}"
+          class="flex flex-col gap-1 mb-4 "
+          [ngClass]="{'pt-16': isMobile, 'pt-48': !isMobile}"
         >
           <h2
-            class="text-2xl font-semibold"
+            class="text-2xl font-semibold "
             [style.color]="'var(--color-text-white)'"
+            [style.text-align]="isMobile ? 'center' : 'left'"
           >
             Resultados encontrados
           </h2>
           <p
             class="text-sm text-text-secondary"
             [style.color]="'var(--color-accent)'"
+            [style.text-align]="isMobile ? 'center' : 'left'"
           >
             {{ filteredProperties.length }} resultado(s)
           </p>
@@ -39,10 +41,10 @@
     <section
       id="imoveis"
       class="px-4"
-      [ngClass]="{'py-16': isMobile, 'py-32': !isMobile}"
+      [ngClass]="{'py-16': isMobile, 'py-40': !isMobile}"
     >
       <div class="max-w-7xl mx-auto">
-        <div class="flex gap-2 items-center mb-4">
+        <div class="flex gap-2 items-center mb-4 " [style.justify-content]="isMobile ? 'center' : 'flex-start'">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -67,7 +69,8 @@
         ></app-list-property>
         <ion-button
           type="button"
-          class="mt-8 w-[25%] mx-auto text-white [--border-radius:0.75rem] [--background:var(--color-accent)] [--background-hover:var(--color-secondary)] [--background-activated:var(--color-secondary)]"
+          class="mt-16 w-[25%] mx-auto text-white [--border-radius:0.75rem] [--background:var(--color-accent)] [--background-hover:var(--color-secondary)] [--background-activated:var(--color-secondary)]"
+          [ngClass]="{'w-[50%]': isMobile}"
           expand="block"
           (click)="loadMoreProperties()"
         >
@@ -83,43 +86,7 @@
     </section>
   </div>
 
-  <!-- Seção de Contato -->
-  <section id="contato" class="px-4 py-16 contact">
-    <div class="max-w-7xl z-10" [ngClass]="{'mx-64': !isMobile}">
-      <div class="flex gap-2 items-center mb-4">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke-width="1.5"
-          stroke="currentColor"
-          class="size-6"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            d="m7.875 14.25 1.214 1.942a2.25 2.25 0 0 0 1.908 1.058h2.006c.776 0 1.497-.4 1.908-1.058l1.214-1.942M2.41 9h4.636a2.25 2.25 0 0 1 1.872 1.002l.164.246a2.25 2.25 0 0 0 1.872 1.002h2.092a2.25 2.25 0 0 0 1.872-1.002l.164-.246A2.25 2.25 0 0 1 16.954 9h4.636M2.41 9a2.25 2.25 0 0 0-.16.832V12a2.25 2.25 0 0 0 2.25 2.25h15A2.25 2.25 0 0 0 21.75 12V9.832c0-.287-.055-.57-.16-.832M2.41 9a2.25 2.25 0 0 1 .382-.632l3.285-3.832a2.25 2.25 0 0 1 1.708-.786h8.43c.657 0 1.281.287 1.709.786l3.284 3.832c.163.19.291.404.382.632M4.5 20.25h15A2.25 2.25 0 0 0 21.75 18v-2.625c0-.621-.504-1.125-1.125-1.125H3.375c-.621 0-1.125.504-1.125 1.125V18a2.25 2.25 0 0 0 2.25 2.25Z"
-          />
-        </svg>
-        <h2 class="text-2xl font-semibold">
-          {{ 'HOME.CONTACT.TITLE' | translate }}
-        </h2>
-      </div>
-      <p class="text-text-surface text-sm md:text-base mb-4">
-        {{ 'HOME.CONTACT.DESCRIPTION' | translate }}
-      </p>
-      <div class="flex flex-col gap-2 text-sm">
-        <span class="font-medium"
-          >{{ 'HOME.CONTACT.PHONE_LABEL' | translate }}
-          <span class="font-normal">(11) 99999-9999</span></span
-        >
-        <span class="font-medium"
-          >{{ 'HOME.CONTACT.EMAIL_LABEL' | translate }}
-          <span class="font-normal">contato@anaimoveis.com.br</span></span
-        >
-      </div>
-    </div>
-  </section>
+
 
   <div
     class="fixed bottom-20 left-4 right-4 z-50 max-w-none sm:bottom-24 sm:left-auto sm:right-24 sm:w-96"
