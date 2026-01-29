@@ -1,6 +1,6 @@
 import { BreakpointObserver } from '@angular/cdk/layout';
 import { CommonModule } from '@angular/common';
-import { Component, DestroyRef, inject } from '@angular/core';
+import { Component, DestroyRef, inject, OnInit } from '@angular/core';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { TranslateModule } from '@ngx-translate/core';
 
@@ -11,14 +11,14 @@ import { TranslateModule } from '@ngx-translate/core';
   standalone: true,
   imports: [TranslateModule, CommonModule],
 })
-export class FooterComponent  {
+export class FooterComponent implements OnInit {
   private bo = inject(BreakpointObserver);
   private destroyRef = inject(DestroyRef);
 
   isMobile = false;
   readonly currentYear = new Date().getFullYear();
 
-  constructor() { }
+  constructor() {}
 
   ngOnInit() {
     this.bo
@@ -26,5 +26,4 @@ export class FooterComponent  {
       .pipe(takeUntilDestroyed(this.destroyRef))
       .subscribe((r) => (this.isMobile = r.matches));
   }
-
 }

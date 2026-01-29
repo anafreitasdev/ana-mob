@@ -7,6 +7,7 @@ import {
   HostListener,
   inject,
   OnDestroy,
+  OnInit,
 } from '@angular/core';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { IonPopover } from '@ionic/angular/standalone';
@@ -42,7 +43,7 @@ const styled = {
   standalone: true,
   imports: [IonPopover, TranslateModule, CommonModule],
 })
-export class HeaderComponent implements OnDestroy, AfterViewInit {
+export class HeaderComponent implements OnDestroy, AfterViewInit, OnInit {
   private bo = inject(BreakpointObserver);
   private destroyRef = inject(DestroyRef);
 
