@@ -318,6 +318,8 @@ export class ChatBotComponent implements AfterViewInit {
     return new Date(y, Math.max(0, m - 1), d);
   }
 
+
+  // Format the date of the conversation into a user-friendly label.
   private formatConversationDayLabel(date: Date): string {
     const now = new Date();
     const todayKey = this.dateKey(now);
@@ -332,7 +334,10 @@ export class ChatBotComponent implements AfterViewInit {
       return this.ngxTranslate.instant('COMMON.YESTERDAY');
     }
 
-    const locale = this.ngxTranslate.currentLang || this.ngxTranslate.defaultLang || 'pt-BR';
+    const locale =
+      this.ngxTranslate.getCurrentLang() ||
+      this.ngxTranslate.getFallbackLang() ||
+      'pt-BR';
     return new Intl.DateTimeFormat(locale, {
       day: '2-digit',
       month: '2-digit',

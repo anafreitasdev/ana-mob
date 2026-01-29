@@ -17,7 +17,7 @@ export class TranslateService {
 
   init(): void {
     const saved = this.readStoredLang();
-    const browser = this.ngxTranslate.getBrowserCultureLang();
+    const browser = NgxTranslateService.getBrowserCultureLang();
     const lang = saved ?? this.normalize(browser) ?? 'pt-BR';
     this.setLang(lang);
   }
@@ -28,7 +28,7 @@ export class TranslateService {
   }
 
   get current(): Lang {
-    return (this.ngxTranslate.currentLang as Lang) || 'pt-BR';
+    return this.normalize(this.ngxTranslate.getCurrentLang()) ?? 'pt-BR';
   }
 
   get supportedLangs(): readonly Lang[] {
