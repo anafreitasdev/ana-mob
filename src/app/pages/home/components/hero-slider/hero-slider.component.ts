@@ -5,6 +5,7 @@ import {
   DestroyRef,
   ElementRef,
   OnDestroy,
+  OnInit,
   ViewChild,
   inject,
 } from '@angular/core';
@@ -21,7 +22,7 @@ import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
   standalone: true,
   imports: [NgFor, NgIf, CommonModule, TranslateModule],
 })
-export class HeroSliderComponent implements AfterViewInit, OnDestroy {
+export class HeroSliderComponent implements OnInit, AfterViewInit, OnDestroy {
 
   @ViewChild('track', { static: false })
   private readonly trackRef?: ElementRef<HTMLDivElement>;

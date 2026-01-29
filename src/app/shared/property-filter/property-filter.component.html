@@ -40,6 +40,7 @@
             <ion-select
               class="mt-2 w-full"
               fill="outline"
+              interface="popover"
               [placeholder]="'HOME.FILTER.PLACEHOLDER.PROPERTY_TYPE' | translate"
               aria-labelledby="propertyTypeLabel"
               [(ngModel)]="selectedType"
@@ -66,6 +67,7 @@
                 <ion-select
                   class="mt-2 w-full"
                   fill="outline"
+                  interface="popover"
                   [placeholder]="'HOME.FILTER.PLACEHOLDER.STATE' | translate"
                   aria-labelledby="stateLabel"
                   [(ngModel)]="selectedStateCode"
@@ -89,6 +91,7 @@
                 <ion-select
                   class="mt-2 w-full"
                   fill="outline"
+                  interface="popover"
                   [placeholder]="
                     selectedStateCode
                       ? ('HOME.FILTER.PLACEHOLDER.CITY' | translate)
@@ -155,32 +158,44 @@
           </div>
 
           <div class="md:col-span-2">
-            <ion-button
-              type="button"
-              class="mt-2 w-full text-white [--border-radius:0.75rem] [--background:var(--color-accent)] [--background-hover:var(--color-secondary)] [--background-activated:var(--color-secondary)]"
-              expand="block"
-              (click)="applyFilters()"
-            >
-              <span class="inline-flex items-center justify-center gap-2">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke-width="1.5"
-                  stroke="currentColor"
-                  class="size-6"
-                  aria-hidden="true"
-                  focusable="false"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z"
-                  />
-                </svg>
-                {{ 'HOME.FILTER.APPLY' | translate }}
-              </span>
-            </ion-button>
+            <div class="mt-2 grid grid-cols-1 gap-2">
+              <ion-button
+                type="button"
+                fill="outline"
+                class="w-full [--border-radius:0.75rem]"
+                expand="block"
+                (click)="clearFilters()"
+              >
+                {{ 'HOME.FILTER.CLEAR' | translate }}
+              </ion-button>
+
+              <ion-button
+                type="button"
+                class="w-full text-white [--border-radius:0.75rem] [--background:var(--color-primary)] [--background-hover:var(--color-secondary)] [--background-activated:var(--color-secondary)]"
+                expand="block"
+                (click)="applyFilters()"
+              >
+                <span class="inline-flex items-center justify-center gap-2">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    class="size-6"
+                    aria-hidden="true"
+                    focusable="false"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z"
+                    />
+                  </svg>
+                  {{ 'HOME.FILTER.APPLY' | translate }}
+                </span>
+              </ion-button>
+            </div>
           </div>
         </div>
       </div>

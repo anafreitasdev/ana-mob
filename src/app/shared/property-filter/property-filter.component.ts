@@ -64,6 +64,16 @@ export class PropertyFilterComponent {
     this.filtersApplied.emit(filtered);
   }
 
+  clearFilters(): void {
+    this.selectedType = '';
+    this.selectedStateCode = '';
+    this.selectedCityName = '';
+    this.priceMinRaw = '';
+    this.priceMaxRaw = '';
+
+    this.filtersApplied.emit(this.propertyService.getAllProperties());
+  }
+
   onPriceMinInput(event: Event): void {
     const nextValue =
       (event as CustomEvent<{ value?: string | null }>).detail?.value ?? '';
