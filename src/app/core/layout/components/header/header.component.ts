@@ -7,7 +7,7 @@ const styled = {
   brand: 'text-primary font-semibold text-lg tracking-tight',
   navListDesktop: 'hidden md:flex items-center gap-8',
   navItemDesktop:
-    'text-sm font-medium text-text-secondary hover:text-primary transition-colors',
+    'text-sm font-medium text-text-white hover:text-accent transition-colors',
   mobileToggleButton:
     'md:hidden inline-flex items-center justify-center p-2 rounded-md text-text-primary hover:bg-background focus:outline-none focus:ring-2 focus:ring-primary',
   mobileOverlay:
@@ -34,8 +34,12 @@ export class HeaderComponent implements OnDestroy {
   readonly styled = styled;
 
   mobileMenuOpen = false;
+  ngAfterViewInit() {
+    this.onScroll();
 
-  @HostListener('document:keydown.escape')
+}
+
+   @HostListener('document:keydown.escape')
   onEscapeKey(): void {
     this.closeMobileMenu();
   }
@@ -73,4 +77,20 @@ export class HeaderComponent implements OnDestroy {
 
     this.closeMobileMenu();
   }
+  onScroll() {
+  const header = document.getElementById('header');
+  const content = document.querySelector('ion-content');
+
+  content?.addEventListener('ionScroll', (event: any) => {
+    const scrollTop = event.detail.scrollTop;
+
+    if (scrollTop > 50) {
+      header?.classList.add('transparent-header');
+    } else {
+      header?.classList.remove('transparent-header');
+    }
+  });
+  }
+
+
 }

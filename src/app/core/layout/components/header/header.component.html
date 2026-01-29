@@ -1,15 +1,11 @@
-<ion-header [translucent]="false" [class]="styled.headerContainer">
-  <ion-toolbar
-    [style.--background]="'var(--color-surface)'"
-    [style.--color]="'var(--color-text-primary)'"
-  >
+<header id="header" class="header-inner">
     <div [class]="styled.headerInner">
       <a href="#inicio" class="flex items-center gap-2">
-        <span [class]="styled.brand">Ana Imóveis</span>
+        <span [class]="styled.brand + ' brand'" >Ana Imóveis</span>
       </a>
 
       <!-- Navegação desktop -->
-      <nav [class]="styled.navListDesktop">
+      <nav [class]="styled.navListDesktop + ' menu-bar'">
         <a
           href="#inicio"
           [class]="styled.navItemDesktop + ' inline-flex items-center gap-2'"
@@ -107,7 +103,7 @@
         </svg>
       </button>
     </div>
-  </ion-toolbar>
+
 
   <div
     [class]="styled.mobileOverlay"
@@ -221,4 +217,4 @@
       </button>
     </nav>
   </aside>
-</ion-header>
+<header>

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { AfterViewInit, Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { IonContent } from '@ionic/angular/standalone';
 import { HeaderComponent } from '@/app/core/layout/components/header/header.component';
@@ -16,6 +16,8 @@ import { FooterComponent } from '@/app/core/layout/components/footer/footer.comp
     RouterOutlet,
   ],
 })
-export class LayoutComponent {
+export class LayoutComponent  {
   constructor() {}
+
+
 }

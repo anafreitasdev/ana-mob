@@ -1,9 +1,13 @@
-import { Component } from '@angular/core';
+import { Component, DestroyRef, inject } from '@angular/core';
 import { HeroSliderComponent } from './components/hero-slider/hero-slider.component';
 import { PropertyFilterComponent } from '@/app/shared/property-filter/property-filter.component';
 import { ListPropertyComponent } from '@/app/shared/list-property/list-property.component';
 import { PROPERTIES_MOCK } from '@/app/data/properties.data';
 import { Property } from '@/app/types/property';
+import { BreakpointObserver } from '@angular/cdk/layout';
+import { distinctUntilChanged, map } from 'rxjs/operators';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-home',
@@ -14,15 +18,31 @@ import { Property } from '@/app/types/property';
     HeroSliderComponent,
     PropertyFilterComponent,
     ListPropertyComponent,
-  ],
+    CommonModule,
+],
 })
 export class HomePage {
+  private bo = inject(BreakpointObserver);
+  private destroyRef = inject(DestroyRef);
+
+  isMobile = false;
+
+  constructor(private breakpointObserver: BreakpointObserver) {}
+
   readonly featuredProperties = PROPERTIES_MOCK.filter(
     (property) => property.featured,
   );
 
   filteredProperties: Property[] = [];
   hasSearched = false;
+  absoluteFilter = true;
+
+  ngOnInit() {
+    this.bo
+      .observe(['(max-width: 768px)'])
+      .pipe(takeUntilDestroyed(this.destroyRef))
+      .subscribe((r) => (this.isMobile = r.matches));
+  }
 
   onFiltersApplied(properties: Property[]): void {
     this.filteredProperties = properties;

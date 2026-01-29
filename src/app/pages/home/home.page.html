@@ -1,15 +1,19 @@
-<main class="bg-background text-text-primary">
+<main class="bg-background text-text-white">
+  <div class="slider">
   <app-hero-slider></app-hero-slider>
+  </div>
   <app-property-filter
     (filtersApplied)="onFiltersApplied($event)"
+    [absolute]="absoluteFilter && !isMobile"
   ></app-property-filter>
 
+<div class="content-main">
   @if (hasSearched) {
-  <section class="px-4 pb-16">
+  <section class="px-4">
     <div class="max-w-7xl mx-auto">
-      <div class="flex flex-col gap-1 mb-4">
-        <h2 class="text-2xl font-semibold">Resultados encontrados</h2>
-        <p class="text-sm text-text-secondary">
+      <div class="flex flex-col gap-1 mb-4" [ngClass]="{'pt-16': isMobile, 'pt-32': !isMobile}">
+        <h2 class="text-2xl font-semibold" [style.color]="'var(--color-text-white)'">Resultados encontrados</h2>
+        <p class="text-sm text-text-secondary" [style.color]="'var(--color-accent)'">
           {{ filteredProperties.length }} resultado(s)
         </p>
       </div>
@@ -19,7 +23,7 @@
   }
 
   <!-- Seção de Imóveis em Destaque -->
-  <section id="imoveis" class="px-4 py-16">
+  <section id="imoveis" class="px-4" [ngClass]="{'py-16': isMobile, 'py-32': !isMobile}">
     <div class="max-w-7xl mx-auto">
       <div class="flex gap-2 items-center mb-4">
         <svg
@@ -42,6 +46,7 @@
       <app-list-property [properties]="featuredProperties"></app-list-property>
     </div>
   </section>
+  </div>
 
   <!-- Seção de Contato -->
   <section id="contato" class="px-4 py-16 bg-surface border-t border-border">

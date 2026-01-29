@@ -1,22 +1,27 @@
-import { NgFor, NgIf } from '@angular/common';
+import { NgFor, NgIf, CommonModule } from '@angular/common';
 import {
   AfterViewInit,
   Component,
+  DestroyRef,
   ElementRef,
   OnDestroy,
   ViewChild,
+  inject,
 } from '@angular/core';
 import { PROPERTIES_MOCK } from '@/app/data/properties.data';
 import { Property } from '@/app/types/property';
+import { BreakpointObserver } from '@angular/cdk/layout';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 
 @Component({
   selector: 'app-hero-slider',
   templateUrl: './hero-slider.component.html',
   styleUrls: ['./hero-slider.component.scss'],
   standalone: true,
-  imports: [NgFor, NgIf],
+  imports: [NgFor, NgIf, CommonModule],
 })
 export class HeroSliderComponent implements AfterViewInit, OnDestroy {
+
   @ViewChild('track', { static: false })
   private readonly trackRef?: ElementRef<HTMLDivElement>;
 
@@ -26,6 +31,16 @@ export class HeroSliderComponent implements AfterViewInit, OnDestroy {
 
   private resizeObserver?: ResizeObserver;
   private rafId?: number;
+  private bo = inject(BreakpointObserver);
+  private destroyRef = inject(DestroyRef);
+
+  isMobile = false;
+
+   ngOnInit() {
+    this.bo.observe(['(max-width: 768px)'])
+      .pipe(takeUntilDestroyed(this.destroyRef))
+      .subscribe(r => (this.isMobile = r.matches));
+  }
 
   ngAfterViewInit(): void {
     const track = this.trackRef?.nativeElement;

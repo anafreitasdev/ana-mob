@@ -1,0 +1,13 @@
+.property-absolute{
+  position: absolute;
+  width: 75%;
+  z-index: 999;
+  left: 50%;
+  top: 60%;
+  transform: translateX(-50%);
+
+}
+
+.relative-container{
+ position: relative;
+}

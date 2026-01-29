@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output, inject } from '@angular/core';
+import { Component, EventEmitter, Input, Output, inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import {
   IonButton,
@@ -13,13 +13,14 @@ import {
   formatPtBrMoney,
   parsePtBrMoneyToNumber,
 } from '@/app/utils/format-numbers.util';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-property-filter',
   templateUrl: './property-filter.component.html',
   styleUrls: ['./property-filter.component.scss'],
   standalone: true,
-  imports: [FormsModule, IonSelect, IonSelectOption, IonInput, IonButton],
+  imports: [FormsModule, IonSelect, IonSelectOption, IonInput, IonButton, CommonModule],
 })
 export class PropertyFilterComponent {
   private readonly propertyService = inject(PropertyService);
@@ -27,6 +28,7 @@ export class PropertyFilterComponent {
   readonly stateOptions = this.buildStateOptions();
 
   @Output() readonly filtersApplied = new EventEmitter<Property[]>();
+  @Input() absolute: false | true = false;
 
   selectedType = '';
   selectedStateCode = '';
