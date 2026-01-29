@@ -43,6 +43,7 @@
       "TITLE": "Filtrar imóveis",
       "SUBTITLE": "Refine sua busca por tipo, localização e faixa de preço.",
       "APPLY": "Aplicar",
+      "CLEAR": "Limpar",
       "LABEL": {
         "PROPERTY_TYPE": "Tipo do imóvel",
         "STATE": "Estado",

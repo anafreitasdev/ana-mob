@@ -11,3 +11,23 @@
 .relative-container{
  position: relative;
 }
+
+ion-input,
+ion-select {
+  --color: var(--color-text-primary);
+  --placeholder-color: var(--color-text-secondary);
+  --icon-color: var(--color-primary);
+  --highlight-color: var(--color-primary);
+  --highlight-color-focused: var(--color-primary);
+  --border-color: var(--color-primary);
+  --border-color-focused: var(--color-primary);
+}
+
+ion-select::part(text) {
+  color: var(--color-text-primary);
+}
+
+ion-select::part(icon) {
+  color: var(--color-primary);
+  opacity: 1;
+}

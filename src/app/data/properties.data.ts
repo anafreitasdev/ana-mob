@@ -45,7 +45,7 @@ export const PROPERTIES_MOCK: Property[] = [
       city: 'Florianópolis',
       state: 'SC',
     },
-    featured: true,
+    featured: false,
     images: [
       'https://images.unsplash.com/photo-1484154218962-a197022b5858',
       'https://images.unsplash.com/photo-1545324418-cc1a3fa10c00',

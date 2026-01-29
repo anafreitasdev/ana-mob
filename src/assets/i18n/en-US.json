@@ -43,6 +43,7 @@
       "TITLE": "Filter properties",
       "SUBTITLE": "Refine your search by type, location, and price range.",
       "APPLY": "Apply",
+      "CLEAR": "Clear",
       "LABEL": {
         "PROPERTY_TYPE": "Property type",
         "STATE": "State",

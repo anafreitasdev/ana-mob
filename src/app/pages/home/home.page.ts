@@ -1,4 +1,4 @@
-import { Component, DestroyRef, inject, ViewChild } from '@angular/core';
+import { Component, DestroyRef, inject, OnInit, ViewChild } from '@angular/core';
 import { TranslateModule } from '@ngx-translate/core';
 import { HeroSliderComponent } from './components/hero-slider/hero-slider.component';
 import { PropertyFilterComponent } from '@/app/shared/property-filter/property-filter.component';
@@ -25,14 +25,14 @@ import { CommonModule } from '@angular/common';
     CommonModule,
 ],
 })
-export class HomePage {
+export class HomePage implements OnInit {
   @ViewChild(ChatBotComponent) private chatBot?: ChatBotComponent;
   private bo = inject(BreakpointObserver);
   private destroyRef = inject(DestroyRef);
 
   isMobile = false;
 
-  constructor(private breakpointObserver: BreakpointObserver) {}
+  constructor() {}
 
   readonly featuredProperties = PROPERTIES_MOCK.filter(
     (property) => property.featured,

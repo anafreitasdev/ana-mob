@@ -1,9 +1,11 @@
-import { Component, HostListener, inject, OnDestroy } from '@angular/core';
 import {
-  IonHeader,
-  IonPopover,
-  IonToolbar,
-} from '@ionic/angular/standalone';
+  AfterViewInit,
+  Component,
+  HostListener,
+  inject,
+  OnDestroy,
+} from '@angular/core';
+import { IonPopover } from '@ionic/angular/standalone';
 import { TranslateModule } from '@ngx-translate/core';
 import { TranslateService } from 'src/app/core/services/translate.service';
 
@@ -34,12 +36,9 @@ const styled = {
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss'],
   standalone: true,
-  imports: [
-    IonPopover,
-    TranslateModule,
-  ],
+  imports: [IonPopover, TranslateModule],
 })
-export class HeaderComponent implements OnDestroy {
+export class HeaderComponent implements OnDestroy, AfterViewInit {
   readonly styled = styled;
 
   private translateService = inject(TranslateService);
@@ -47,10 +46,9 @@ export class HeaderComponent implements OnDestroy {
   mobileMenuOpen = false;
   ngAfterViewInit() {
     this.onScroll();
+  }
 
-}
-
-   @HostListener('document:keydown.escape')
+  @HostListener('document:keydown.escape')
   onEscapeKey(): void {
     this.closeMobileMenu();
   }
@@ -89,21 +87,19 @@ export class HeaderComponent implements OnDestroy {
     this.closeMobileMenu();
   }
   onScroll() {
-  const header = document.getElementById('header');
-  const content = document.querySelector('ion-content');
+    const header = document.getElementById('header');
+    const content = document.querySelector('ion-content');
 
-  content?.addEventListener('ionScroll', (event: any) => {
-    const scrollTop = event.detail.scrollTop;
+    content?.addEventListener('ionScroll', (event: any) => {
+      const scrollTop = event.detail.scrollTop;
 
-    if (scrollTop > 50) {
-      header?.classList.add('transparent-header');
-    } else {
-      header?.classList.remove('transparent-header');
-    }
-  });
+      if (scrollTop > 50) {
+        header?.classList.add('transparent-header');
+      } else {
+        header?.classList.remove('transparent-header');
+      }
+    });
   }
-
-
 
   setLanguage(lang: 'pt-BR' | 'en-US'): void {
     this.translateService.setLang(lang);
