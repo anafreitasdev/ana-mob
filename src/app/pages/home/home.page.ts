@@ -1,7 +1,9 @@
-import { Component, DestroyRef, inject } from '@angular/core';
+import { Component, DestroyRef, inject, ViewChild } from '@angular/core';
+import { TranslateModule } from '@ngx-translate/core';
 import { HeroSliderComponent } from './components/hero-slider/hero-slider.component';
 import { PropertyFilterComponent } from '@/app/shared/property-filter/property-filter.component';
 import { ListPropertyComponent } from '@/app/shared/list-property/list-property.component';
+import { ChatBotComponent } from '@/app/shared/chat-bot/chat-bot.component';
 import { PROPERTIES_MOCK } from '@/app/data/properties.data';
 import { Property } from '@/app/types/property';
 import { BreakpointObserver } from '@angular/cdk/layout';
@@ -15,13 +17,16 @@ import { CommonModule } from '@angular/common';
   styleUrls: ['home.page.scss'],
   standalone: true,
   imports: [
+    TranslateModule,
     HeroSliderComponent,
     PropertyFilterComponent,
     ListPropertyComponent,
+     ChatBotComponent,
     CommonModule,
 ],
 })
 export class HomePage {
+  @ViewChild(ChatBotComponent) private chatBot?: ChatBotComponent;
   private bo = inject(BreakpointObserver);
   private destroyRef = inject(DestroyRef);
 
@@ -44,8 +49,19 @@ export class HomePage {
       .subscribe((r) => (this.isMobile = r.matches));
   }
 
+  isChatOpen = false;
+
   onFiltersApplied(properties: Property[]): void {
     this.filteredProperties = properties;
     this.hasSearched = true;
+  }
+
+  toggleChat(): void {
+    this.isChatOpen = !this.isChatOpen;
+    if (this.isChatOpen) {
+      setTimeout(() => {
+        this.chatBot?.scrollToLatest();
+      }, 0);
+    }
   }
 }

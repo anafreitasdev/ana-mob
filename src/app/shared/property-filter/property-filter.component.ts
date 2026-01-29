@@ -6,6 +6,7 @@ import {
   IonSelect,
   IonSelectOption,
 } from '@ionic/angular/standalone';
+import { TranslateModule } from '@ngx-translate/core';
 import { PROPERTIES_MOCK } from '@/app/data/properties.data';
 import { PropertyService } from '@/app/core/services/property.service';
 import { Property } from '@/app/types/property';
@@ -20,7 +21,7 @@ import { CommonModule } from '@angular/common';
   templateUrl: './property-filter.component.html',
   styleUrls: ['./property-filter.component.scss'],
   standalone: true,
-  imports: [FormsModule, IonSelect, IonSelectOption, IonInput, IonButton, CommonModule],
+  imports: [FormsModule, IonSelect, IonSelectOption, IonInput, IonButton, CommonModule, TranslateModule],
 })
 export class PropertyFilterComponent {
   private readonly propertyService = inject(PropertyService);

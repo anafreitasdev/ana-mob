@@ -1,0 +1,119 @@
+{
+  "APP": {
+    "NAME": "Ana Real Estate"
+  },
+  "COMMON": {
+    "SEND": "Send",
+    "LOADING": "Loading",
+    "TODAY": "Today",
+    "YESTERDAY": "Yesterday"
+  },
+  "CHAT": {
+    "PLACEHOLDER": "Type a message",
+    "ARIA_INPUT": "Message input",
+    "ARIA_SEND": "Send message",
+    "TYPING": "Bot typing"
+  },
+  "HEADER": {
+    "NAV": {
+      "HOME": "Home",
+      "PROPERTIES": "Properties",
+      "CONTACT": "Contact"
+    }
+  },
+  "FOOTER": {
+    "RIGHTS_RESERVED": "All rights reserved."
+  },
+  "HOME": {
+    "HERO_SLIDER": {
+      "ARIA": {
+        "BANNER": "Featured properties",
+        "PREVIOUS_SLIDE": "Previous slide",
+        "NEXT_SLIDE": "Next slide",
+        "GO_TO_SLIDE": "Go to slide {{index}}"
+      },
+      "ALT": {
+        "FEATURED_IMAGE_SUFFIX": " - featured image"
+      }
+    },
+    "FILTER": {
+      "ARIA": {
+        "SECTION": "Property filters"
+      },
+      "TITLE": "Filter properties",
+      "SUBTITLE": "Refine your search by type, location, and price range.",
+      "APPLY": "Apply",
+      "LABEL": {
+        "PROPERTY_TYPE": "Property type",
+        "STATE": "State",
+        "CITY": "City",
+        "MIN_PRICE": "Min. price",
+        "MAX_PRICE": "Max. price"
+      },
+      "PLACEHOLDER": {
+        "PROPERTY_TYPE": "Select a type",
+        "STATE": "Select a state",
+        "CITY": "Select a city",
+        "CITY_STATE_FIRST": "Select a state first",
+        "MIN_PRICE": "0",
+        "MAX_PRICE": "1000000"
+      },
+      "TYPE": {
+        "HOUSE": "House",
+        "APARTMENT": "Apartment",
+        "COMMERCIAL": "Commercial"
+      }
+    },
+    "CONTACT": {
+      "TITLE": "Contact",
+      "DESCRIPTION": "Talk to our team to schedule visits or ask questions about any property.",
+      "PHONE_LABEL": "Phone:",
+      "EMAIL_LABEL": "Email:"
+    },
+    "FEATURED": {
+      "TITLE": "Featured properties"
+    },
+    "PROPERTIES": {
+      "P1": {
+        "TITLE": "Apartment in São Paulo",
+        "DESCRIPTION": "A modern apartment in the city of São Paulo."
+      },
+      "P2": {
+        "TITLE": "House in Rio de Janeiro",
+        "DESCRIPTION": "A spacious house in the city of Rio de Janeiro."
+      },
+      "P3": {
+        "TITLE": "Sea-view apartment",
+        "DESCRIPTION": "High-end apartment with a balcony and panoramic sea views."
+      },
+      "P4": {
+        "TITLE": "Single-story house with backyard",
+        "DESCRIPTION": "Single-story house with a large backyard, ideal for families with kids and pets."
+      },
+      "P5": {
+        "TITLE": "Downtown commercial suite",
+        "DESCRIPTION": "Commercial suite ready to use in a modern building downtown."
+      },
+      "P6": {
+        "TITLE": "Duplex penthouse",
+        "DESCRIPTION": "Duplex penthouse with a gourmet area and private pool."
+      },
+      "P7": {
+        "TITLE": "Gated community house",
+        "DESCRIPTION": "House in a gated community with 24/7 security and a complete leisure area."
+      },
+      "P8": {
+        "TITLE": "Street-level store in a busy area",
+        "DESCRIPTION": "Ground-floor store on a commercial avenue with heavy pedestrian traffic."
+      },
+      "P9": {
+        "TITLE": "Compact furnished studio",
+        "DESCRIPTION": "Furnished studio near universities and subway stations."
+      },
+      "P10": {
+        "TITLE": "Country house for leisure",
+        "DESCRIPTION": "Country house with green area, swimming pool, and space for weekend events."
+      }
+    }
+  }
+}

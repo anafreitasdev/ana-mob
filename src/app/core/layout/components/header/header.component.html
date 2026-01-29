@@ -27,7 +27,7 @@
               d="m2.25 12 8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25"
             />
           </svg>
-          Início
+          {{ "HEADER.NAV.HOME" | translate }}
         </a>
         <a
           href="#imoveis"
@@ -51,7 +51,7 @@
             />
           </svg>
 
-          Imóveis
+          {{ "HEADER.NAV.PROPERTIES" | translate }}
         </a>
         <a
           href="#contato"
@@ -74,8 +74,61 @@
               d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 0 1-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 4.5v2.25Z"
             />
           </svg>
-          Contato
+          {{ "HEADER.NAV.CONTACT" | translate }}
         </a>
+        <button
+          id="language-trigger"
+          type="button"
+          aria-label="Selecionar idioma"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="32"
+            height="24"
+            fill="currentColor"
+            class="bi bi-translate"
+            viewBox="0 0 16 16"
+          >
+            <path
+              d="M4.545 6.714 4.11 8H3l1.862-5h1.284L8 8H6.833l-.435-1.286zm1.634-.736L5.5 3.956h-.049l-.679 2.022z"
+            />
+            <path
+              d="M0 2a2 2 0 0 1 2-2h7a2 2 0 0 1 2 2v3h3a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-3H2a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v7a1 1 0 0 0 1 1h7a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zm7.138 9.995q.289.451.63.846c-.748.575-1.673 1.001-2.768 1.292.178.217.451.635.555.867 1.125-.359 2.08-.844 2.886-1.494.777.665 1.739 1.165 2.93 1.472.133-.254.414-.673.629-.89-1.125-.253-2.057-.694-2.82-1.284.681-.747 1.222-1.651 1.621-2.757H14V8h-3v1.047h.765c-.318.844-.74 1.546-1.272 2.13a6 6 0 0 1-.415-.492 2 2 0 0 1-.94.31"
+            />
+          </svg>
+        </button>
+        <ion-popover
+          trigger="language-trigger"
+          side="bottom"
+          alignment="start"
+          cssClass="language-popover"
+          dismissOnSelect="true"
+        >
+          <ng-template>
+            <div
+              class="min-w-[180px] rounded-lg bg-white p-2"
+            >
+              <button
+                type="button"
+                class="w-full rounded-md px-2 py-1 text-left text-sm font-medium text-text-primary hover:bg-gray-100"
+                [class.bg-gray-100]="currentLanguage === 'pt-BR'"
+                [class.text-blue-600]="currentLanguage === 'pt-BR'"
+                (click)="setLanguage('pt-BR')"
+              >
+                Português
+              </button>
+              <button
+                type="button"
+                class="w-full rounded-md px-2 py-1 text-left text-sm font-medium text-text-primary hover:bg-gray-100"
+                [class.bg-gray-100]="currentLanguage === 'en-US'"
+                [class.text-blue-600]="currentLanguage === 'en-US'"
+                (click)="setLanguage('en-US')"
+              >
+                English
+              </button>
+            </div>
+          </ng-template>
+        </ion-popover>
       </nav>
 
       <!-- Ações / menu mobile -->
@@ -167,7 +220,7 @@
             d="m2.25 12 8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25"
           />
         </svg>
-        Início
+        {{ "HEADER.NAV.HOME" | translate }}
       </button>
       <button
         type="button"
@@ -190,7 +243,7 @@
             d="M8.25 21v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21m0 0h4.5V3.545M12.75 21h7.5V10.75M2.25 21h1.5m18 0h-18M2.25 9l4.5-1.636M18.75 3l-1.5.545m0 6.205 3 1m1.5.5-1.5-.5M6.75 7.364V3h-3v18m3-13.636 10.5-3.819"
           />
         </svg>
-        Imóveis
+        {{ "HEADER.NAV.PROPERTIES" | translate }}
       </button>
       <button
         type="button"
@@ -213,7 +266,7 @@
             d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 0 1-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 4.5v2.25Z"
           />
         </svg>
-        Contato
+        {{ "HEADER.NAV.CONTACT" | translate }}
       </button>
     </nav>
   </aside>

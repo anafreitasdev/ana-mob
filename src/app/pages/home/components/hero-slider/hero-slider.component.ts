@@ -8,6 +8,7 @@ import {
   ViewChild,
   inject,
 } from '@angular/core';
+import { TranslateModule } from '@ngx-translate/core';
 import { PROPERTIES_MOCK } from '@/app/data/properties.data';
 import { Property } from '@/app/types/property';
 import { BreakpointObserver } from '@angular/cdk/layout';
@@ -18,7 +19,7 @@ import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
   templateUrl: './hero-slider.component.html',
   styleUrls: ['./hero-slider.component.scss'],
   standalone: true,
-  imports: [NgFor, NgIf, CommonModule],
+  imports: [NgFor, NgIf, CommonModule, TranslateModule],
 })
 export class HeroSliderComponent implements AfterViewInit, OnDestroy {
 

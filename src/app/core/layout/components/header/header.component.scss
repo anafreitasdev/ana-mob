@@ -16,3 +16,6 @@
   transition: 0.5s;
 }
 
+ion-popover.language-popover::part(content) {
+  --background: transparent;
+}
