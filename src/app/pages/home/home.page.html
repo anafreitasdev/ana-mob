@@ -49,8 +49,8 @@
   </div>
 
   <!-- Seção de Contato -->
-  <section id="contato" class="px-4 py-16 bg-surface border-t border-border">
-    <div class="max-w-7xl mx-auto">
+  <section id="contato" class="px-4 py-16 contact">
+    <div class="max-w-7xl z-10" [ngClass]="{'mx-56': !isMobile}">
       <div class="flex gap-2 items-center mb-4">
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -68,7 +68,7 @@
         </svg>
         <h2 class="text-2xl font-semibold">{{ 'HOME.CONTACT.TITLE' | translate }}</h2>
       </div>
-      <p class="text-text-secondary text-sm md:text-base mb-4">
+      <p class="text-text-surface text-sm md:text-base mb-4">
         {{ 'HOME.CONTACT.DESCRIPTION' | translate }}
       </p>
       <div class="flex flex-col gap-2 text-sm">

@@ -19,3 +19,15 @@
 ion-popover.language-popover::part(content) {
   --background: transparent;
 }
+
+.menu-bar a:hover{
+  font-size: 1.125rem;
+  transition: 0.2s;
+
+}
+
+.translate:hover{
+  transform: scale(1.2);
+  transition: 0.2s;
+  color: var(--color-accent);
+}
