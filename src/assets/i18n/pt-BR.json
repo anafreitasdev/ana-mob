@@ -74,6 +74,20 @@
     "FEATURED": {
       "TITLE": "Imóveis em destaque"
     },
+    "REAL_ESTATE_BIN_BRAZIL": {
+      "TITLE": "Imóveis por todo o Brasil",
+      "ARIA": {
+        "SECTION": "Imóveis por todo o Brasil",
+        "CAROUSEL": "Carrossel de estados",
+        "PREVIOUS": "Anterior",
+        "NEXT": "Próximo",
+        "VIEW_STATE": "Ver imóveis em {{state}}"
+      },
+      "CARD": {
+        "FOR_SALE_IN": "Imóveis à venda em {{city}}",
+        "IMAGE_ALT": "Imagem de {{location}}"
+      }
+    },
     "PROPERTIES": {
       "P1": {
         "TITLE": "Apartamento em São Paulo",

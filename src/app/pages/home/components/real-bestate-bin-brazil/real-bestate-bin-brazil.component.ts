@@ -7,11 +7,12 @@ import {
   ViewChild,
 } from '@angular/core';
 import { register } from 'swiper/element/bundle';
+import { TranslateModule } from '@ngx-translate/core';
 
 type BrazilStateCard = {
   name: string;
   imageUrl: string;
-  imageAlt: string;
+  imageAltLocation: string;
   cities: string[];
 };
 
@@ -20,7 +21,7 @@ type BrazilStateCard = {
   templateUrl: './real-bestate-bin-brazil.component.html',
   styleUrls: ['./real-bestate-bin-brazil.component.scss'],
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, TranslateModule],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class RealBestateBinBrazilComponent implements AfterViewInit {
@@ -39,43 +40,43 @@ export class RealBestateBinBrazilComponent implements AfterViewInit {
     {
       name: 'São Paulo',
       imageUrl:
-        'https://images.unsplash.com/photo-1590611936760-eeb9bc598548?auto=format&fit=crop&w=1600&q=80',
-      imageAlt: 'Vista aérea de São Paulo, São Paulo',
+        'https://images.unsplash.com/photo-1544989164-31dc3c645987?auto=format&fit=crop&w=1920&q=800',
+      imageAltLocation: 'São Paulo, São Paulo',
       cities: ['São Paulo', 'Campinas', 'Santos'],
     },
     {
       name: 'Minas Gerais',
       imageUrl:
-        'https://images.unsplash.com/photo-1544986581-efac024faf62?auto=format&fit=crop&w=1600&q=80',
-      imageAlt: 'Rua histórica em Ouro Preto, Minas Gerais',
+        'https://media.istockphoto.com/id/1351677112/pt/foto/a-quiet-historic-street-in-the-city-of-tiradentes-in-minas-gerais.jpg?s=612x612&w=0&k=20&c=47OemKd1XTeAiOrRA9JOk0DvZcWXbRATU7gKbvDlszE=',
+      imageAltLocation: 'Ouro Preto, Minas Gerais',
       cities: ['Belo Horizonte', 'Uberlândia', 'Ouro Preto'],
     },
     {
       name: 'Paraná',
       imageUrl:
-        'https://images.unsplash.com/photo-1612277795421-9bc5c6e6fbe7?auto=format&fit=crop&w=1600&q=80',
-      imageAlt: 'Jardim Botânico de Curitiba, Paraná',
+        'https://t3.ftcdn.net/jpg/05/22/77/60/360_F_522776067_C7l8uTlLuz4CbATfsBXMoize4MS6dtu4.jpg',
+      imageAltLocation: 'Curitiba, Paraná',
       cities: ['Curitiba', 'Londrina', 'Maringá'],
     },
     {
       name: 'Rio de Janeiro',
       imageUrl:
-        'https://images.unsplash.com/photo-1593995863953-4cda03e6b2c8?auto=format&fit=crop&w=1600&q=80',
-      imageAlt: 'Cristo Redentor no Rio de Janeiro, Rio de Janeiro',
+        'https://media.istockphoto.com/id/534215078/pt/foto/vista-a%C3%A9rea-do-rio-de-janeiro.jpg?s=612x612&w=0&k=20&c=7UGZ6Z0jtq5MPTsbVQWCFcL06uCF4KvuDOYo2WXs9rg=',
+      imageAltLocation: 'Rio de Janeiro, Rio de Janeiro',
       cities: ['Rio de Janeiro', 'Niterói', 'Petrópolis'],
     },
     {
       name: 'Rio Grande do Sul',
       imageUrl:
-        'https://images.unsplash.com/photo-1593995863953-4cda03e6b2c8?auto=format&fit=crop&w=1600&q=80',
-      imageAlt: 'Paisagem urbana em Porto Alegre, Rio Grande do Sul',
+        'https://t4.ftcdn.net/jpg/04/54/21/71/360_F_454217171_xjACqjrvmjOMcKwkac5ZPDnL493JC6gN.jpg',
+      imageAltLocation: 'Porto Alegre, Rio Grande do Sul',
       cities: ['Porto Alegre', 'Caxias do Sul', 'Gramado'],
     },
     {
       name: 'Santa Catarina',
       imageUrl:
-        'https://images.unsplash.com/photo-1593995863953-4cda03e6b2c8?auto=format&fit=crop&w=1600&q=80',
-      imageAlt: 'Ponte e skyline em Florianópolis, Santa Catarina',
+        'https://media.istockphoto.com/id/1502541960/pt/foto/spectacular-view-of-a-huge-paddle-wheel-on-balneario-camboriu-city-beach.jpg?s=612x612&w=0&k=20&c=1RjAtzcZN3rvFUdrvnvjI27_gkA2xVR_YJD052GOjzY=',
+      imageAltLocation: 'Florianópolis, Santa Catarina',
       cities: ['Florianópolis', 'Joinville', 'Balneário Camboriú'],
     },
   ];

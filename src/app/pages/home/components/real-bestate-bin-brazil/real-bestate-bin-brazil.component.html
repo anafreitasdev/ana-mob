@@ -1,10 +1,10 @@
 <section
   class="w-full bg-transparent px-4 py-12 text-text-white sm:py-16 lg:py-20"
-  aria-label="Imóveis por todo o Brasil"
+  [attr.aria-label]="'HOME.REAL_ESTATE_BIN_BRAZIL.ARIA.SECTION' | translate"
 >
   <div class="mx-auto w-full max-w-7xl overflow-x-hidden">
     <h2 class="mb-6 text-2xl font-semibold text-text-white">
-      Imóveis por todo o Brasil
+      {{ 'HOME.REAL_ESTATE_BIN_BRAZIL.TITLE' | translate }}
     </h2>
 
     <div class="relative w-full overflow-x-hidden">
@@ -13,7 +13,7 @@
         init="false"
         class="w-full pb-10 [--swiper-pagination-color:var(--color-primary)]"
         aria-roledescription="carousel"
-        aria-label="Carrossel de estados"
+        [attr.aria-label]="'HOME.REAL_ESTATE_BIN_BRAZIL.ARIA.CAROUSEL' | translate"
       >
         <swiper-slide
           *ngFor="let state of states; trackBy: trackByStateName"
@@ -23,12 +23,12 @@
             <button
               type="button"
               class="group flex h-full w-full flex-col overflow-hidden rounded-2xl border border-border bg-white shadow-sm transition-transform duration-200 ease-out motion-reduce:transition-none hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-surface"
-              [attr.aria-label]="'Ver imóveis em ' + state.name"
+              [attr.aria-label]="'HOME.REAL_ESTATE_BIN_BRAZIL.ARIA.VIEW_STATE' | translate: { state: state.name }"
             >
               <img
                 class="h-40 w-full object-cover sm:h-44"
                 [src]="state.imageUrl"
-                [alt]="state.imageAlt"
+                [alt]="'HOME.REAL_ESTATE_BIN_BRAZIL.CARD.IMAGE_ALT' | translate: { location: state.imageAltLocation }"
                 loading="lazy"
                 decoding="async"
               />
@@ -41,7 +41,7 @@
                   <li
                     *ngFor="let city of state.cities; trackBy: trackByCityName"
                   >
-                    Imóveis à venda em {{ city }}
+                    {{ 'HOME.REAL_ESTATE_BIN_BRAZIL.CARD.FOR_SALE_IN' | translate: { city: city } }}
                   </li>
                 </ul>
               </div>
@@ -53,7 +53,7 @@
       <button
         type="button"
         class="absolute left-3 top-1/2 z-10 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full bg-black/40 text-white shadow-sm transition-colors duration-300 hover:bg-primary focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-black/20 disabled:pointer-events-none disabled:opacity-40 md:h-12 md:w-12"
-        aria-label="Anterior"
+        [attr.aria-label]="'HOME.REAL_ESTATE_BIN_BRAZIL.ARIA.PREVIOUS' | translate"
         [disabled]="isAtStart"
         (click)="goToPrevious()"
       >
@@ -76,7 +76,7 @@
       <button
         type="button"
         class="absolute right-3 top-1/2 z-10 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full bg-black/40 text-white shadow-sm transition-colors duration-300 hover:bg-primary focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-black/20 disabled:pointer-events-none disabled:opacity-40 md:h-12 md:w-12"
-        aria-label="Próximo"
+        [attr.aria-label]="'HOME.REAL_ESTATE_BIN_BRAZIL.ARIA.NEXT' | translate"
         [disabled]="isAtEnd"
         (click)="goToNext()"
       >

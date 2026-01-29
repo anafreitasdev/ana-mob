@@ -74,6 +74,20 @@
     "FEATURED": {
       "TITLE": "Featured properties"
     },
+    "REAL_ESTATE_BIN_BRAZIL": {
+      "TITLE": "Properties across Brazil",
+      "ARIA": {
+        "SECTION": "Properties across Brazil",
+        "CAROUSEL": "States carousel",
+        "PREVIOUS": "Previous",
+        "NEXT": "Next",
+        "VIEW_STATE": "View properties in {{state}}"
+      },
+      "CARD": {
+        "FOR_SALE_IN": "Properties for sale in {{city}}",
+        "IMAGE_ALT": "Image of {{location}}"
+      }
+    },
     "PROPERTIES": {
       "P1": {
         "TITLE": "Apartment in São Paulo",
