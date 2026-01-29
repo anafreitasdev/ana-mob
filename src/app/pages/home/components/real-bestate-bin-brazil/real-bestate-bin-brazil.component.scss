@@ -1,3 +1,13 @@
 :host {
   display: block;
 }
+
+swiper-container::part(pagination) {
+  bottom: 0.25rem;
+}
+
+@media (min-width: 768px) {
+  swiper-container::part(pagination) {
+    bottom: 0.5rem;
+  }
+}
