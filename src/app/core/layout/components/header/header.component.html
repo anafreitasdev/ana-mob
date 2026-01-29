@@ -1,5 +1,5 @@
 <header id="header" class="header-inner">
-    <div [class]="styled.headerInner">
+    <div [class]="styled.headerInner" [ngClass]="{'mx-4': isMobile}">
       <a href="#inicio" class="flex items-center gap-2">
         <span [class]="styled.brand + ' brand'" >Ana Imóveis</span>
       </a>
