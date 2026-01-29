@@ -35,8 +35,6 @@ const styled = {
   styleUrls: ['./header.component.scss'],
   standalone: true,
   imports: [
-    IonHeader,
-    IonToolbar,
     IonPopover,
     TranslateModule,
   ],
