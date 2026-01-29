@@ -13,11 +13,11 @@
     <section class="px-4">
       <div class="max-w-7xl mx-auto">
         <div
-          class="flex flex-col gap-1 mb-4 "
+          class="flex flex-col gap-1 mb-4"
           [ngClass]="{'pt-16': isMobile, 'pt-48': !isMobile}"
         >
           <h2
-            class="text-2xl font-semibold "
+            class="text-2xl font-semibold"
             [style.color]="'var(--color-text-white)'"
             [style.text-align]="isMobile ? 'center' : 'left'"
           >
@@ -45,7 +45,10 @@
       [ngClass]="{'py-16': isMobile, 'py-40': !isMobile}"
     >
       <div class="max-w-7xl mx-auto">
-        <div class="flex gap-2 items-center mb-4 " [style.justify-content]="isMobile ? 'center' : 'flex-start'">
+        <div
+          class="flex gap-2 items-center mb-4"
+          [style.justify-content]="isMobile ? 'center' : 'flex-start'"
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -75,19 +78,17 @@
           expand="block"
           (click)="loadMoreProperties()"
         >
-        @if(seeMore){
-        <ion-spinner ></ion-spinner>
-        }@else {
+          @if(seeMore){
+          <ion-spinner></ion-spinner>
+          }@else {
           <span class="inline-flex items-center justify-center gap-2">
             {{ 'HOME.SEE_MORE' | translate }}
           </span>
-        }
+          }
         </ion-button>
       </div>
     </section>
   </div>
-
-
 
   <div
     class="fixed bottom-20 left-4 right-4 z-50 max-w-none sm:bottom-24 sm:left-auto sm:right-24 sm:w-96"
