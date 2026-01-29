@@ -1,6 +1,11 @@
-import { Component, HostListener, OnDestroy } from '@angular/core';
-import { IonHeader, IonToolbar } from '@ionic/angular/standalone';
+import { Component, HostListener, inject, OnDestroy } from '@angular/core';
+import {
+  IonHeader,
+  IonPopover,
+  IonToolbar,
+} from '@ionic/angular/standalone';
 import { TranslateModule } from '@ngx-translate/core';
+import { TranslateService } from 'src/app/core/services/translate.service';
 
 const styled = {
   headerContainer: 'bg-surface text-text-primary shadow-sm',
@@ -29,10 +34,17 @@ const styled = {
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss'],
   standalone: true,
-  imports: [IonHeader, IonToolbar, TranslateModule],
+  imports: [
+    IonHeader,
+    IonToolbar,
+    IonPopover,
+    TranslateModule,
+  ],
 })
 export class HeaderComponent implements OnDestroy {
   readonly styled = styled;
+
+  private translateService = inject(TranslateService);
 
   mobileMenuOpen = false;
 
@@ -73,5 +85,13 @@ export class HeaderComponent implements OnDestroy {
     }
 
     this.closeMobileMenu();
+  }
+
+  setLanguage(lang: 'pt-BR' | 'en-US'): void {
+    this.translateService.setLang(lang);
+  }
+
+  get currentLanguage(): 'pt-BR' | 'en-US' {
+    return this.translateService.current;
   }
 }
