@@ -4,11 +4,14 @@ import {
   add,
   businessOutline,
   callOutline,
+  cashOutline,
   close,
   closeOutline,
   home,
   homeOutline,
   languageOutline,
+  locationOutline,
+  mailOutline,
   menu,
   menuOutline,
   personCircleOutline,
@@ -31,5 +34,8 @@ export function registerIonicons() {
     'search-outline': searchOutline,
     'close-outline': closeOutline,
     'star-outline': starOutline,
+    'location-outline': locationOutline,
+    'cash-outline': cashOutline,
+    'mail-outline': mailOutline,
   });
 }

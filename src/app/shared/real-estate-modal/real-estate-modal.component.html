@@ -3,21 +3,7 @@
     <ion-title>{{ property?.title | translate }}</ion-title>
     <ion-buttons slot="end">
       <ion-button (click)="close()" fill="clear" aria-label="Fechar">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          class="h-6 w-6"
-          aria-hidden="true"
-          focusable="false"
-        >
-          <path d="M18 6 6 18" />
-          <path d="M6 6l12 12" />
-        </svg>
+        <ion-icon name="close-outline" class="h-6 w-6"></ion-icon>
       </ion-button>
     </ion-buttons>
   </ion-toolbar>
@@ -26,7 +12,9 @@
 <ion-content class="ion-padding">
   <div class="real-estate-modal__layout">
     <div class="real-estate-modal__images" *ngIf="property?.images?.length">
-      <ng-container *ngIf="(property?.images?.length ?? 0) === 1; else imagesCarousel">
+      <ng-container
+        *ngIf="(property?.images?.length ?? 0) === 1; else imagesCarousel"
+      >
         <img
           class="real-estate-modal__image"
           [src]="property?.images?.[0]"
@@ -101,7 +89,9 @@
     </div>
 
     <div class="real-estate-modal__form">
-      <div class="real-estate-modal__info mb-2 rounded-xl border border-border bg-white p-4">
+      <div
+        class="real-estate-modal__info mb-2 rounded-xl border border-border bg-white p-4"
+      >
         <h3 class="text-base font-semibold text-text-primary">
           {{ property?.title | translate }}
         </h3>
@@ -110,7 +100,10 @@
         </p>
 
         <div class="mt-4 space-y-2">
-          <div class="flex items-center gap-2 text-sm text-text-primary" *ngIf="property?.type">
+          <div
+            class="flex items-center gap-2 text-sm text-text-primary"
+            *ngIf="property?.type"
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"
@@ -125,32 +118,24 @@
             >
               <path d="M20 10V7a2 2 0 0 0-2-2h-3" />
               <path d="M4 14v3a2 2 0 0 0 2 2h3" />
-              <path d="M15 5H9a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2Z" />
+              <path
+                d="M15 5H9a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2Z"
+              />
             </svg>
             <span class="font-medium">Tipo</span>
-            <span class="text-text-secondary">{{ ('PROPERTY.TYPE.' + (property?.type | uppercase)) | translate }}</span>
+            <span class="text-text-secondary">{{
+              "PROPERTY.TYPE." + (property?.type | uppercase) | translate
+            }}</span>
           </div>
 
-          <div class="flex items-center gap-2 text-sm text-text-primary" *ngIf="formattedPrice">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+          <div
+            class="flex items-center gap-2 text-sm text-text-primary"
+            *ngIf="formattedPrice"
+          >
+            <ion-icon
+              name="cash-outline"
               class="h-5 w-5 text-primary"
-              aria-hidden="true"
-              focusable="false"
-            >
-              <path d="M6 6h15" />
-              <path d="M6 12h15" />
-              <path d="M6 18h15" />
-              <path d="M3 6h.01" />
-              <path d="M3 12h.01" />
-              <path d="M3 18h.01" />
-            </svg>
+            ></ion-icon>
             <span class="font-medium">Preço</span>
             <span class="text-text-secondary">{{ formattedPrice }}</span>
           </div>
@@ -159,25 +144,17 @@
             class="flex items-center gap-2 text-sm text-text-primary"
             *ngIf="property?.location?.city || property?.location?.state"
           >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+            <ion-icon
+              name="location-outline"
               class="h-5 w-5 text-primary"
-              aria-hidden="true"
-              focusable="false"
-            >
-              <path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 0 1 16 0Z" />
-              <path d="M12 10a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z" />
-            </svg>
+            ></ion-icon>
             <span class="font-medium">Localização</span>
             <span class="text-text-secondary">
               {{ property?.location?.city }}
-              <ng-container *ngIf="property?.location?.city && property?.location?.state">-</ng-container>
+              <ng-container
+                *ngIf="property?.location?.city && property?.location?.state"
+                >-</ng-container
+              >
               {{ property?.location?.state }}
             </span>
           </div>
@@ -206,7 +183,9 @@
       </ion-item>
 
       <div class="mt-4">
-        <ion-button (click)="sendMessage()" expand="block" type="button">{{ 'REAL_ESTATE_MODAL.FORM.SUBMIT' | translate }}</ion-button>
+        <ion-button (click)="sendMessage()" expand="block" type="button">{{
+          "REAL_ESTATE_MODAL.FORM.SUBMIT" | translate
+        }}</ion-button>
       </div>
     </div>
   </div>

@@ -7,6 +7,7 @@ import {
   IonSpinner,
   IonText,
   ModalController,
+  IonIcon,
 } from '@ionic/angular/standalone';
 import { TranslateModule } from '@ngx-translate/core';
 import { RealEstateModalComponent } from '../real-estate-modal/real-estate-modal.component';
@@ -24,6 +25,7 @@ import { RealEstateModalComponent } from '../real-estate-modal/real-estate-modal
     IonSpinner,
     IonText,
     TranslateModule,
+    IonIcon,
   ],
 })
 export class CardPropertyComponent {

@@ -19,6 +19,7 @@ import {
   IonToolbar,
   ModalController,
   IonTextarea,
+  IonIcon,
 } from '@ionic/angular/standalone';
 import { CommonModule } from '@angular/common';
 import { register } from 'swiper/element/bundle';
@@ -41,6 +42,7 @@ import type { PropertyCardProperty } from '../card-property/card-property.compon
     IonInput,
     TranslateModule,
     IonTextarea,
+    IonIcon,
     CommonModule,
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
