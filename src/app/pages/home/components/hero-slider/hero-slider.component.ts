@@ -14,13 +14,14 @@ import { PROPERTIES_MOCK } from '@/app/data/properties.data';
 import { Property } from '@/app/types/property';
 import { BreakpointObserver } from '@angular/cdk/layout';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
+import { IonButton, IonIcon } from '@ionic/angular/standalone';
 
 @Component({
   selector: 'app-hero-slider',
   templateUrl: './hero-slider.component.html',
   styleUrls: ['./hero-slider.component.scss'],
   standalone: true,
-  imports: [NgFor, NgIf, CommonModule, TranslateModule],
+  imports: [NgFor, NgIf, CommonModule, TranslateModule, IonButton, IonIcon],
 })
 export class HeroSliderComponent implements OnInit, AfterViewInit, OnDestroy {
 

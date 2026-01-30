@@ -9,7 +9,7 @@ import {
   OnDestroy,
   OnInit,
 } from '@angular/core';
-import { IonPopover, IonIcon, IonButton } from '@ionic/angular/standalone';
+import { IonPopover, IonIcon } from '@ionic/angular/standalone';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { TranslateModule } from '@ngx-translate/core';
 import { TranslateService } from 'src/app/core/services/translate.service';
@@ -42,7 +42,7 @@ const styled = {
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss'],
   standalone: true,
-  imports: [IonPopover, IonIcon, IonButton, TranslateModule, CommonModule],
+  imports: [IonPopover, IonIcon, TranslateModule, CommonModule],
 })
 export class HeaderComponent implements OnDestroy, AfterViewInit, OnInit {
   private bo = inject(BreakpointObserver);
