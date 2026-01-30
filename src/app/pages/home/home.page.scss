@@ -23,48 +23,47 @@
   text-decoration: none;
 }
 
-.slider{
+.hero-banner {
   margin-top: -3.175rem;
 }
 
 .content-main {
-  margin-top: -4rem;;
+  margin-top: -4rem;
   position: relative;
-  background-image:  url('../../../assets/images/fundo_casa.jpg');
-  background-size:cover;
-  background-repeat:no-repeat;
+  background-image: url("../../../assets/images/fundo_casa.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
   background-position: top center;
-  section{
+  section {
     position: relative;
     z-index: 1;
   }
 }
 
 .content-main::before {
-  content: '';
+  content: "";
   position: absolute;
   inset: 0;
   background: #080f36c9;
-  z-index: 0 ;
+  z-index: 0;
 }
 
-.contact{
+.contact {
   position: relative;
-  background-image: url('https://img.freepik.com/fotos-gratis/fone-de-ouvido-de-audio-usado-por-agentes-de-call-center-para-atender-clientes-e-fazer-telecomunicacoes-com-tecnologia-estacao-de-trabalho-de-atendimento-ao-cliente-vazia-com-fones-de-ouvido-computadores-e-aparelhos-modernos_482257-40834.jpg?semt=ais_se_enriched&w=740&q=80');
+  background-image: url("https://img.freepik.com/fotos-gratis/fone-de-ouvido-de-audio-usado-por-agentes-de-call-center-para-atender-clientes-e-fazer-telecomunicacoes-com-tecnologia-estacao-de-trabalho-de-atendimento-ao-cliente-vazia-com-fones-de-ouvido-computadores-e-aparelhos-modernos_482257-40834.jpg?semt=ais_se_enriched&w=740&q=80");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
   height: 25rem;
   display: flex;
   align-items: center;
-  justify-content:flex-start;
+  justify-content: flex-start;
 }
 
-.contact::before{
-  content: '';
+.contact::before {
+  content: "";
   position: absolute;
   inset: 0;
   background: #01083058;
-  z-index: 0 ;
+  z-index: 0;
 }
-

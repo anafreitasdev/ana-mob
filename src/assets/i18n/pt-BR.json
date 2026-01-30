@@ -102,15 +102,9 @@
       "TITLE": "Resultados encontrados",
       "COUNT": "{{count}} resultado(s)"
     },
-    "HERO_SLIDER": {
+    "HERO_BANNER": {
       "ARIA": {
-        "BANNER": "Destaques de imóveis",
-        "PREVIOUS_SLIDE": "Slide anterior",
-        "NEXT_SLIDE": "Próximo slide",
-        "GO_TO_SLIDE": "Ir para o slide {{index}}"
-      },
-      "ALT": {
-        "FEATURED_IMAGE_SUFFIX": " - imagem em destaque"
+        "BANNER": "Banner principal"
       }
     },
     "FILTER": {

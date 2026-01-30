@@ -6,7 +6,7 @@ import {
   ViewChild,
 } from '@angular/core';
 import { TranslateModule } from '@ngx-translate/core';
-import { HeroSliderComponent } from './components/hero-slider/hero-slider.component';
+import { HeroBannerComponent } from './components/hero-banner/hero-banner.component';
 import { PropertyFilterComponent } from '@/app/shared/property-filter/property-filter.component';
 import { ListPropertyComponent } from '@/app/shared/list-property/list-property.component';
 import { ChatBotComponent } from '@/app/shared/chat-bot/chat-bot.component';
@@ -26,7 +26,7 @@ import { RealEstateBinBrazilComponent } from './components/real-estate-bin-brazi
   standalone: true,
   imports: [
     TranslateModule,
-    HeroSliderComponent,
+    HeroBannerComponent,
     PropertyFilterComponent,
     ListPropertyComponent,
     ChatBotComponent,
@@ -99,6 +99,21 @@ export class HomePage implements OnInit {
       }, 0);
     }
   }
+
+  openChat(): void {
+    this.isChatOpen = true;
+    setTimeout(() => {
+      this.chatBot?.scrollToLatest();
+    }, 0);
+  }
+
+  scrollToFilter(): void {
+    document.getElementById('filtro')?.scrollIntoView({
+      behavior: 'smooth',
+      block: 'start',
+    });
+  }
+
   loadMoreProperties(): void {
     if (this.seeMore || !this.canLoadMoreProperties) return;
 

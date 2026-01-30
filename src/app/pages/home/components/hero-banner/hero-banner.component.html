@@ -1,0 +1,58 @@
+<section
+  id="inicio"
+  [attr.aria-label]="'HOME.HERO_BANNER.ARIA.BANNER' | translate"
+  class="relative w-full max-w-full overflow-x-hidden"
+>
+  <div class="relative h-[52vh] w-full sm:h-[60vh] md:h-[68vh] lg:h-[72vh]">
+    <img
+      class="absolute inset-0 h-full w-full max-w-full object-cover object-center"
+      src="../../../../../assets/images/fundo_casa.jpg"
+      alt="{{ 'HOME.TITLE_HOME' | translate }}"
+      loading="lazy"
+    />
+
+    <div
+      class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-black/10"
+    ></div>
+
+    <div
+      class="absolute inset-[15%] bottom-0 px-4 pb-12 pt-16 sm:pb-14 md:pb-16"
+      [ngClass]="{ 'inset-48': !isMobile }"
+    >
+      <div class="mx-auto w-full max-w-5xl text-center">
+        <h2 class="text-2xl font-semibold text-white md:text-4xl">
+          {{ "HOME.TITLE_HOME" | translate }}
+        </h2>
+        <p class="mt-2 text-sm text-white/90 md:text-base">
+          {{ "HOME.SUBTITLE_HOME" | translate }}
+        </p>
+
+        <div class="mt-6 flex flex-col gap-3 sm:flex-row sm:justify-center sm:gap-6">
+          <ion-button
+            type="button"
+            class="w-full text-sm sm:w-[320px] sm:text-base text-white [--border-radius:0.75rem] [--background:var(--color-primary)] [--background-hover:var(--color-secondary)] [--background-activated:var(--color-secondary)]"
+            expand="block"
+            (click)="searchProperties.emit()"
+          >
+            <span class="inline-flex items-center justify-center gap-2">
+              <ion-icon name="search-outline" class="h-5 w-5 sm:h-6 sm:w-6"></ion-icon>
+              {{ "HOME.SEARCH_PROPERTIES" | translate }}
+            </span>
+          </ion-button>
+
+          <ion-button
+            type="button"
+            class="w-full text-sm sm:w-[320px] sm:text-base text-primary [--border-radius:0.75rem] [--background:var(--color-surface)] [--background-hover:var(--color-secondary)] [--background-activated:var(--color-secondary)]"
+            expand="block"
+            (click)="talkToSpecialist.emit()"
+          >
+            <span class="inline-flex items-center justify-center gap-2">
+              <ion-icon name="call-outline" class="h-5 w-5 sm:h-6 sm:w-6"></ion-icon>
+              {{ "HOME.TALK_TO_SPECIALIST" | translate }}
+            </span>
+          </ion-button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
