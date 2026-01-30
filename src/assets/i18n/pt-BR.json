@@ -40,7 +40,10 @@
         "PLACEHOLDER": "Digite sua mensagem"
       },
       "SUBMIT": "Enviar mensagem"
-    }
+    },
+    "PRICE": "Preço",
+    "TYPE": "Tipo",
+    "LOCATION": "Localização"
   },
   "HEADER": {
     "NAV": {
