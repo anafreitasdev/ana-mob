@@ -17,6 +17,7 @@ import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { CommonModule } from '@angular/common';
 import { RealBestateBinBrazilComponent } from './components/real-bestate-bin-brazil/real-bestate-bin-brazil.component';
 import { IonButton, IonSpinner, IonIcon } from '@ionic/angular/standalone';
+import { ContactSectionComponent } from './components/contact-section/contact-section.component';
 
 @Component({
   selector: 'app-home',
@@ -30,6 +31,7 @@ import { IonButton, IonSpinner, IonIcon } from '@ionic/angular/standalone';
     ListPropertyComponent,
     ChatBotComponent,
     RealBestateBinBrazilComponent,
+    ContactSectionComponent,
     CommonModule,
     IonButton,
     IonSpinner,

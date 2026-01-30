@@ -59,6 +59,13 @@
   "FOOTER": {
     "RIGHTS_RESERVED": "All rights reserved."
   },
+  "CONTACT": {
+    "TITLE": "Get in touch",
+    "DESCRIPTION": "Talk to our team to schedule visits or ask questions about any property.",
+    "PHONE_LABEL": "Phone",
+    "EMAIL_LABEL": "Email",
+    "CTA": "Talk to an agent"
+  },
   "HOME": {
     "HERO_SLIDER": {
       "ARIA": {

@@ -1,0 +1,23 @@
+.contact-section {
+  position: relative;
+  isolation: isolate;
+  background-image: url('/assets/img/bg-contact-section.jpeg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.contact-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+  z-index: 0;
+}
+
+.contact-section__content {
+  position: relative;
+  z-index: 1;
+}

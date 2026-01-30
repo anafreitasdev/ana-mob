@@ -59,6 +59,13 @@
   "FOOTER": {
     "RIGHTS_RESERVED": "Todos os direitos reservados."
   },
+  "CONTACT": {
+    "TITLE": "Entre em contato",
+    "DESCRIPTION": "Fale com nossa equipe para agendar visitas ou tirar dúvidas sobre qualquer imóvel.",
+    "PHONE_LABEL": "Telefone",
+    "EMAIL_LABEL": "E-mail",
+    "CTA": "Falar com corretor"
+  },
   "HOME": {
     "HERO_SLIDER": {
       "ARIA": {
