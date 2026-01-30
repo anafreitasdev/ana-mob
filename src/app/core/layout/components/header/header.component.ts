@@ -21,7 +21,7 @@ const styled = {
   brand: 'text-primary font-semibold text-lg tracking-tight',
   navListDesktop: 'hidden md:flex items-center gap-8',
   navItemDesktop:
-    'text-sm font-medium text-text-white hover:text-accent transition-colors',
+    'text-sm font-medium text-text-white',
   mobileToggleButton:
     'md:hidden inline-flex items-center justify-center p-2 rounded-md text-text-white hover:bg-background focus:outline-none focus:ring-2 focus:ring-primary',
   mobileOverlay:
