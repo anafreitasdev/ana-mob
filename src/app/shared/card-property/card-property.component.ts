@@ -6,8 +6,10 @@ import {
   IonCardTitle,
   IonSpinner,
   IonText,
+  ModalController,
 } from '@ionic/angular/standalone';
 import { TranslateModule } from '@ngx-translate/core';
+import { RealEstateModalComponent } from '../real-estate-modal/real-estate-modal.component';
 
 @Component({
   selector: 'app-card-property',
@@ -27,6 +29,8 @@ import { TranslateModule } from '@ngx-translate/core';
 export class CardPropertyComponent {
   @Input() property?: PropertyCardProperty | null;
   @Input() loading = false;
+
+  constructor(private modalCtrl: ModalController) {}
 
   private readonly priceFormatter = new Intl.NumberFormat('pt-BR', {
     style: 'currency',
@@ -64,15 +68,31 @@ export class CardPropertyComponent {
       ''
     );
   }
+
+  async onCardClick(property: PropertyCardProperty) {
+    const modal = await this.modalCtrl.create({
+      component: RealEstateModalComponent,
+      cssClass: 'real-estate-modal',
+      componentProps: {
+        property,
+      },
+    });
+
+    await modal.present();
+
+    await modal.onWillDismiss();
+  }
 }
 
 export type PropertyCardProperty = {
   id: number | string;
   title: string;
   description: string;
+  type?: string;
   price: number;
   city?: string;
   state?: string;
+  featured?: boolean;
   imageUrl?: string;
   location?: {
     city: string;

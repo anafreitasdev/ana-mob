@@ -24,7 +24,7 @@
   --color-text-primary: #0f172a;
   --color-text-secondary: #475569;
   --color-text-white: #ffffff;
-   --color-text-accent: #29b9d9;
+  --color-text-accent: #29b9d9;
 
   --color-border: #e2e8f0;
   --color-highlight: #29a7d9;
@@ -45,6 +45,98 @@
 @import "@ionic/angular/css/text-alignment.css";
 @import "@ionic/angular/css/text-transformation.css";
 @import "@ionic/angular/css/flex-utils.css";
+
+ion-modal.real-estate-modal ion-content {
+  --background: #ffffff;
+}
+
+ion-modal.real-estate-modal {
+  --width: 900px;
+}
+
+ion-modal.real-estate-modal .real-estate-modal__swiper::part(pagination) {
+  bottom: 0.5rem;
+}
+
+ion-modal.real-estate-modal .real-estate-modal__layout {
+  display: flex;
+  gap: 16px;
+  width: 100%;
+  height: 100%;
+}
+
+ion-modal.real-estate-modal .real-estate-modal__images {
+  width: 50%;
+  height: 100%;
+}
+
+ion-modal.real-estate-modal .real-estate-modal__image {
+  width: 100%;
+  height: 100%;
+  border-radius: 6px;
+  object-fit: cover;
+}
+
+ion-modal.real-estate-modal .real-estate-modal__form {
+  width: 50%;
+}
+
+@media (max-width: 767px) {
+  ion-modal.real-estate-modal {
+    --width: 100%;
+  }
+
+  ion-modal.real-estate-modal .real-estate-modal__layout {
+    flex-direction: column-reverse;
+    height: auto;
+  }
+
+  ion-modal.real-estate-modal .real-estate-modal__form {
+    width: 100%;
+  }
+
+  ion-modal.real-estate-modal .real-estate-modal__images {
+    width: 100%;
+    height: 240px;
+  }
+
+  ion-modal.real-estate-modal .real-estate-modal__swiper {
+    height: 240px;
+  }
+
+}
+
+ion-modal.real-estate-modal ion-header ion-toolbar {
+  --background: #ffffff;
+  --color: #0f172a;
+}
+
+ion-modal.real-estate-modal ion-item {
+  --background: #ffffff;
+  --color: var(--color-text-primary);
+  --border-color: var(--color-border);
+  --highlight-color-invalid: #ef4444;
+}
+
+ion-modal.real-estate-modal ion-input,
+ion-modal.real-estate-modal ion-textarea {
+  --highlight-color-focused: var(--color-primary);
+  --highlight-color-valid: var(--color-primary);
+  --highlight-color: var(--color-primary);
+}
+
+ion-modal.real-estate-modal ion-input,
+ion-modal.real-estate-modal ion-textarea {
+  --color: var(--color-text-primary);
+  --placeholder-color: var(--color-text-secondary);
+}
+
+ion-modal.real-estate-modal ion-button {
+  --color: var(--color-text-white);
+  --background: var(--color-primary);
+  --border-radius: 24px;
+  height: 48px;
+}
 
 /**
  * Ionic Dark Mode
