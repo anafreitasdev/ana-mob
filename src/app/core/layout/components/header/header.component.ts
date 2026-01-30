@@ -5,7 +5,7 @@ import {
   inject,
   OnDestroy,
 } from '@angular/core';
-import { IonPopover } from '@ionic/angular/standalone';
+import { IonPopover, IonIcon, IonButton } from '@ionic/angular/standalone';
 import { TranslateModule } from '@ngx-translate/core';
 import { TranslateService } from 'src/app/core/services/translate.service';
 
@@ -36,7 +36,7 @@ const styled = {
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss'],
   standalone: true,
-  imports: [IonPopover, TranslateModule],
+  imports: [IonPopover, IonIcon, IonButton, TranslateModule],
 })
 export class HeaderComponent implements OnDestroy, AfterViewInit {
   readonly styled = styled;
