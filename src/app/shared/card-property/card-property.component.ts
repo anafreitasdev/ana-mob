@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, inject, Input } from '@angular/core';
 import {
   IonCard,
   IonCardContent,
@@ -30,7 +30,9 @@ export class CardPropertyComponent {
   @Input() property?: PropertyCardProperty | null;
   @Input() loading = false;
 
-  constructor(private modalCtrl: ModalController) {}
+  private modalCtrl = inject(ModalController);
+
+  constructor() {}
 
   private readonly priceFormatter = new Intl.NumberFormat('pt-BR', {
     style: 'currency',

@@ -10,8 +10,8 @@
 
   <div class="content-main">
     @if (hasSearched) {
-    <section class="px-4">
-      <div class="max-w-7xl mx-auto">
+    <section>
+      <div class="mx-auto w-full max-w-7xl px-4 md:px-16">
         <div
           class="flex flex-col gap-1 mb-4"
           [ngClass]="{'pt-16': isMobile, 'pt-48': !isMobile}"
@@ -41,15 +41,14 @@
     <!-- Seção de Imóveis em Destaque -->
     <section
       id="imoveis"
-      class="px-4"
-      [ngClass]="isMobile ? 'py-16' : 'pt-[210px] pb-16'"
+      [ngClass]="{'py-16': isMobile, 'pt-[210px] pb-16': !isMobile}"
     >
-      <div class="max-w-7xl mx-auto">
+      <div class="mx-auto w-full max-w-7xl px-4 md:px-16">
         <div
           class="flex gap-2 items-center mb-4 mt-8"
           [style.justify-content]="isMobile ? 'center' : 'flex-start'"
         >
-          <h2 class="text-2xl font-semibold text-white">
+          <h2 class="text-2xl font-semibold">
             {{ 'HOME.FEATURED.TITLE' | translate }}
           </h2>
         </div>
