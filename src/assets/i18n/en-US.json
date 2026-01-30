@@ -12,19 +12,96 @@
     "PLACEHOLDER": "Type a message",
     "ARIA_INPUT": "Message input",
     "ARIA_SEND": "Send message",
-    "TYPING": "Bot typing"
+    "ARIA_MESSAGES": "Chat messages",
+    "TYPING": "Bot typing",
+    "WELCOME": "Hi! How can I help you today?"
+  },
+  "LIST_PROPERTY": {
+    "ARIA": {
+      "SECTION": "Properties list"
+    },
+    "EMPTY": "No properties found"
+  },
+  "CARD_PROPERTY": {
+    "NO_IMAGE": "No image available"
+  },
+  "PROPERTY": {
+    "TYPE": {
+      "APARTMENT": "Apartment",
+      "HOUSE": "House",
+      "COMMERCIAL": "Commercial"
+    }
+  },
+  "REAL_ESTATE_MODAL": {
+    "ARIA": {
+      "CLOSE": "Close",
+      "PREV_IMAGE": "Previous image",
+      "NEXT_IMAGE": "Next image"
+    },
+    "INFO": {
+      "PRICE": "Price",
+      "TYPE": "Type",
+      "LOCATION": "Location"
+    },
+    "FORM": {
+      "NAME": {
+        "LABEL": "Name",
+        "PLACEHOLDER": "Your name"
+      },
+      "EMAIL": {
+        "LABEL": "Email",
+        "PLACEHOLDER": "Your email"
+      },
+      "PHONE": {
+        "LABEL": "Phone",
+        "PLACEHOLDER": "Your phone"
+      },
+      "MESSAGE": {
+        "LABEL": "Message",
+        "PLACEHOLDER": "Type your message"
+      },
+      "SUBMIT": "Send message"
+    }
   },
   "HEADER": {
     "NAV": {
       "HOME": "Home",
       "PROPERTIES": "Properties",
       "CONTACT": "Contact"
+    },
+    "ARIA": {
+      "SELECT_LANGUAGE": "Select language",
+      "OPEN_NAV_MENU": "Open navigation menu",
+      "NAV_MENU": "Navigation menu",
+      "CLOSE_MENU": "Close menu"
+    },
+    "LANGUAGE": {
+      "BUTTON": "Language",
+      "OPTIONS": {
+        "PT_BR": "pt-BR",
+        "EN_US": "English"
+      }
     }
   },
   "FOOTER": {
-    "RIGHTS_RESERVED": "All rights reserved."
+    "RIGHTS_RESERVED": "All rights reserved.",
+    "NAVIGATION": "Navigation"
+  },
+  "CONTACT": {
+    "TITLE": "Get in touch",
+    "DESCRIPTION": "Talk to our team to schedule visits or ask questions about any property.",
+    "PHONE_LABEL": "Phone",
+    "EMAIL_LABEL": "Email",
+    "CTA": "Talk to an agent"
   },
   "HOME": {
+    "CHAT": {
+      "ARIA_OPEN": "Open chat"
+    },
+    "SEARCH_RESULTS": {
+      "TITLE": "Results found",
+      "COUNT": "{{count}} result(s)"
+    },
     "HERO_SLIDER": {
       "ARIA": {
         "BANNER": "Featured properties",
@@ -65,14 +142,22 @@
         "COMMERCIAL": "Commercial"
       }
     },
-    "CONTACT": {
-      "TITLE": "Contact",
-      "DESCRIPTION": "Talk to our team to schedule visits or ask questions about any property.",
-      "PHONE_LABEL": "Phone:",
-      "EMAIL_LABEL": "Email:"
-    },
     "FEATURED": {
       "TITLE": "Featured properties"
+    },
+    "REAL_ESTATE_BIN_BRAZIL": {
+      "TITLE": "Properties across Brazil",
+      "ARIA": {
+        "SECTION": "Properties across Brazil",
+        "CAROUSEL": "States carousel",
+        "PREVIOUS": "Previous",
+        "NEXT": "Next",
+        "VIEW_STATE": "View properties in {{state}}"
+      },
+      "CARD": {
+        "FOR_SALE_IN": "Properties for sale in {{city}}",
+        "IMAGE_ALT": "Image of {{location}}"
+      }
     },
     "PROPERTIES": {
       "P1": {
@@ -114,6 +199,26 @@
       "P10": {
         "TITLE": "Country house for leisure",
         "DESCRIPTION": "Country house with green area, swimming pool, and space for weekend events."
+      },
+      "P11": {
+        "TITLE": "Apartment in Campinas",
+        "DESCRIPTION": "Modern apartment in Campinas, with great location and excellent infrastructure."
+      },
+      "P12": {
+        "TITLE": "House in Jundiaí",
+        "DESCRIPTION": "Spacious house in Jundiaí, perfect for families who value space and security."
+      },
+      "P13": {
+        "TITLE": "Commercial Property in São Paulo",
+        "DESCRIPTION": "Commercial property in São Paulo, ideal for offices, retail spaces, or investment."
+      },
+      "P14": {
+        "TITLE": "Apartment in Sorocaba",
+        "DESCRIPTION": "Comfortable apartment in Sorocaba, with easy access to the main areas of the city."
+      },
+      "P15": {
+        "TITLE": "House in Campos do Jordão",
+        "DESCRIPTION": "High-end house in Campos do Jordão, surrounded by nature with a mountain atmosphere."
       }
     },
         "SEE_MORE": "See more"

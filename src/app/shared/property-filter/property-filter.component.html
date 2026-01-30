@@ -1,10 +1,10 @@
 <section
   [attr.aria-label]="'HOME.FILTER.ARIA.SECTION' | translate"
-  class="px-4 py-8 z-10"
+  class="py-8 z-10"
   [ngClass]="{ 'relative-container': !absolute }"
 >
   <div
-    class="mx-auto w-full max-w-7xl"
+    class="mx-auto w-full max-w-7xl px-4 md:px-10"
     [ngClass]="{ 'property-absolute': absolute }"
   >
     <div class="rounded-2xl border border-border bg-surface shadow-sm">
@@ -172,61 +172,47 @@
             </div>
           </div>
         </div>
-        <div class="">
-          <div class="mt-2 gap-2 flex items-start justify-end">
-            <ion-button
-              type="button"
-              fill="outline"
-              class="mt-2 w-[20%] text-primary [--border-radius:0.75rem] [--color:var(--color-primary)] [--border-color:var(--color-primary)]"
-              expand="block"
-              (click)="applyFilters()"
-            >
-              <span class="inline-flex items-center justify-center gap-2">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke-width="1.5"
-                  stroke="currentColor"
-                  class="size-6"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="M6 18 18 6M6 6l12 12"
-                  />
-                </svg>
+        <div class="mt-6 flex flex-col gap-2 sm:flex-row sm:justify-end">
+          <ion-button
+            type="button"
+            fill="outline"
+            class="w-full sm:w-auto [--border-radius:0.75rem]"
+            expand="block"
+            (click)="handleClearFilters()"
+            [disabled]="notHasFilters"
+          >
+            <span class="inline-flex items-center justify-center gap-2">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                class="size-6"
+                aria-hidden="true"
+                focusable="false"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M6 18 18 6M6 6l12 12"
+                />
+              </svg>
+              {{ "HOME.FILTER.CLEAR" | translate }}
+            </span>
+          </ion-button>
 
-                {{ "HOME.FILTER.CLEAR" | translate }}
-              </span>
-            </ion-button>
-            <ion-button
-              type="button"
-              class="mt-2 w-[20%] text-white [--border-radius:0.75rem] [--background:var(--color-accent)] [--background-hover:var(--color-secondary)] [--background-activated:var(--color-secondary)]"
-              expand="block"
-              (click)="applyFilters()"
-            >
-              <span class="inline-flex items-center justify-center gap-2">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke-width="1.5"
-                  stroke="currentColor"
-                  class="size-6"
-                  aria-hidden="true"
-                  focusable="false"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z"
-                  />
-                </svg>
-                {{ "HOME.FILTER.APPLY" | translate }}
-              </span>
-            </ion-button>
-          </div>
+          <ion-button
+            type="button"
+            class="w-full sm:w-auto text-white [--border-radius:0.75rem] [--background:var(--color-primary)] [--background-hover:var(--color-secondary)] [--background-activated:var(--color-secondary)]"
+            expand="block"
+            (click)="applyFilters()"
+          >
+            <span class="inline-flex items-center justify-center gap-2">
+              <ion-icon name="search-outline" class="h-6 w-6"></ion-icon>
+              {{ "HOME.FILTER.APPLY" | translate }}
+            </span>
+          </ion-button>
         </div>
       </div>
     </div>

@@ -15,7 +15,11 @@
       </div>
     }
 
-    <div class="flex flex-col gap-3 p-3" role="log" aria-label="Chat messages">
+    <div
+      class="flex flex-col gap-3 p-3"
+      role="log"
+      [attr.aria-label]="'CHAT.ARIA_MESSAGES' | translate"
+    >
       @for (message of messages; track trackByMessageId($index, message)) {
         <div
           class="flex"

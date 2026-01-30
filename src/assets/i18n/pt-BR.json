@@ -12,19 +12,96 @@
     "PLACEHOLDER": "Digite uma mensagem",
     "ARIA_INPUT": "Campo de mensagem",
     "ARIA_SEND": "Enviar mensagem",
-    "TYPING": "Bot digitando"
+    "ARIA_MESSAGES": "Mensagens do chat",
+    "TYPING": "Bot digitando",
+    "WELCOME": "Olá! Como posso te ajudar hoje?"
+  },
+  "LIST_PROPERTY": {
+    "ARIA": {
+      "SECTION": "Lista de imóveis"
+    },
+    "EMPTY": "Nenhuma propriedade encontrada"
+  },
+  "CARD_PROPERTY": {
+    "NO_IMAGE": "Nenhuma imagem disponível"
+  },
+  "PROPERTY": {
+    "TYPE": {
+      "APARTMENT": "Apartamento",
+      "HOUSE": "Casa",
+      "COMMERCIAL": "Comercial"
+    }
+  },
+  "REAL_ESTATE_MODAL": {
+    "ARIA": {
+      "CLOSE": "Fechar",
+      "PREV_IMAGE": "Imagem anterior",
+      "NEXT_IMAGE": "Próxima imagem"
+    },
+    "INFO": {
+      "PRICE": "Preço",
+      "TYPE": "Tipo",
+      "LOCATION": "Localização"
+    },
+    "FORM": {
+      "NAME": {
+        "LABEL": "Nome",
+        "PLACEHOLDER": "Seu nome"
+      },
+      "EMAIL": {
+        "LABEL": "E-mail",
+        "PLACEHOLDER": "Seu e-mail"
+      },
+      "PHONE": {
+        "LABEL": "Telefone",
+        "PLACEHOLDER": "Seu telefone"
+      },
+      "MESSAGE": {
+        "LABEL": "Mensagem",
+        "PLACEHOLDER": "Digite sua mensagem"
+      },
+      "SUBMIT": "Enviar mensagem"
+    }
   },
   "HEADER": {
     "NAV": {
       "HOME": "Início",
       "PROPERTIES": "Imóveis",
       "CONTACT": "Contato"
+    },
+    "ARIA": {
+      "SELECT_LANGUAGE": "Selecionar idioma",
+      "OPEN_NAV_MENU": "Abrir menu de navegação",
+      "NAV_MENU": "Menu de navegação",
+      "CLOSE_MENU": "Fechar menu"
+    },
+    "LANGUAGE": {
+      "BUTTON": "Linguagem",
+      "OPTIONS": {
+        "PT_BR": "pt-BR",
+        "EN_US": "Inglês"
+      }
     }
   },
   "FOOTER": {
-    "RIGHTS_RESERVED": "Todos os direitos reservados."
+    "RIGHTS_RESERVED": "Todos os direitos reservados.",
+    "NAVIGATION": "Navegação"
+  },
+  "CONTACT": {
+    "TITLE": "Entre em contato",
+    "DESCRIPTION": "Fale com nossa equipe para agendar visitas ou tirar dúvidas sobre qualquer imóvel.",
+    "PHONE_LABEL": "Telefone",
+    "EMAIL_LABEL": "E-mail",
+    "CTA": "Falar com corretor"
   },
   "HOME": {
+    "CHAT": {
+      "ARIA_OPEN": "Abrir chat"
+    },
+    "SEARCH_RESULTS": {
+      "TITLE": "Resultados encontrados",
+      "COUNT": "{{count}} resultado(s)"
+    },
     "HERO_SLIDER": {
       "ARIA": {
         "BANNER": "Destaques de imóveis",
@@ -65,14 +142,22 @@
         "COMMERCIAL": "Comercial"
       }
     },
-    "CONTACT": {
-      "TITLE": "Contato",
-      "DESCRIPTION": "Fale com nossa equipe para agendar visitas ou tirar dúvidas sobre qualquer imóvel.",
-      "PHONE_LABEL": "Telefone:",
-      "EMAIL_LABEL": "E-mail:"
-    },
     "FEATURED": {
       "TITLE": "Imóveis em destaque"
+    },
+    "REAL_ESTATE_BIN_BRAZIL": {
+      "TITLE": "Imóveis por todo o Brasil",
+      "ARIA": {
+        "SECTION": "Imóveis por todo o Brasil",
+        "CAROUSEL": "Carrossel de estados",
+        "PREVIOUS": "Anterior",
+        "NEXT": "Próximo",
+        "VIEW_STATE": "Ver imóveis em {{state}}"
+      },
+      "CARD": {
+        "FOR_SALE_IN": "Imóveis à venda em {{city}}",
+        "IMAGE_ALT": "Imagem de {{location}}"
+      }
     },
     "PROPERTIES": {
       "P1": {
@@ -114,6 +199,26 @@
       "P10": {
         "TITLE": "Chácara para lazer",
         "DESCRIPTION": "Chácara com área verde, piscina e espaço para eventos de fim de semana."
+      },
+      "P11": {
+        "TITLE": "Apartamento em Campinas",
+        "DESCRIPTION": "Apartamento moderno em Campinas, com excelente localização e ótima infraestrutura."
+      },
+      "P12": {
+        "TITLE": "Casa em Jundiaí",
+        "DESCRIPTION": "Casa espaçosa em Jundiaí, perfeita para famílias que valorizam espaço e segurança."
+      },
+      "P13": {
+        "TITLE": "Imóvel Comercial em São Paulo",
+        "DESCRIPTION": "Imóvel comercial em São Paulo, ideal para escritórios, lojas ou investimentos."
+      },
+      "P14": {
+        "TITLE": "Apartamento em Sorocaba",
+        "DESCRIPTION": "Apartamento confortável em Sorocaba, com fácil acesso aos principais pontos da cidade."
+      },
+      "P15": {
+        "TITLE": "Casa em Campos do Jordão",
+        "DESCRIPTION": "Casa de alto padrão em Campos do Jordão, cercada pela natureza e com clima de montanha."
       }
     },
     "SEE_MORE": "Ver mais"

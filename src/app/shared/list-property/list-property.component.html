@@ -1,4 +1,7 @@
-<section aria-label="Properties list" class="w-full list">
+<section
+  class="w-full list"
+  [attr.aria-label]="'LIST_PROPERTY.ARIA.SECTION' | translate"
+>
   @if (loading) {
     <div
       class="grid items-stretch grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3"
@@ -10,7 +13,7 @@
   } @else if (!properties?.length) {
     <div class="flex min-h-[220px] items-center justify-center px-4">
       <p class="text-sm text-text-secondary text-center">
-        Nenhuma propriedade encontrada
+        {{ "LIST_PROPERTY.EMPTY" | translate }}
       </p>
     </div>
   } @else {

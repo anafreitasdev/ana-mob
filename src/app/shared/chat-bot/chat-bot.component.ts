@@ -57,6 +57,12 @@ export class ChatBotComponent implements AfterViewInit {
       }
     });
 
+    if (this.messages.length === 0) {
+      this.messages = this.withStoredMessages([
+        this.buildMessage('bot', this.ngxTranslate.instant('CHAT.WELCOME')),
+      ]);
+    }
+
     this.ngxTranslate.onLangChange
       .pipe(takeUntilDestroyed(this.destroyRef))
       .subscribe(() => {

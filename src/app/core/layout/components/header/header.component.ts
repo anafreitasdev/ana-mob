@@ -7,15 +7,17 @@ import {
   HostListener,
   inject,
   OnDestroy,
+  OnInit,
 } from '@angular/core';
+import { IonPopover, IonIcon, IonButton } from '@ionic/angular/standalone';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
-import { IonPopover } from '@ionic/angular/standalone';
 import { TranslateModule } from '@ngx-translate/core';
 import { TranslateService } from 'src/app/core/services/translate.service';
 
 const styled = {
   headerContainer: 'bg-surface text-text-primary shadow-sm',
-  headerInner: 'max-w-7xl mx-auto flex items-center justify-between py-3',
+  headerInner:
+    'max-w-7xl mx-auto flex items-center justify-between py-3 px-4 md:px-16',
   brand: 'text-primary font-semibold text-lg tracking-tight',
   navListDesktop: 'hidden md:flex items-center gap-8',
   navItemDesktop:
@@ -40,9 +42,9 @@ const styled = {
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss'],
   standalone: true,
-  imports: [IonPopover, TranslateModule, CommonModule],
+  imports: [IonPopover, IonIcon, IonButton, TranslateModule, CommonModule],
 })
-export class HeaderComponent implements OnDestroy, AfterViewInit {
+export class HeaderComponent implements OnDestroy, AfterViewInit, OnInit {
   private bo = inject(BreakpointObserver);
   private destroyRef = inject(DestroyRef);
 
