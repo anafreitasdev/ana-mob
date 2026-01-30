@@ -1,87 +1,106 @@
 <header id="header" class="header-inner px-4">
-  <div [class]="styled.headerInner">
-    <a href="#inicio" class="flex items-center gap-2">
-      <span [class]="styled.brand + ' brand'">Ana Imóveis</span>
-    </a>
+    <div [class]="styled.headerInner" [ngClass]="{'mx-4': isMobile}">
+      <a href="#inicio" class="flex items-center gap-2">
+        <span [class]="styled.brand + ' brand'" >Ana Imóveis</span>
+      </a>
 
-    <!-- Navegação desktop -->
-    <nav [class]="styled.navListDesktop + ' menu-bar'">
-      <a
-        href="#inicio"
-        [class]="styled.navItemDesktop + ' inline-flex items-center gap-2'"
-        (click)="scrollTo('inicio', $event)"
-      >
-        <ion-icon name="home-outline" class="w-6 h-6"></ion-icon>
-        {{ "HEADER.NAV.HOME" | translate }}
-      </a>
-      <a
-        href="#imoveis"
-        [class]="styled.navItemDesktop + ' inline-flex items-center gap-2'"
-        (click)="scrollTo('imoveis', $event)"
-      >
-        <ion-icon name="business-outline" class="w-6 h-6"></ion-icon>
+      <!-- Navegação desktop -->
+      <nav [class]="styled.navListDesktop + ' menu-bar'">
+        <a
+          href="#inicio"
+          [class]="styled.navItemDesktop + ' inline-flex items-center gap-2'"
+          (click)="scrollTo('inicio', $event)"
+        >
+          <ion-icon
+            name="home-outline"
+            class="w-6 h-6"
+            aria-hidden="true"
+          ></ion-icon>
+          {{ "HEADER.NAV.HOME" | translate }}
+        </a>
+        <a
+          href="#imoveis"
+          [class]="styled.navItemDesktop + ' inline-flex items-center gap-2'"
+          (click)="scrollTo('imoveis', $event)"
+        >
+          <ion-icon
+            name="business-outline"
+            class="w-6 h-6"
+            aria-hidden="true"
+          ></ion-icon>
 
-        {{ "HEADER.NAV.PROPERTIES" | translate }}
-      </a>
-      <a
-        href="#contato"
-        [class]="styled.navItemDesktop + ' inline-flex items-center gap-2'"
-        (click)="scrollTo('contato', $event)"
-      >
-        <ion-icon name="call-outline" class="w-6 h-6"></ion-icon>
-        {{ "HEADER.NAV.CONTACT" | translate }}
-      </a>
+          {{ "HEADER.NAV.PROPERTIES" | translate }}
+        </a>
+        <a
+          href="#contato"
+          [class]="styled.navItemDesktop + ' inline-flex items-center gap-2'"
+          (click)="scrollTo('contato', $event)"
+        >
+          <ion-icon
+            name="call-outline"
+            class="w-6 h-6"
+            aria-hidden="true"
+          ></ion-icon>
+          {{ "HEADER.NAV.CONTACT" | translate }}
+        </a>
+        <button
+          id="language-trigger"
+          type="button"
+          aria-label="Selecionar idioma"
+          class="translate"
+        >
+          <ion-icon
+            name="language-outline"
+            class="w-6 h-6"
+            aria-hidden="true"
+          ></ion-icon>
+        </button>
+        <ion-popover
+          trigger="language-trigger"
+          side="bottom"
+          alignment="start"
+          cssClass="language-popover"
+          dismissOnSelect="true"
+        >
+          <ng-template>
+            <div
+              class="min-w-[180px] rounded-lg bg-white p-2"
+            >
+              <button
+                type="button"
+                class="w-full rounded-md px-2 py-1 text-left text-sm font-medium text-text-primary hover:bg-gray-100"
+                [class.bg-gray-100]="currentLanguage === 'pt-BR'"
+                [class.text-blue-600]="currentLanguage === 'pt-BR'"
+                (click)="setLanguage('pt-BR')"
+              >
+                Português
+              </button>
+              <button
+                type="button"
+                class="w-full rounded-md px-2 py-1 text-left text-sm font-medium text-text-primary hover:bg-gray-100"
+                [class.bg-gray-100]="currentLanguage === 'en-US'"
+                [class.text-blue-600]="currentLanguage === 'en-US'"
+                (click)="setLanguage('en-US')"
+              >
+                English
+              </button>
+            </div>
+          </ng-template>
+        </ion-popover>
+      </nav>
+
+      <!-- Ações / menu mobile -->
       <button
-        id="language-trigger"
         type="button"
-        aria-label="Selecionar idioma"
+        [class]="styled.mobileToggleButton"
+        aria-label="Abrir menu de navegação"
+        [attr.aria-expanded]="mobileMenuOpen"
+        aria-controls="mobile-menu"
+        (click)="toggleMobileMenu()"
       >
-        <ion-icon name="language-outline" class="w-6 h-6"></ion-icon>
+        <ion-icon name="menu-outline" class="w-6 h-6"></ion-icon>
       </button>
-      <ion-popover
-        trigger="language-trigger"
-        side="bottom"
-        alignment="start"
-        cssClass="language-popover"
-        dismissOnSelect="true"
-      >
-        <ng-template>
-          <div class="min-w-[180px] rounded-lg bg-white p-2">
-            <button
-              type="button"
-              class="w-full rounded-md px-2 py-1 text-left text-sm font-medium text-text-primary hover:bg-gray-100"
-              [class.bg-gray-100]="currentLanguage === 'pt-BR'"
-              [class.text-blue-600]="currentLanguage === 'pt-BR'"
-              (click)="setLanguage('pt-BR')"
-            >
-              Português
-            </button>
-            <button
-              type="button"
-              class="w-full rounded-md px-2 py-1 text-left text-sm font-medium text-text-primary hover:bg-gray-100"
-              [class.bg-gray-100]="currentLanguage === 'en-US'"
-              [class.text-blue-600]="currentLanguage === 'en-US'"
-              (click)="setLanguage('en-US')"
-            >
-              English
-            </button>
-          </div>
-        </ng-template>
-      </ion-popover>
-    </nav>
-
-    <!-- Ações / menu mobile -->
-    <button
-      type="button"
-      [class]="styled.mobileToggleButton"
-      aria-label="Abrir menu de navegação"
-      [attr.aria-expanded]="mobileMenuOpen"
-      aria-controls="mobile-menu"
-      (click)="toggleMobileMenu()"
-    >
-      <ion-icon name="menu-outline" class="w-6 h-6"></ion-icon>
-    </button>
-  </div>
+    </div>
 
   <div
     [class]="styled.mobileOverlay"

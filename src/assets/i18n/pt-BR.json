@@ -14,6 +14,34 @@
     "ARIA_SEND": "Enviar mensagem",
     "TYPING": "Bot digitando"
   },
+  "PROPERTY": {
+    "TYPE": {
+      "APARTMENT": "Apartamento",
+      "HOUSE": "Casa",
+      "COMMERCIAL": "Comercial"
+    }
+  },
+  "REAL_ESTATE_MODAL": {
+    "FORM": {
+      "NAME": {
+        "LABEL": "Nome",
+        "PLACEHOLDER": "Seu nome"
+      },
+      "EMAIL": {
+        "LABEL": "E-mail",
+        "PLACEHOLDER": "Seu e-mail"
+      },
+      "PHONE": {
+        "LABEL": "Telefone",
+        "PLACEHOLDER": "Seu telefone"
+      },
+      "MESSAGE": {
+        "LABEL": "Mensagem",
+        "PLACEHOLDER": "Digite sua mensagem"
+      },
+      "SUBMIT": "Enviar mensagem"
+    }
+  },
   "HEADER": {
     "NAV": {
       "HOME": "Início",
@@ -74,6 +102,20 @@
     "FEATURED": {
       "TITLE": "Imóveis em destaque"
     },
+    "REAL_ESTATE_BIN_BRAZIL": {
+      "TITLE": "Imóveis por todo o Brasil",
+      "ARIA": {
+        "SECTION": "Imóveis por todo o Brasil",
+        "CAROUSEL": "Carrossel de estados",
+        "PREVIOUS": "Anterior",
+        "NEXT": "Próximo",
+        "VIEW_STATE": "Ver imóveis em {{state}}"
+      },
+      "CARD": {
+        "FOR_SALE_IN": "Imóveis à venda em {{city}}",
+        "IMAGE_ALT": "Imagem de {{location}}"
+      }
+    },
     "PROPERTIES": {
       "P1": {
         "TITLE": "Apartamento em São Paulo",
@@ -114,7 +156,28 @@
       "P10": {
         "TITLE": "Chácara para lazer",
         "DESCRIPTION": "Chácara com área verde, piscina e espaço para eventos de fim de semana."
+      },
+      "P11": {
+        "TITLE": "Apartamento em Campinas",
+        "DESCRIPTION": "Apartamento moderno em Campinas, com excelente localização e ótima infraestrutura."
+      },
+      "P12": {
+        "TITLE": "Casa em Jundiaí",
+        "DESCRIPTION": "Casa espaçosa em Jundiaí, perfeita para famílias que valorizam espaço e segurança."
+      },
+      "P13": {
+        "TITLE": "Imóvel Comercial em São Paulo",
+        "DESCRIPTION": "Imóvel comercial em São Paulo, ideal para escritórios, lojas ou investimentos."
+      },
+      "P14": {
+        "TITLE": "Apartamento em Sorocaba",
+        "DESCRIPTION": "Apartamento confortável em Sorocaba, com fácil acesso aos principais pontos da cidade."
+      },
+      "P15": {
+        "TITLE": "Casa em Campos do Jordão",
+        "DESCRIPTION": "Casa de alto padrão em Campos do Jordão, cercada pela natureza e com clima de montanha."
       }
-    }
+    },
+    "SEE_MORE": "Ver mais"
   }
 }

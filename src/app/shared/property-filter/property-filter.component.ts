@@ -21,7 +21,15 @@ import { CommonModule } from '@angular/common';
   templateUrl: './property-filter.component.html',
   styleUrls: ['./property-filter.component.scss'],
   standalone: true,
-  imports: [FormsModule, IonSelect, IonSelectOption, IonInput, IonButton, CommonModule, TranslateModule],
+  imports: [
+    FormsModule,
+    IonSelect,
+    IonSelectOption,
+    IonInput,
+    IonButton,
+    CommonModule,
+    TranslateModule,
+  ],
 })
 export class PropertyFilterComponent {
   private readonly propertyService = inject(PropertyService);
@@ -29,6 +37,8 @@ export class PropertyFilterComponent {
   readonly stateOptions = this.buildStateOptions();
 
   @Output() readonly filtersApplied = new EventEmitter<Property[]>();
+  @Output() readonly clearFilters = new EventEmitter<void>();
+
   @Input() absolute: false | true = false;
 
   selectedType = '';
@@ -42,6 +52,16 @@ export class PropertyFilterComponent {
       (option) => option.code === this.selectedStateCode,
     );
     return state?.cities ?? [];
+  }
+
+  get notHasFilters(): boolean {
+    return (
+      !this.selectedType &&
+      !this.selectedStateCode &&
+      !this.selectedCityName &&
+      !this.priceMinRaw &&
+      !this.priceMaxRaw
+    );
   }
 
   onSelectedStateCodeChange(nextStateCode: string): void {
@@ -64,14 +84,14 @@ export class PropertyFilterComponent {
     this.filtersApplied.emit(filtered);
   }
 
-  clearFilters(): void {
+  handleClearFilters(): void {
     this.selectedType = '';
     this.selectedStateCode = '';
     this.selectedCityName = '';
     this.priceMinRaw = '';
     this.priceMaxRaw = '';
 
-    this.filtersApplied.emit(this.propertyService.getAllProperties());
+    this.clearFilters.emit();
   }
 
   onPriceMinInput(event: Event): void {

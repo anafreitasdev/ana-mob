@@ -1,11 +1,16 @@
+import { BreakpointObserver } from '@angular/cdk/layout';
+import { CommonModule } from '@angular/common';
 import {
   AfterViewInit,
   Component,
+  DestroyRef,
   HostListener,
   inject,
   OnDestroy,
+  OnInit,
 } from '@angular/core';
 import { IonPopover, IonIcon, IonButton } from '@ionic/angular/standalone';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { TranslateModule } from '@ngx-translate/core';
 import { TranslateService } from 'src/app/core/services/translate.service';
 
@@ -17,7 +22,7 @@ const styled = {
   navItemDesktop:
     'text-sm font-medium text-text-white hover:text-accent transition-colors',
   mobileToggleButton:
-    'md:hidden inline-flex items-center justify-center p-2 rounded-md text-text-primary hover:bg-background focus:outline-none focus:ring-2 focus:ring-primary',
+    'md:hidden inline-flex items-center justify-center p-2 rounded-md text-text-white hover:bg-background focus:outline-none focus:ring-2 focus:ring-primary',
   mobileOverlay:
     'fixed inset-0 z-50 bg-black/40 transition-opacity duration-200',
   mobilePanel:
@@ -28,7 +33,7 @@ const styled = {
     'inline-flex items-center justify-center p-2 rounded-md hover:bg-background focus:outline-none focus:ring-2 focus:ring-primary',
   navListMobile: 'flex flex-col py-3',
   navItemMobile:
-    'w-full text-left px-4 py-2 text-sm font-medium text-text-primary hover:text-primary hover:bg-background',
+    'w-full text-left px-4 py-2 text-sm font-medium text-text-primary hover:text-accent hover:bg-background',
 };
 
 @Component({
@@ -36,14 +41,26 @@ const styled = {
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss'],
   standalone: true,
-  imports: [IonPopover, IonIcon, IonButton, TranslateModule],
+  imports: [IonPopover, IonIcon, IonButton, TranslateModule, CommonModule],
 })
-export class HeaderComponent implements OnDestroy, AfterViewInit {
+export class HeaderComponent implements OnDestroy, AfterViewInit, OnInit {
+  private bo = inject(BreakpointObserver);
+  private destroyRef = inject(DestroyRef);
+
+  isMobile = false;
   readonly styled = styled;
 
   private translateService = inject(TranslateService);
 
   mobileMenuOpen = false;
+
+  ngOnInit() {
+    this.bo
+      .observe(['(max-width: 768px)'])
+      .pipe(takeUntilDestroyed(this.destroyRef))
+      .subscribe((r) => (this.isMobile = r.matches));
+  }
+
   ngAfterViewInit() {
     this.onScroll();
   }

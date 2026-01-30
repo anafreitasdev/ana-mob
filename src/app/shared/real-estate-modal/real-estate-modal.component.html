@@ -1,0 +1,213 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>{{ property?.title | translate }}</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="close()" fill="clear" aria-label="Fechar">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="h-6 w-6"
+          aria-hidden="true"
+          focusable="false"
+        >
+          <path d="M18 6 6 18" />
+          <path d="M6 6l12 12" />
+        </svg>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <div class="real-estate-modal__layout">
+    <div class="real-estate-modal__images" *ngIf="property?.images?.length">
+      <ng-container *ngIf="(property?.images?.length ?? 0) === 1; else imagesCarousel">
+        <img
+          class="real-estate-modal__image"
+          [src]="property?.images?.[0]"
+          [alt]="property?.title"
+        />
+      </ng-container>
+
+      <ng-template #imagesCarousel>
+        <div class="relative h-full w-full">
+          <swiper-container
+            #swiper
+            init="false"
+            class="real-estate-modal__swiper h-full w-full [--swiper-pagination-color:var(--color-primary)]"
+            aria-roledescription="carousel"
+          >
+            <swiper-slide *ngFor="let image of property?.images" class="h-full">
+              <img
+                class="real-estate-modal__image"
+                [src]="image"
+                [alt]="property?.title"
+              />
+            </swiper-slide>
+          </swiper-container>
+
+          <button
+            type="button"
+            class="absolute left-3 top-1/2 z-10 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full bg-black/40 text-white shadow-sm transition-colors duration-300 hover:bg-primary focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-black/20 disabled:pointer-events-none disabled:opacity-40"
+            [disabled]="isAtStart"
+            (click)="goToPrevious()"
+            aria-label="Previous image"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+              class="h-5 w-5"
+              aria-hidden="true"
+              focusable="false"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M12.79 15.77a.75.75 0 0 1-1.06.02l-5-4.5a.75.75 0 0 1 0-1.12l5-4.5a.75.75 0 1 1 1.04 1.08L8.39 10l4.42 3.98a.75.75 0 0 1-.02 1.06Z"
+                clip-rule="evenodd"
+              />
+            </svg>
+          </button>
+
+          <button
+            type="button"
+            class="absolute right-3 top-1/2 z-10 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full bg-black/40 text-white shadow-sm transition-colors duration-300 hover:bg-primary focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-black/20 disabled:pointer-events-none disabled:opacity-40"
+            [disabled]="isAtEnd"
+            (click)="goToNext()"
+            aria-label="Next image"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+              class="h-5 w-5"
+              aria-hidden="true"
+              focusable="false"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M7.21 4.23a.75.75 0 0 1 1.06-.02l5 4.5a.75.75 0 0 1 0 1.12l-5 4.5a.75.75 0 1 1-1.04-1.08L11.61 10 7.19 6.02a.75.75 0 0 1 .02-1.06Z"
+                clip-rule="evenodd"
+              />
+            </svg>
+          </button>
+        </div>
+      </ng-template>
+    </div>
+
+    <div class="real-estate-modal__form">
+      <div class="real-estate-modal__info mb-2 rounded-xl border border-border bg-white p-4">
+        <h3 class="text-base font-semibold text-text-primary">
+          {{ property?.title | translate }}
+        </h3>
+        <p class="mt-1 text-sm text-text-secondary">
+          {{ property?.description | translate }}
+        </p>
+
+        <div class="mt-4 space-y-2">
+          <div class="flex items-center gap-2 text-sm text-text-primary" *ngIf="property?.type">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="h-5 w-5 text-primary"
+              aria-hidden="true"
+              focusable="false"
+            >
+              <path d="M20 10V7a2 2 0 0 0-2-2h-3" />
+              <path d="M4 14v3a2 2 0 0 0 2 2h3" />
+              <path d="M15 5H9a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2Z" />
+            </svg>
+            <span class="font-medium">Tipo</span>
+            <span class="text-text-secondary">{{ ('PROPERTY.TYPE.' + (property?.type | uppercase)) | translate }}</span>
+          </div>
+
+          <div class="flex items-center gap-2 text-sm text-text-primary" *ngIf="formattedPrice">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="h-5 w-5 text-primary"
+              aria-hidden="true"
+              focusable="false"
+            >
+              <path d="M6 6h15" />
+              <path d="M6 12h15" />
+              <path d="M6 18h15" />
+              <path d="M3 6h.01" />
+              <path d="M3 12h.01" />
+              <path d="M3 18h.01" />
+            </svg>
+            <span class="font-medium">Preço</span>
+            <span class="text-text-secondary">{{ formattedPrice }}</span>
+          </div>
+
+          <div
+            class="flex items-center gap-2 text-sm text-text-primary"
+            *ngIf="property?.location?.city || property?.location?.state"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="h-5 w-5 text-primary"
+              aria-hidden="true"
+              focusable="false"
+            >
+              <path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 0 1 16 0Z" />
+              <path d="M12 10a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z" />
+            </svg>
+            <span class="font-medium">Localização</span>
+            <span class="text-text-secondary">
+              {{ property?.location?.city }}
+              <ng-container *ngIf="property?.location?.city && property?.location?.state">-</ng-container>
+              {{ property?.location?.state }}
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <ion-item *ngFor="let field of formFields">
+        <ion-input
+          *ngIf="field.type === 'input'"
+          labelPlacement="stacked"
+          [label]="field.labelKey | translate"
+          [placeholder]="field.placeholderKey | translate"
+          [type]="field.inputType"
+          [(ngModel)]="form[field.model]"
+        ></ion-input>
+
+        <ion-textarea
+          *ngIf="field.type === 'textarea'"
+          labelPlacement="stacked"
+          [label]="field.labelKey | translate"
+          [placeholder]="field.placeholderKey | translate"
+          [autoGrow]="true"
+          [(ngModel)]="form[field.model]"
+        >
+        </ion-textarea>
+      </ion-item>
+
+      <div class="mt-4">
+        <ion-button (click)="sendMessage()" expand="block" type="button">{{ 'REAL_ESTATE_MODAL.FORM.SUBMIT' | translate }}</ion-button>
+      </div>
+    </div>
+  </div>
+</ion-content>

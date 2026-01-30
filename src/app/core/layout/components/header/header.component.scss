@@ -9,13 +9,26 @@
 
 .brand{
   color: var(--color-text-white);
+  margin-left: 0.5rem;;
 }
 
 .transparent-header{
- background-color:  #080f367e;
+ background-color:  #080f3695;
   transition: 0.5s;
 }
 
 ion-popover.language-popover::part(content) {
   --background: transparent;
+}
+
+.menu-bar a:hover{
+  font-size: 1.125rem;
+  transition: 0.2s;
+
+}
+
+.translate:hover{
+  transform: scale(1.2);
+  transition: 0.2s;
+  color: var(--color-accent);
 }

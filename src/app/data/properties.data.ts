@@ -160,4 +160,79 @@ export const PROPERTIES_MOCK: Property[] = [
       'https://images.unsplash.com/photo-1470770841072-f978cf4d019e?w=1600&auto=format&fit=crop&q=80',
     ],
   },
+  {
+    id: 11,
+    title: 'HOME.PROPERTIES.P11.TITLE',
+    description: 'HOME.PROPERTIES.P11.DESCRIPTION',
+    type: 'apartment',
+    price: 420000,
+    location: {
+      city: 'Campinas',
+      state: 'SP',
+    },
+    featured: false,
+    images: [
+      'https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=1600&auto=format&fit=crop&q=80',
+    ],
+  },
+  {
+    id: 12,
+    title: 'HOME.PROPERTIES.P12.TITLE',
+    description: 'HOME.PROPERTIES.P12.DESCRIPTION',
+    type: 'house',
+    price: 780000,
+    location: {
+      city: 'Jundiaí',
+      state: 'SP',
+    },
+    featured: true,
+    images: [
+      'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1600&auto=format&fit=crop&q=80',
+    ],
+  },
+  {
+    id: 13,
+    title: 'HOME.PROPERTIES.P13.TITLE',
+    description: 'HOME.PROPERTIES.P13.DESCRIPTION',
+    type: 'commercial',
+    price: 980000,
+    location: {
+      city: 'São Paulo',
+      state: 'SP',
+    },
+    featured: false,
+    images: [
+      'https://images.unsplash.com/photo-1497366216548-37526070297c?w=1600&auto=format&fit=crop&q=80',
+    ],
+  },
+  {
+    id: 14,
+    title: 'HOME.PROPERTIES.P14.TITLE',
+    description: 'HOME.PROPERTIES.P14.DESCRIPTION',
+    type: 'apartment',
+    price: 350000,
+    location: {
+      city: 'Sorocaba',
+      state: 'SP',
+    },
+    featured: false,
+    images: [
+      'https://images.unsplash.com/photo-1527030280862-64139fba04ca?w=1600&auto=format&fit=crop&q=80',
+    ],
+  },
+  {
+    id: 15,
+    title: 'HOME.PROPERTIES.P15.TITLE',
+    description: 'HOME.PROPERTIES.P15.DESCRIPTION',
+    type: 'house',
+    price: 1250000,
+    location: {
+      city: 'Campos do Jordão',
+      state: 'SP',
+    },
+    featured: true,
+    images: [
+      'https://images.unsplash.com/photo-1605276373954-0c4a0dac5b12?w=1600&auto=format&fit=crop&q=80',
+    ],
+  },
 ];

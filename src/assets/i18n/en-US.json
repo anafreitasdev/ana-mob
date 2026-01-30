@@ -14,6 +14,34 @@
     "ARIA_SEND": "Send message",
     "TYPING": "Bot typing"
   },
+  "PROPERTY": {
+    "TYPE": {
+      "APARTMENT": "Apartment",
+      "HOUSE": "House",
+      "COMMERCIAL": "Commercial"
+    }
+  },
+  "REAL_ESTATE_MODAL": {
+    "FORM": {
+      "NAME": {
+        "LABEL": "Name",
+        "PLACEHOLDER": "Your name"
+      },
+      "EMAIL": {
+        "LABEL": "Email",
+        "PLACEHOLDER": "Your email"
+      },
+      "PHONE": {
+        "LABEL": "Phone",
+        "PLACEHOLDER": "Your phone"
+      },
+      "MESSAGE": {
+        "LABEL": "Message",
+        "PLACEHOLDER": "Type your message"
+      },
+      "SUBMIT": "Send message"
+    }
+  },
   "HEADER": {
     "NAV": {
       "HOME": "Home",
@@ -74,6 +102,20 @@
     "FEATURED": {
       "TITLE": "Featured properties"
     },
+    "REAL_ESTATE_BIN_BRAZIL": {
+      "TITLE": "Properties across Brazil",
+      "ARIA": {
+        "SECTION": "Properties across Brazil",
+        "CAROUSEL": "States carousel",
+        "PREVIOUS": "Previous",
+        "NEXT": "Next",
+        "VIEW_STATE": "View properties in {{state}}"
+      },
+      "CARD": {
+        "FOR_SALE_IN": "Properties for sale in {{city}}",
+        "IMAGE_ALT": "Image of {{location}}"
+      }
+    },
     "PROPERTIES": {
       "P1": {
         "TITLE": "Apartment in São Paulo",
@@ -114,7 +156,28 @@
       "P10": {
         "TITLE": "Country house for leisure",
         "DESCRIPTION": "Country house with green area, swimming pool, and space for weekend events."
+      },
+      "P11": {
+        "TITLE": "Apartment in Campinas",
+        "DESCRIPTION": "Modern apartment in Campinas, with great location and excellent infrastructure."
+      },
+      "P12": {
+        "TITLE": "House in Jundiaí",
+        "DESCRIPTION": "Spacious house in Jundiaí, perfect for families who value space and security."
+      },
+      "P13": {
+        "TITLE": "Commercial Property in São Paulo",
+        "DESCRIPTION": "Commercial property in São Paulo, ideal for offices, retail spaces, or investment."
+      },
+      "P14": {
+        "TITLE": "Apartment in Sorocaba",
+        "DESCRIPTION": "Comfortable apartment in Sorocaba, with easy access to the main areas of the city."
+      },
+      "P15": {
+        "TITLE": "House in Campos do Jordão",
+        "DESCRIPTION": "High-end house in Campos do Jordão, surrounded by nature with a mountain atmosphere."
       }
-    }
+    },
+        "SEE_MORE": "See more"
   }
 }
