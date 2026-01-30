@@ -57,7 +57,8 @@
     }
   },
   "FOOTER": {
-    "RIGHTS_RESERVED": "Todos os direitos reservados."
+    "RIGHTS_RESERVED": "Todos os direitos reservados.",
+    "NAVIGATION": "Navegação"
   },
   "HOME": {
     "HERO_SLIDER": {

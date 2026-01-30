@@ -36,12 +36,48 @@
   </div>
 </section>
 <div class="bg-surface border-t border-border">
-  <div class="max-w-7xl mx-auto px-4 md:px-16 py-6">
+  <div class="max-w-7xl mx-auto px-4 md:px-16 py-6 flex justify-between">
     <div class="flex flex-col gap-2 text-sm text-text-secondary">
       <span class="font-medium text-text-primary">Ana Imóveis</span>
+      <div class="flex gap-3 mt-1">
+        <ion-icon
+          name="logo-facebook"
+          class="text-xl text-blue-600 group-hover:text-blue-800 cursor-pointer transition-colors"
+        ></ion-icon>
+
+        <ion-icon
+          name="logo-instagram"
+          class="text-xl text-pink-500 group-hover:text-pink-700 cursor-pointer transition-colors"
+        ></ion-icon>
+
+        <ion-icon
+          name="logo-whatsapp"
+          class="text-xl text-green-500 group-hover:text-green-700 cursor-pointer transition-colors"
+        ></ion-icon>
+      </div>
       <span
-        >© {{ currentYear }} Ana Imóveis. {{ "FOOTER.RIGHTS_RESERVED" | translate }}</span
+        >© {{ currentYear }} Ana Imóveis.
+        {{ "FOOTER.RIGHTS_RESERVED" | translate }}</span
       >
+    </div>
+    <div class="flex flex-col gap-2 text-sm text-text-secondary">
+      <span class="font-medium text-text-primary"> {{"FOOTER.NAVIGATION" | translate}}</span>
+      <nav class="flex flex-col gap-1 mt-1">
+        <a
+          href="#inicio"
+          class="hover:underline cursor-pointer"
+          (click)="scrollTo('inicio', $event)"
+        >
+          {{ "HEADER.NAV.HOME" | translate }}
+        </a>
+        <a
+          href="#imoveis"
+          class="hover:underline cursor-pointer"
+          (click)="scrollTo('imoveis', $event)"
+        >
+          {{ "HEADER.NAV.PROPERTIES" | translate }}
+        </a>
+      </nav>
     </div>
   </div>
 </div>

@@ -3,13 +3,14 @@ import { CommonModule } from '@angular/common';
 import { Component, DestroyRef, inject, OnInit } from '@angular/core';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { TranslateModule } from '@ngx-translate/core';
+import { IonIcon } from "@ionic/angular/standalone";
 
 @Component({
   selector: 'app-footer',
   templateUrl: './footer.component.html',
   styleUrls: ['./footer.component.scss'],
   standalone: true,
-  imports: [TranslateModule, CommonModule],
+  imports: [IonIcon, TranslateModule, CommonModule],
 })
 export class FooterComponent implements OnInit {
   private bo = inject(BreakpointObserver);
@@ -25,5 +26,13 @@ export class FooterComponent implements OnInit {
       .observe(['(max-width: 768px)'])
       .pipe(takeUntilDestroyed(this.destroyRef))
       .subscribe((r) => (this.isMobile = r.matches));
+  }
+
+  scrollTo(anchor: string, event?: Event): void {
+    event?.preventDefault();
+    const target = document.getElementById(anchor);
+    if (target) {
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
   }
 }
