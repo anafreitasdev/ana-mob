@@ -21,7 +21,8 @@ ion-popover.language-popover::part(content) {
   --background: transparent;
 }
 
-.menu-bar a:hover {
+.menu-bar a:hover,
+.menu-bar button:hover {
   font-size: 1.125rem;
   transition: 0.2s;
 }

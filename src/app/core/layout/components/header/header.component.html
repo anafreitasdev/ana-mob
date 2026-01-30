@@ -1,7 +1,9 @@
 <header id="header" class="header-inner">
   <div [class]="styled.headerInner">
     <a href="#inicio" class="flex items-center gap-2">
-      <span [class]="styled.brand + ' brand'">{{ "APP.NAME" | translate }}</span>
+      <span [class]="styled.brand + ' brand'">{{
+        "APP.NAME" | translate
+      }}</span>
     </a>
 
     <!-- Navegação desktop -->
@@ -37,7 +39,10 @@
         id="language-trigger"
         type="button"
         [attr.aria-label]="'HEADER.ARIA.SELECT_LANGUAGE' | translate"
-        class="translate text-white"
+        [class]="
+          styled.navItemDesktop +
+          ' inline-flex items-center gap-2  text-white cursor-pointer'
+        "
       >
         {{ "HEADER.LANGUAGE.BUTTON" | translate }}
       </button>
@@ -102,7 +107,9 @@
     [attr.aria-label]="'HEADER.ARIA.NAV_MENU' | translate"
   >
     <div [class]="styled.mobilePanelHeader">
-      <span class="font-semibold text-primary">{{ "APP.NAME" | translate }}</span>
+      <span class="font-semibold text-primary">{{
+        "APP.NAME" | translate
+      }}</span>
       <button
         type="button"
         [class]="styled.mobileCloseButton"
