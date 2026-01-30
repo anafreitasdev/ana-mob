@@ -17,6 +17,9 @@ import {
   personCircleOutline,
   searchOutline,
   starOutline,
+  logoFacebook,
+  logoInstagram,
+  logoWhatsapp,
 } from 'ionicons/icons';
 
 export function registerIonicons() {
@@ -37,5 +40,8 @@ export function registerIonicons() {
     'location-outline': locationOutline,
     'cash-outline': cashOutline,
     'mail-outline': mailOutline,
+    'logo-facebook': logoFacebook,
+    'logo-instagram': logoInstagram,
+    'logo-whatsapp': logoWhatsapp,
   });
 }

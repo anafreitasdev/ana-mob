@@ -8,21 +8,27 @@
     <nav [class]="styled.navListDesktop + ' menu-bar'">
       <a
         href="#inicio"
-        [class]="styled.navItemDesktop + ' inline-flex items-center gap-2'"
+        [class]="
+          styled.navItemDesktop + ' inline-flex items-center gap-2 text-white'
+        "
         (click)="scrollTo('inicio', $event)"
       >
         {{ "HEADER.NAV.HOME" | translate }}
       </a>
       <a
         href="#imoveis"
-        [class]="styled.navItemDesktop + ' inline-flex items-center gap-2'"
+        [class]="
+          styled.navItemDesktop + ' inline-flex items-center gap-2  text-white'
+        "
         (click)="scrollTo('imoveis', $event)"
       >
         {{ "HEADER.NAV.PROPERTIES" | translate }}
       </a>
       <a
         href="#contato"
-        [class]="styled.navItemDesktop + ' inline-flex items-center gap-2'"
+        [class]="
+          styled.navItemDesktop + ' inline-flex items-center gap-2  text-white'
+        "
         (click)="scrollTo('contato', $event)"
       >
         {{ "HEADER.NAV.CONTACT" | translate }}
@@ -31,7 +37,7 @@
         id="language-trigger"
         type="button"
         aria-label="Selecionar idioma"
-        class="translate"
+        class="translate text-white"
       >
         {{ "HEADER.LANGUAGE.BUTTON" | translate }}
       </button>

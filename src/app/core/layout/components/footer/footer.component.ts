@@ -27,4 +27,12 @@ export class FooterComponent implements OnInit {
       .pipe(takeUntilDestroyed(this.destroyRef))
       .subscribe((r) => (this.isMobile = r.matches));
   }
+
+  scrollTo(anchor: string, event?: Event): void {
+    event?.preventDefault();
+    const target = document.getElementById(anchor);
+    if (target) {
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  }
 }

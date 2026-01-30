@@ -57,7 +57,8 @@
     }
   },
   "FOOTER": {
-    "RIGHTS_RESERVED": "All rights reserved."
+    "RIGHTS_RESERVED": "All rights reserved.",
+    "NAVIGATION": "Navigation"
   },
   "CONTACT": {
     "TITLE": "Get in touch",
