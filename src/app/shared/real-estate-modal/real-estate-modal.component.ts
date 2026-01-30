@@ -145,17 +145,17 @@ export class RealEstateModalComponent implements AfterViewInit {
 
     swiperEl.initialize();
 
-    swiperEl.addEventListener('swiperinit', (event: any) => {
-      const swiper = event?.detail?.[0] ?? swiperEl.swiper;
-      this.setSwiperInstance(swiper);
+    swiperEl.addEventListener('swiperinit', () => {
+      this.setSwiperInstance(swiperEl.swiper);
     });
 
-    swiperEl.addEventListener('swiperslidechange', (event: any) => {
-      const swiper = event?.detail?.[0] ?? this.swiperInstance;
-      this.setSwiperInstance(swiper);
+    swiperEl.addEventListener('slidechange', () => {
+      this.setSwiperInstance(swiperEl.swiper);
     });
-
-    this.setSwiperInstance(swiperEl.swiper);
+    
+    queueMicrotask(() => {
+      this.setSwiperInstance(swiperEl.swiper);
+    });
   }
 
   goToPrevious(): void {

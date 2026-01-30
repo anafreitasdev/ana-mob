@@ -81,6 +81,10 @@ ion-modal.real-estate-modal .real-estate-modal__form {
   width: 50%;
 }
 
+ion-modal.real-estate-modal::part(content) {
+  border-radius: 16px;
+}
+
 @media (max-width: 767px) {
   ion-modal.real-estate-modal {
     --width: 100%;
@@ -108,7 +112,12 @@ ion-modal.real-estate-modal .real-estate-modal__form {
 
 ion-modal.real-estate-modal ion-header ion-toolbar {
   --background: #ffffff;
-  --color: #0f172a;
+  --color: #0f292a;
+}
+
+ion-modal.real-estate-modal ion-header ion-toolbar ion-title{
+  font-weight: 600;
+  color: #2b3a8c;
 }
 
 ion-modal.real-estate-modal ion-item {
