@@ -107,7 +107,6 @@ ion-modal.real-estate-modal::part(content) {
   ion-modal.real-estate-modal .real-estate-modal__swiper {
     height: 240px;
   }
-
 }
 
 ion-modal.real-estate-modal ion-header ion-toolbar {
@@ -115,7 +114,7 @@ ion-modal.real-estate-modal ion-header ion-toolbar {
   --color: #0f292a;
 }
 
-ion-modal.real-estate-modal ion-header ion-toolbar ion-title{
+ion-modal.real-estate-modal ion-header ion-toolbar ion-title {
   font-weight: 600;
   color: #2b3a8c;
 }
@@ -147,6 +146,8 @@ ion-modal.real-estate-modal ion-button {
   height: 48px;
 }
 
+
+
 /**
  * Ionic Dark Mode
  * -----------------------------------------------------
@@ -156,4 +157,4 @@ ion-modal.real-estate-modal ion-button {
 
 /* @import "@ionic/angular/css/palettes/dark.always.css"; */
 /* @import "@ionic/angular/css/palettes/dark.class.css"; */
-@import "@ionic/angular/css/palettes/dark.system.css";
+

@@ -153,4 +153,5 @@ export class PropertyFilterComponent {
       }))
       .sort((a, b) => a.code.localeCompare(b.code, 'pt-BR'));
   }
+
 }
