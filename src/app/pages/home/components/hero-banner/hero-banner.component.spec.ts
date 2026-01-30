@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { IonicModule } from '@ionic/angular';
 
-import { HeroSliderComponent } from './hero-slider.component';
+import { HeroBannerComponent } from './hero-banner.component';
 
-describe('HeroSliderComponent', () => {
-  let component: HeroSliderComponent;
-  let fixture: ComponentFixture<HeroSliderComponent>;
+describe('HeroBannerComponent', () => {
+  let component: HeroBannerComponent;
+  let fixture: ComponentFixture<HeroBannerComponent>;
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      imports: [HeroSliderComponent, IonicModule.forRoot()],
+      imports: [HeroBannerComponent, IonicModule.forRoot()],
     }).compileComponents();
 
-    fixture = TestBed.createComponent(HeroSliderComponent);
+    fixture = TestBed.createComponent(HeroBannerComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   }));
@@ -21,3 +21,4 @@ describe('HeroSliderComponent', () => {
     expect(component).toBeTruthy();
   });
 });
+

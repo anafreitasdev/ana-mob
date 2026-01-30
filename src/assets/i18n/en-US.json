@@ -102,15 +102,9 @@
       "TITLE": "Results found",
       "COUNT": "{{count}} result(s)"
     },
-    "HERO_SLIDER": {
+    "HERO_BANNER": {
       "ARIA": {
-        "BANNER": "Featured properties",
-        "PREVIOUS_SLIDE": "Previous slide",
-        "NEXT_SLIDE": "Next slide",
-        "GO_TO_SLIDE": "Go to slide {{index}}"
-      },
-      "ALT": {
-        "FEATURED_IMAGE_SUFFIX": " - featured image"
+        "BANNER": "Main banner"
       }
     },
     "FILTER": {
@@ -221,6 +215,10 @@
         "DESCRIPTION": "High-end house in Campos do Jordão, surrounded by nature with a mountain atmosphere."
       }
     },
-        "SEE_MORE": "See more"
+        "SEE_MORE": "See more",
+         "TITLE_HOME": "Find the ideal property to live well",
+          "SUBTITLE_HOME": "Houses and apartments selected in the best regions of Brazil.",
+    "SEARCH_PROPERTIES": "Search properties",
+    "TALK_TO_SPECIALIST": "Talk to a specialist"
   }
 }

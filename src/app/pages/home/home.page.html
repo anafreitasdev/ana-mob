@@ -1,11 +1,16 @@
 <main class="bg-background text-text-white">
-  <div class="slider">
-    <app-hero-slider></app-hero-slider>
+  <div class="hero-banner">
+    <app-hero-banner
+      (searchProperties)="scrollToFilter()"
+      (talkToSpecialist)="openChat()"
+    ></app-hero-banner>
   </div>
   <app-property-filter
+    id="filtro"
     (filtersApplied)="onFiltersApplied($event)"
     (clearFilters)="onClearFilters()"
     [absolute]="absoluteFilter && !isMobile"
+    class="scroll-mt-12 md:scroll-mt-[200px]"
   ></app-property-filter>
 
   <div class="content-main">

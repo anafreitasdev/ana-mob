@@ -102,15 +102,9 @@
       "TITLE": "Resultados encontrados",
       "COUNT": "{{count}} resultado(s)"
     },
-    "HERO_SLIDER": {
+    "HERO_BANNER": {
       "ARIA": {
-        "BANNER": "Destaques de imóveis",
-        "PREVIOUS_SLIDE": "Slide anterior",
-        "NEXT_SLIDE": "Próximo slide",
-        "GO_TO_SLIDE": "Ir para o slide {{index}}"
-      },
-      "ALT": {
-        "FEATURED_IMAGE_SUFFIX": " - imagem em destaque"
+        "BANNER": "Banner principal"
       }
     },
     "FILTER": {
@@ -221,6 +215,10 @@
         "DESCRIPTION": "Casa de alto padrão em Campos do Jordão, cercada pela natureza e com clima de montanha."
       }
     },
-    "SEE_MORE": "Ver mais"
+    "SEE_MORE": "Ver mais",
+    "TITLE_HOME": "Encontre o imóvel ideal para viver bem",
+    "SUBTITLE_HOME": "Casas e apartamentos selecionados nas melhores regiões do Brasil.",
+    "SEARCH_PROPERTIES": "Buscar imóveis",
+    "TALK_TO_SPECIALIST": "Falar com um especialista"
   }
 }
