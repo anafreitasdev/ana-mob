@@ -28,6 +28,8 @@
 
   --color-border: #e2e8f0;
   --color-highlight: #29a7d9;
+
+  --ion-font-family: "Poppins", sans-serif;
 }
 
 /* Core CSS required for Ionic components to work properly */
@@ -45,6 +47,11 @@
 @import "@ionic/angular/css/text-alignment.css";
 @import "@ionic/angular/css/text-transformation.css";
 @import "@ionic/angular/css/flex-utils.css";
+
+html,
+body {
+  font-family: "Poppins", sans-serif;
+}
 
 ion-modal.real-estate-modal ion-content {
   --background: #ffffff;
@@ -107,7 +114,6 @@ ion-modal.real-estate-modal::part(content) {
   ion-modal.real-estate-modal .real-estate-modal__swiper {
     height: 240px;
   }
-
 }
 
 ion-modal.real-estate-modal ion-header ion-toolbar {
@@ -115,7 +121,7 @@ ion-modal.real-estate-modal ion-header ion-toolbar {
   --color: #0f292a;
 }
 
-ion-modal.real-estate-modal ion-header ion-toolbar ion-title{
+ion-modal.real-estate-modal ion-header ion-toolbar ion-title {
   font-weight: 600;
   color: #2b3a8c;
 }

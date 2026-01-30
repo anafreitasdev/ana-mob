@@ -1,10 +1,10 @@
 <section
   [attr.aria-label]="'HOME.FILTER.ARIA.SECTION' | translate"
-  class="px-4 py-8 z-10"
+  class="py-8 z-10"
   [ngClass]="{ 'relative-container': !absolute }"
 >
   <div
-    class="mx-auto w-full max-w-7xl"
+    class="mx-auto w-full max-w-7xl px-4 md:px-16"
     [ngClass]="{ 'property-absolute': absolute }"
   >
     <div class="rounded-2xl border border-border bg-surface shadow-sm">
@@ -209,22 +209,7 @@
             (click)="applyFilters()"
           >
             <span class="inline-flex items-center justify-center gap-2">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke-width="1.5"
-                stroke="currentColor"
-                class="size-6"
-                aria-hidden="true"
-                focusable="false"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z"
-                />
-              </svg>
+              <ion-icon name="search-outline" class="h-6 w-6"></ion-icon>
               {{ "HOME.FILTER.APPLY" | translate }}
             </span>
           </ion-button>

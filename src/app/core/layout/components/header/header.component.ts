@@ -16,7 +16,8 @@ import { TranslateService } from 'src/app/core/services/translate.service';
 
 const styled = {
   headerContainer: 'bg-surface text-text-primary shadow-sm',
-  headerInner: 'max-w-7xl mx-auto flex items-center justify-between py-3',
+  headerInner:
+    'max-w-7xl mx-auto flex items-center justify-between py-3 px-4 md:px-16',
   brand: 'text-primary font-semibold text-lg tracking-tight',
   navListDesktop: 'hidden md:flex items-center gap-8',
   navItemDesktop:

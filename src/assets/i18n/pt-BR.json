@@ -47,6 +47,13 @@
       "HOME": "Início",
       "PROPERTIES": "Imóveis",
       "CONTACT": "Contato"
+    },
+    "LANGUAGE": {
+      "BUTTON": "Linguagem",
+      "OPTIONS": {
+        "PT_BR": "pt-BR",
+        "EN_US": "Inglês"
+      }
     }
   },
   "FOOTER": {

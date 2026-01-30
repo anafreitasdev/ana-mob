@@ -3,6 +3,7 @@ import {
   Component,
   CUSTOM_ELEMENTS_SCHEMA,
   ElementRef,
+  inject,
   Input,
   ViewChild,
 } from '@angular/core';
@@ -19,7 +20,7 @@ import {
   ModalController,
   IonTextarea,
 } from '@ionic/angular/standalone';
-import { NgFor, NgIf, CommonModule } from '@angular/common';
+import { CommonModule } from '@angular/common';
 import { register } from 'swiper/element/bundle';
 import { TranslateModule } from '@ngx-translate/core';
 import type { PropertyCardProperty } from '../card-property/card-property.component';
@@ -40,8 +41,6 @@ import type { PropertyCardProperty } from '../card-property/card-property.compon
     IonInput,
     TranslateModule,
     IonTextarea,
-    NgFor,
-    NgIf,
     CommonModule,
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
@@ -118,7 +117,9 @@ export class RealEstateModalComponent implements AfterViewInit {
     return this.priceFormatter.format(Number(value));
   }
 
-  constructor(private modalCtrl: ModalController) {}
+  private modalCtrl = inject(ModalController);
+
+  constructor() {}
 
   ngAfterViewInit(): void {
     const imagesCount = this.property?.images?.length ?? 0;
@@ -152,7 +153,7 @@ export class RealEstateModalComponent implements AfterViewInit {
     swiperEl.addEventListener('slidechange', () => {
       this.setSwiperInstance(swiperEl.swiper);
     });
-    
+
     queueMicrotask(() => {
       this.setSwiperInstance(swiperEl.swiper);
     });

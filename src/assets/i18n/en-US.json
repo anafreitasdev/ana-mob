@@ -47,6 +47,13 @@
       "HOME": "Home",
       "PROPERTIES": "Properties",
       "CONTACT": "Contact"
+    },
+    "LANGUAGE": {
+      "BUTTON": "Language",
+      "OPTIONS": {
+        "PT_BR": "pt-BR",
+        "EN_US": "English"
+      }
     }
   },
   "FOOTER": {

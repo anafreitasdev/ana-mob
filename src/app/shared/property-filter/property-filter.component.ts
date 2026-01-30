@@ -5,6 +5,7 @@ import {
   IonInput,
   IonSelect,
   IonSelectOption,
+  IonIcon,
 } from '@ionic/angular/standalone';
 import { TranslateModule } from '@ngx-translate/core';
 import { PROPERTIES_MOCK } from '@/app/data/properties.data';
@@ -29,6 +30,7 @@ import { CommonModule } from '@angular/common';
     IonButton,
     CommonModule,
     TranslateModule,
+    IonIcon,
   ],
 })
 export class PropertyFilterComponent {
