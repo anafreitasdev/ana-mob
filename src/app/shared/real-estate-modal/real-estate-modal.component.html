@@ -2,7 +2,11 @@
   <ion-toolbar>
     <ion-title>{{ property?.title | translate }}</ion-title>
     <ion-buttons slot="end">
-      <ion-button (click)="close()" fill="clear" aria-label="Fechar">
+      <ion-button
+        (click)="close()"
+        fill="clear"
+        [attr.aria-label]="'REAL_ESTATE_MODAL.ARIA.CLOSE' | translate"
+      >
         <ion-icon name="close-outline" class="h-6 w-6"></ion-icon>
       </ion-button>
     </ion-buttons>
@@ -44,7 +48,7 @@
             class="absolute left-3 top-1/2 z-10 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full bg-black/40 text-white shadow-sm transition-colors duration-300 hover:bg-primary focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-black/20 disabled:pointer-events-none disabled:opacity-40"
             [disabled]="isAtStart"
             (click)="goToPrevious()"
-            aria-label="Previous image"
+            [attr.aria-label]="'REAL_ESTATE_MODAL.ARIA.PREV_IMAGE' | translate"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -67,7 +71,7 @@
             class="absolute right-3 top-1/2 z-10 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full bg-black/40 text-white shadow-sm transition-colors duration-300 hover:bg-primary focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-black/20 disabled:pointer-events-none disabled:opacity-40"
             [disabled]="isAtEnd"
             (click)="goToNext()"
-            aria-label="Next image"
+            [attr.aria-label]="'REAL_ESTATE_MODAL.ARIA.NEXT_IMAGE' | translate"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -122,7 +126,9 @@
                 d="M15 5H9a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2Z"
               />
             </svg>
-            <span class="font-medium">Tipo</span>
+            <span class="font-medium">{{
+              "REAL_ESTATE_MODAL.INFO.TYPE" | translate
+            }}</span>
             <span class="text-text-secondary">{{
               "PROPERTY.TYPE." + (property?.type | uppercase) | translate
             }}</span>
@@ -136,7 +142,9 @@
               name="cash-outline"
               class="h-5 w-5 text-primary"
             ></ion-icon>
-            <span class="font-medium">Preço</span>
+            <span class="font-medium">{{
+              "REAL_ESTATE_MODAL.INFO.PRICE" | translate
+            }}</span>
             <span class="text-text-secondary">{{ formattedPrice }}</span>
           </div>
 
@@ -148,7 +156,9 @@
               name="location-outline"
               class="h-5 w-5 text-primary"
             ></ion-icon>
-            <span class="font-medium">Localização</span>
+            <span class="font-medium">{{
+              "REAL_ESTATE_MODAL.INFO.LOCATION" | translate
+            }}</span>
             <span class="text-text-secondary">
               {{ property?.location?.city }}
               <ng-container

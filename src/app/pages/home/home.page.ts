@@ -15,9 +15,9 @@ import { Property } from '@/app/types/property';
 import { BreakpointObserver } from '@angular/cdk/layout';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { CommonModule } from '@angular/common';
-import { RealBestateBinBrazilComponent } from './components/real-bestate-bin-brazil/real-bestate-bin-brazil.component';
 import { IonButton, IonSpinner, IonIcon } from '@ionic/angular/standalone';
 import { ContactSectionComponent } from './components/contact-section/contact-section.component';
+import { RealEstateBinBrazilComponent } from './components/real-estate-bin-brazil/real-estate-bin-brazil.component';
 
 @Component({
   selector: 'app-home',
@@ -30,7 +30,7 @@ import { ContactSectionComponent } from './components/contact-section/contact-se
     PropertyFilterComponent,
     ListPropertyComponent,
     ChatBotComponent,
-    RealBestateBinBrazilComponent,
+    RealEstateBinBrazilComponent,
     ContactSectionComponent,
     CommonModule,
     IonButton,

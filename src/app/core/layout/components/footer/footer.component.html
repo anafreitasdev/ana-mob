@@ -1,7 +1,9 @@
 <div class="bg-surface border-t border-border">
   <div class="max-w-7xl mx-auto px-4 md:px-16 py-6 flex justify-between">
     <div class="flex flex-col gap-2 text-sm text-text-secondary">
-      <span class="font-medium text-text-primary">Ana Imóveis</span>
+      <span class="font-medium text-text-primary">{{
+        "APP.NAME" | translate
+      }}</span>
       <div class="flex gap-3 mt-1">
         <ion-icon
           name="logo-facebook"
@@ -19,12 +21,14 @@
         ></ion-icon>
       </div>
       <span
-        >© {{ currentYear }} Ana Imóveis.
+        >© {{ currentYear }} {{ "APP.NAME" | translate }}.
         {{ "FOOTER.RIGHTS_RESERVED" | translate }}</span
       >
     </div>
     <div class="flex flex-col gap-2 text-sm text-text-secondary">
-      <span class="font-medium text-text-primary"> {{"FOOTER.NAVIGATION" | translate}}</span>
+      <span class="font-medium text-text-primary">
+        {{ "FOOTER.NAVIGATION" | translate }}</span
+      >
       <nav class="flex flex-col gap-1 mt-1">
         <a
           href="#inicio"

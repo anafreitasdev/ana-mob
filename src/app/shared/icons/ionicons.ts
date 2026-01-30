@@ -20,6 +20,7 @@ import {
   logoFacebook,
   logoInstagram,
   logoWhatsapp,
+  chatbubbleEllipsesOutline,
 } from 'ionicons/icons';
 
 export function registerIonicons() {
@@ -43,5 +44,6 @@ export function registerIonicons() {
     'logo-facebook': logoFacebook,
     'logo-instagram': logoInstagram,
     'logo-whatsapp': logoWhatsapp,
+    'chatbubble-ellipses-outline': chatbubbleEllipsesOutline,
   });
 }

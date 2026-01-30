@@ -12,7 +12,18 @@
     "PLACEHOLDER": "Type a message",
     "ARIA_INPUT": "Message input",
     "ARIA_SEND": "Send message",
-    "TYPING": "Bot typing"
+    "ARIA_MESSAGES": "Chat messages",
+    "TYPING": "Bot typing",
+    "WELCOME": "Hi! How can I help you today?"
+  },
+  "LIST_PROPERTY": {
+    "ARIA": {
+      "SECTION": "Properties list"
+    },
+    "EMPTY": "No properties found"
+  },
+  "CARD_PROPERTY": {
+    "NO_IMAGE": "No image available"
   },
   "PROPERTY": {
     "TYPE": {
@@ -22,6 +33,16 @@
     }
   },
   "REAL_ESTATE_MODAL": {
+    "ARIA": {
+      "CLOSE": "Close",
+      "PREV_IMAGE": "Previous image",
+      "NEXT_IMAGE": "Next image"
+    },
+    "INFO": {
+      "PRICE": "Price",
+      "TYPE": "Type",
+      "LOCATION": "Location"
+    },
     "FORM": {
       "NAME": {
         "LABEL": "Name",
@@ -48,6 +69,12 @@
       "PROPERTIES": "Properties",
       "CONTACT": "Contact"
     },
+    "ARIA": {
+      "SELECT_LANGUAGE": "Select language",
+      "OPEN_NAV_MENU": "Open navigation menu",
+      "NAV_MENU": "Navigation menu",
+      "CLOSE_MENU": "Close menu"
+    },
     "LANGUAGE": {
       "BUTTON": "Language",
       "OPTIONS": {
@@ -68,6 +95,13 @@
     "CTA": "Talk to an agent"
   },
   "HOME": {
+    "CHAT": {
+      "ARIA_OPEN": "Open chat"
+    },
+    "SEARCH_RESULTS": {
+      "TITLE": "Results found",
+      "COUNT": "{{count}} result(s)"
+    },
     "HERO_SLIDER": {
       "ARIA": {
         "BANNER": "Featured properties",
@@ -107,12 +141,6 @@
         "APARTMENT": "Apartment",
         "COMMERCIAL": "Commercial"
       }
-    },
-    "CONTACT": {
-      "TITLE": "Contact",
-      "DESCRIPTION": "Talk to our team to schedule visits or ask questions about any property.",
-      "PHONE_LABEL": "Phone:",
-      "EMAIL_LABEL": "Email:"
     },
     "FEATURED": {
       "TITLE": "Featured properties"

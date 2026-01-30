@@ -17,18 +17,17 @@
           [ngClass]="{'pt-16': isMobile, 'pt-48': !isMobile}"
         >
           <h2
-            class="text-2xl font-semibold"
-            [style.color]="'var(--color-text-white)'"
+            class="text-2xl font-semibold text-white"
             [style.text-align]="isMobile ? 'center' : 'left'"
           >
-            Resultados encontrados
+            {{ "HOME.SEARCH_RESULTS.TITLE" | translate }}
           </h2>
           <p
-            class="text-sm text-text-secondary"
-            [style.color]="'var(--color-accent)'"
+            class="text-sm text-text-secondary text-white mt-8"
             [style.text-align]="isMobile ? 'center' : 'left'"
           >
-            {{ filteredProperties.length }} resultado(s)
+            {{ "HOME.SEARCH_RESULTS.COUNT" | translate: { count:
+            filteredProperties.length } }}
           </p>
         </div>
         <app-list-property
@@ -75,8 +74,7 @@
     </section>
 
     <!-- Seção de Binário em Brasil -->
-
-    <app-real-bestate-bin-brazil></app-real-bestate-bin-brazil>
+    <app-real-estate-bin-brazil></app-real-estate-bin-brazil>
   </div>
 
   <!-- Seção de Contato -->
@@ -96,30 +94,10 @@
   <button
     type="button"
     class="fixed bottom-6 right-8 z-50 inline-flex h-14 w-14 items-center justify-center rounded-full bg-accent text-white shadow-xl transition-colors hover:bg-secondary focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-background"
-    aria-label="Abrir chat"
+    [attr.aria-label]="'HOME.CHAT.ARIA_OPEN' | translate"
     [attr.aria-expanded]="isChatOpen"
     (click)="toggleChat()"
   >
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      fill="none"
-      viewBox="0 0 24 24"
-      stroke-width="1.5"
-      stroke="currentColor"
-      class="size-7"
-      aria-hidden="true"
-      focusable="false"
-    >
-      <path
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        d="M8.625 9.75a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm3.75 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm3.75 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0ZM21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
-      />
-      <path
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        d="M8.25 15.75h7.5"
-      />
-    </svg>
+    <ion-icon name="chatbubble-ellipses-outline" class="text-3xl"></ion-icon>
   </button>
 </main>

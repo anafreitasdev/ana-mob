@@ -17,14 +17,14 @@ type BrazilStateCard = {
 };
 
 @Component({
-  selector: 'app-real-bestate-bin-brazil',
-  templateUrl: './real-bestate-bin-brazil.component.html',
-  styleUrls: ['./real-bestate-bin-brazil.component.scss'],
+  selector: 'app-real-estate-bin-brazil',
+  templateUrl: './real-estate-bin-brazil.component.html',
+  styleUrls: ['./real-estate-bin-brazil.component.scss'],
   standalone: true,
   imports: [CommonModule, TranslateModule],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
-export class RealBestateBinBrazilComponent implements AfterViewInit {
+export class RealEstateBinBrazilComponent implements AfterViewInit {
   private static swiperRegistered = false;
 
   @ViewChild('swiper', { static: true })
@@ -98,9 +98,9 @@ export class RealBestateBinBrazilComponent implements AfterViewInit {
   };
 
   ngAfterViewInit(): void {
-    if (!RealBestateBinBrazilComponent.swiperRegistered) {
+    if (!RealEstateBinBrazilComponent.swiperRegistered) {
       register();
-      RealBestateBinBrazilComponent.swiperRegistered = true;
+      RealEstateBinBrazilComponent.swiperRegistered = true;
     }
 
     const swiperEl = this.swiperRef?.nativeElement as any;

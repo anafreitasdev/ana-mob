@@ -1,7 +1,7 @@
 <header id="header" class="header-inner">
   <div [class]="styled.headerInner">
     <a href="#inicio" class="flex items-center gap-2">
-      <span [class]="styled.brand + ' brand'">Ana Imóveis</span>
+      <span [class]="styled.brand + ' brand'">{{ "APP.NAME" | translate }}</span>
     </a>
 
     <!-- Navegação desktop -->
@@ -36,7 +36,7 @@
       <button
         id="language-trigger"
         type="button"
-        aria-label="Selecionar idioma"
+        [attr.aria-label]="'HEADER.ARIA.SELECT_LANGUAGE' | translate"
         class="translate text-white"
       >
         {{ "HEADER.LANGUAGE.BUTTON" | translate }}
@@ -77,7 +77,7 @@
     <button
       type="button"
       [class]="styled.mobileToggleButton"
-      aria-label="Abrir menu de navegação"
+      [attr.aria-label]="'HEADER.ARIA.OPEN_NAV_MENU' | translate"
       [attr.aria-expanded]="mobileMenuOpen"
       aria-controls="mobile-menu"
       (click)="toggleMobileMenu()"
@@ -99,14 +99,14 @@
     [class.translate-x-full]="!mobileMenuOpen"
     role="dialog"
     aria-modal="true"
-    aria-label="Menu de navegação"
+    [attr.aria-label]="'HEADER.ARIA.NAV_MENU' | translate"
   >
     <div [class]="styled.mobilePanelHeader">
-      <span class="font-semibold text-primary">Ana Imóveis</span>
+      <span class="font-semibold text-primary">{{ "APP.NAME" | translate }}</span>
       <button
         type="button"
         [class]="styled.mobileCloseButton"
-        aria-label="Fechar menu"
+        [attr.aria-label]="'HEADER.ARIA.CLOSE_MENU' | translate"
         (click)="closeMobileMenu()"
       >
         <svg
@@ -155,7 +155,7 @@
         [class]="
           styled.navItemMobile + ' flex items-center justify-between gap-2'
         "
-        aria-label="Selecionar idioma"
+        [attr.aria-label]="'HEADER.ARIA.SELECT_LANGUAGE' | translate"
       >
         <span class="inline-flex items-center gap-2">
           {{ "HEADER.LANGUAGE.BUTTON" | translate }}

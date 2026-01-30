@@ -6,7 +6,7 @@
       <ion-spinner
         name="dots"
         color="primary"
-        aria-label="Carregando"
+        [attr.aria-label]="'COMMON.LOADING' | translate"
       ></ion-spinner>
     </div>
   </ion-card>
@@ -29,7 +29,7 @@
           class="flex h-full w-full flex-col items-center justify-center gap-2 text-sm text-text-secondary"
         >
           <ion-text class="text-sm text-text-secondary"
-            >Nenhuma imagem disponível</ion-text
+            >{{ "CARD_PROPERTY.NO_IMAGE" | translate }}</ion-text
           >
         </div>
       }

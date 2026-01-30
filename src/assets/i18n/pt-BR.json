@@ -12,7 +12,18 @@
     "PLACEHOLDER": "Digite uma mensagem",
     "ARIA_INPUT": "Campo de mensagem",
     "ARIA_SEND": "Enviar mensagem",
-    "TYPING": "Bot digitando"
+    "ARIA_MESSAGES": "Mensagens do chat",
+    "TYPING": "Bot digitando",
+    "WELCOME": "Olá! Como posso te ajudar hoje?"
+  },
+  "LIST_PROPERTY": {
+    "ARIA": {
+      "SECTION": "Lista de imóveis"
+    },
+    "EMPTY": "Nenhuma propriedade encontrada"
+  },
+  "CARD_PROPERTY": {
+    "NO_IMAGE": "Nenhuma imagem disponível"
   },
   "PROPERTY": {
     "TYPE": {
@@ -22,6 +33,16 @@
     }
   },
   "REAL_ESTATE_MODAL": {
+    "ARIA": {
+      "CLOSE": "Fechar",
+      "PREV_IMAGE": "Imagem anterior",
+      "NEXT_IMAGE": "Próxima imagem"
+    },
+    "INFO": {
+      "PRICE": "Preço",
+      "TYPE": "Tipo",
+      "LOCATION": "Localização"
+    },
     "FORM": {
       "NAME": {
         "LABEL": "Nome",
@@ -48,6 +69,12 @@
       "PROPERTIES": "Imóveis",
       "CONTACT": "Contato"
     },
+    "ARIA": {
+      "SELECT_LANGUAGE": "Selecionar idioma",
+      "OPEN_NAV_MENU": "Abrir menu de navegação",
+      "NAV_MENU": "Menu de navegação",
+      "CLOSE_MENU": "Fechar menu"
+    },
     "LANGUAGE": {
       "BUTTON": "Linguagem",
       "OPTIONS": {
@@ -68,6 +95,13 @@
     "CTA": "Falar com corretor"
   },
   "HOME": {
+    "CHAT": {
+      "ARIA_OPEN": "Abrir chat"
+    },
+    "SEARCH_RESULTS": {
+      "TITLE": "Resultados encontrados",
+      "COUNT": "{{count}} resultado(s)"
+    },
     "HERO_SLIDER": {
       "ARIA": {
         "BANNER": "Destaques de imóveis",
@@ -107,12 +141,6 @@
         "APARTMENT": "Apartamento",
         "COMMERCIAL": "Comercial"
       }
-    },
-    "CONTACT": {
-      "TITLE": "Contato",
-      "DESCRIPTION": "Fale com nossa equipe para agendar visitas ou tirar dúvidas sobre qualquer imóvel.",
-      "PHONE_LABEL": "Telefone:",
-      "EMAIL_LABEL": "E-mail:"
     },
     "FEATURED": {
       "TITLE": "Imóveis em destaque"
