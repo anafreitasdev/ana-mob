@@ -14,11 +14,46 @@
     "ARIA_SEND": "Send message",
     "TYPING": "Bot typing"
   },
+  "PROPERTY": {
+    "TYPE": {
+      "APARTMENT": "Apartment",
+      "HOUSE": "House",
+      "COMMERCIAL": "Commercial"
+    }
+  },
+  "REAL_ESTATE_MODAL": {
+    "FORM": {
+      "NAME": {
+        "LABEL": "Name",
+        "PLACEHOLDER": "Your name"
+      },
+      "EMAIL": {
+        "LABEL": "Email",
+        "PLACEHOLDER": "Your email"
+      },
+      "PHONE": {
+        "LABEL": "Phone",
+        "PLACEHOLDER": "Your phone"
+      },
+      "MESSAGE": {
+        "LABEL": "Message",
+        "PLACEHOLDER": "Type your message"
+      },
+      "SUBMIT": "Send message"
+    }
+  },
   "HEADER": {
     "NAV": {
       "HOME": "Home",
       "PROPERTIES": "Properties",
       "CONTACT": "Contact"
+    },
+    "LANGUAGE": {
+      "BUTTON": "Language",
+      "OPTIONS": {
+        "PT_BR": "pt-BR",
+        "EN_US": "English"
+      }
     }
   },
   "FOOTER": {

@@ -92,7 +92,8 @@ export class RealBestateBinBrazilComponent implements AfterViewInit {
     pagination: { clickable: true },
     breakpoints: {
       768: { slidesPerView: 2 },
-      1024: { slidesPerView: 4 },
+      1024: { slidesPerView: 2.5 },
+      1440: { slidesPerView: 4 },
     },
   };
 

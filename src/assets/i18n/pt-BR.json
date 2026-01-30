@@ -14,11 +14,46 @@
     "ARIA_SEND": "Enviar mensagem",
     "TYPING": "Bot digitando"
   },
+  "PROPERTY": {
+    "TYPE": {
+      "APARTMENT": "Apartamento",
+      "HOUSE": "Casa",
+      "COMMERCIAL": "Comercial"
+    }
+  },
+  "REAL_ESTATE_MODAL": {
+    "FORM": {
+      "NAME": {
+        "LABEL": "Nome",
+        "PLACEHOLDER": "Seu nome"
+      },
+      "EMAIL": {
+        "LABEL": "E-mail",
+        "PLACEHOLDER": "Seu e-mail"
+      },
+      "PHONE": {
+        "LABEL": "Telefone",
+        "PLACEHOLDER": "Seu telefone"
+      },
+      "MESSAGE": {
+        "LABEL": "Mensagem",
+        "PLACEHOLDER": "Digite sua mensagem"
+      },
+      "SUBMIT": "Enviar mensagem"
+    }
+  },
   "HEADER": {
     "NAV": {
       "HOME": "Início",
       "PROPERTIES": "Imóveis",
       "CONTACT": "Contato"
+    },
+    "LANGUAGE": {
+      "BUTTON": "Linguagem",
+      "OPTIONS": {
+        "PT_BR": "pt-BR",
+        "EN_US": "Inglês"
+      }
     }
   },
   "FOOTER": {
@@ -128,10 +163,6 @@
       "P10": {
         "TITLE": "Chácara para lazer",
         "DESCRIPTION": "Chácara com área verde, piscina e espaço para eventos de fim de semana."
-      },
-      "P10": {
-        "TITLE": "Casa em Atibaia",
-        "DESCRIPTION": "Casa ampla em Atibaia, ideal para quem busca conforto, tranquilidade e qualidade de vida."
       },
       "P11": {
         "TITLE": "Apartamento em Campinas",

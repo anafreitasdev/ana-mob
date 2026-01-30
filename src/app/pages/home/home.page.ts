@@ -13,11 +13,10 @@ import { ChatBotComponent } from '@/app/shared/chat-bot/chat-bot.component';
 import { PROPERTIES_MOCK } from '@/app/data/properties.data';
 import { Property } from '@/app/types/property';
 import { BreakpointObserver } from '@angular/cdk/layout';
-import { distinctUntilChanged, map } from 'rxjs/operators';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { CommonModule } from '@angular/common';
 import { RealBestateBinBrazilComponent } from './components/real-bestate-bin-brazil/real-bestate-bin-brazil.component';
-import { IonButton, IonSpinner } from '@ionic/angular/standalone';
+import { IonButton, IonSpinner, IonIcon } from '@ionic/angular/standalone';
 
 @Component({
   selector: 'app-home',
@@ -34,6 +33,7 @@ import { IonButton, IonSpinner } from '@ionic/angular/standalone';
     CommonModule,
     IonButton,
     IonSpinner,
+    IonIcon,
   ],
 })
 export class HomePage implements OnInit {
