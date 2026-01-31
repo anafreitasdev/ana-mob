@@ -44,10 +44,14 @@
     <!-- Seção de Imóveis em Destaque -->
     <section
       id="imoveis"
-      [ngClass]="isMobile ? 'py-16' : 'pt-[210px] pb-16'"
+      [ngClass]="{
+        'py-16': isMobile || (hasSearched && !isMobile),
+        'pb-16': !isMobile && !hasSearched,
+        'md:pt-[232px]': !isMobile && !hasSearched,
+      }
+      "
     >
       <div>
-
         <app-list-property [properties]="visibleProperties"></app-list-property>
         @if (canLoadMoreProperties) {
         <ion-button
