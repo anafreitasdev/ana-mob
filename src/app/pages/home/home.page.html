@@ -1,4 +1,4 @@
-<main class="bg-background text-text-white">
+<main class="bg-background text-text-white" id="main-home">
   <div class="hero-banner">
     <app-hero-banner
       (searchProperties)="scrollToFilter()"
@@ -13,13 +13,13 @@
     class="scroll-mt-12 block md:hidden mb-16"
   ></app-property-filter>
 
-  <div class="content-main">
+  <div class="content-main md:scroll-mt-[250px]" #imoveisRef>
     <app-property-filter
       id="filtro"
       (filtersApplied)="onFiltersApplied($event)"
       (clearFilters)="onClearFilters()"
       [absolute]=" !isMobile"
-      class="scroll-mt-12 md:scroll-mt-[200px] hidden md:block"
+      class="scroll-mt-12 hidden md:block"
     ></app-property-filter>
 
     @if (hasSearched) {

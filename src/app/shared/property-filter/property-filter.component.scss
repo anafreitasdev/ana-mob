@@ -1,15 +1,5 @@
-.property-absolute{
-  position: absolute;
-  width: 75%;
-  z-index: 10;
-  left: 50%;
-  top: 60%;
-  transform: translateX(-50%);
-
-}
-
-.relative-container{
- position: relative;
+.relative-container {
+  position: relative;
 }
 
 ion-input,
