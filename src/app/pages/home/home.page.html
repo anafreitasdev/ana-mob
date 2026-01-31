@@ -51,7 +51,12 @@
       }
       "
     >
-      <div>
+      <div class="mx-auto w-full max-w-7xl px-4 md:px-16">
+        <div class="flex gap-2 items-center mb-4">
+          <h2 class="text-2xl font-semibold text-white">
+            {{ 'HOME.FEATURED.TITLE' | translate }}
+          </h2>
+        </div>
         <app-list-property [properties]="visibleProperties"></app-list-property>
         @if (canLoadMoreProperties) {
         <ion-button
