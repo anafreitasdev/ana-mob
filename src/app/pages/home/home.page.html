@@ -10,23 +10,26 @@
     (filtersApplied)="onFiltersApplied($event)"
     (clearFilters)="onClearFilters()"
     [absolute]=" !isMobile"
-    class="scroll-mt-12 md:scroll-mt-[200px]"
+    class="scroll-mt-12 block md:hidden mb-16"
   ></app-property-filter>
 
   <div class="content-main">
+    <app-property-filter
+      id="filtro"
+      (filtersApplied)="onFiltersApplied($event)"
+      (clearFilters)="onClearFilters()"
+      [absolute]=" !isMobile"
+      class="scroll-mt-12 md:scroll-mt-[200px] hidden md:block"
+    ></app-property-filter>
+
     @if (hasSearched) {
     <section>
       <div class="mx-auto w-full max-w-7xl px-4 md:px-16">
-        <div class="flex flex-col gap-1 mb-4 pt-16 md:pt-[232px] lg:pt-48">
-          <h2
-            class="text-2xl font-semibold text-white"
-            [style.text-align]="isMobile ? 'center' : 'left'"
-          >
+        <div class="flex flex-col gap-1 mb-4 pt-16 md:pt-[232px]">
+          <h2 class="text-2xl font-semibold text-white">
             {{ "HOME.SEARCH_RESULTS.TITLE" | translate }}
           </h2>
-          <p
-            class="text-sm text-text-secondary text-white mt-8 text-center md:text-left"
-          >
+          <p class="text-sm text-text-secondary text-white mt-8">
             {{ "HOME.SEARCH_RESULTS.COUNT" | translate: { count:
             filteredProperties.length } }}
           </p>
@@ -41,18 +44,15 @@
     <!-- Seção de Imóveis em Destaque -->
     <section
       id="imoveis"
-      [ngClass]="
-        isMobile
-          ? 'py-16'
-          : hasSearched
-            ? 'py-16'
-            : 'pt-[210px] pb-16'
+      [ngClass]="{
+        'py-16': isMobile || (hasSearched && !isMobile),
+        'pb-16': !isMobile && !hasSearched,
+        'md:pt-[232px]': !isMobile && !hasSearched,
+      }
       "
     >
       <div class="mx-auto w-full max-w-7xl px-4 md:px-16">
-        <div
-          class="flex gap-2 items-center mb-4 mt-8 justify-center md:justify-start"
-        >
+        <div class="flex gap-2 items-center mb-4">
           <h2 class="text-2xl font-semibold text-white">
             {{ 'HOME.FEATURED.TITLE' | translate }}
           </h2>
