@@ -44,6 +44,8 @@ export class HomePage implements OnInit {
   private destroyRef = inject(DestroyRef);
 
   isMobile = false;
+  isChatPulseActive = false;
+  private chatPulseIntervalId?: ReturnType<typeof setInterval>;
 
   constructor() {}
 
@@ -69,7 +71,6 @@ export class HomePage implements OnInit {
 
   filteredProperties: Property[] = [];
   hasSearched = false;
-  absoluteFilter = true;
   seeMore = false;
 
   ngOnInit() {
@@ -77,6 +78,24 @@ export class HomePage implements OnInit {
       .observe(['(max-width: 768px)'])
       .pipe(takeUntilDestroyed(this.destroyRef))
       .subscribe((r) => (this.isMobile = r.matches));
+
+    this.destroyRef.onDestroy(() => {
+      if (this.chatPulseIntervalId) {
+        clearInterval(this.chatPulseIntervalId);
+      }
+    });
+
+    setTimeout(() => {
+      if (!this.isChatOpen) {
+        this.triggerChatPulse();
+      }
+    }, 600); // Trigger a chat pulse after 600ms
+
+    this.chatPulseIntervalId = setInterval(() => {
+      if (!this.isChatOpen) {
+        this.triggerChatPulse();
+      }
+    }, 15_000); // Trigger a chat pulse every 15 seconds
   }
 
   isChatOpen = false;
@@ -107,6 +126,27 @@ export class HomePage implements OnInit {
     }, 0);
   }
 
+  onChatPulseAnimationEnd(event: AnimationEvent): void {
+    if (event.animationName !== 'chatPulse') return;
+    this.isChatPulseActive = false;
+  }
+
+  // Trigger a chat pulse animation if the chat is not open
+  private triggerChatPulse(): void {
+    if (this.isChatPulseActive) {
+      this.isChatPulseActive = false;
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+          this.isChatPulseActive = true;
+        });
+      });
+      return;
+    }
+
+    this.isChatPulseActive = true;
+  }
+
+  // Scroll to the property filter section
   scrollToFilter(): void {
     document.getElementById('filtro')?.scrollIntoView({
       behavior: 'smooth',

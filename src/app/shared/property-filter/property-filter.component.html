@@ -1,11 +1,10 @@
 <section
   [attr.aria-label]="'HOME.FILTER.ARIA.SECTION' | translate"
-  class="py-8 z-10"
+  class="z-10 pt-16 md:pt-0"
   [ngClass]="{ 'relative-container': !absolute }"
 >
   <div
-    class="mx-auto w-full max-w-7xl px-4 md:px-10"
-    [ngClass]="{ 'property-absolute': absolute }"
+    class="mx-auto w-full max-w-7xl px-4 md:px-8 relative md:absolute w-full md:w-3/4 lg:w-2/3 md:z-10 md:translate-x-[-50%] md:translate-y-[-50%] md:left-1/2 md:h-[300px]"
   >
     <div class="rounded-2xl border border-border bg-surface shadow-sm">
       <div class="px-4 py-5 sm:px-6">
@@ -207,6 +206,7 @@
             class="w-full sm:w-auto text-white [--border-radius:0.75rem] [--background:var(--color-primary)] [--background-hover:var(--color-secondary)] [--background-activated:var(--color-secondary)]"
             expand="block"
             (click)="applyFilters()"
+            [disabled]="notHasFilters"
           >
             <span class="inline-flex items-center justify-center gap-2">
               <ion-icon name="search-outline" class="h-6 w-6"></ion-icon>

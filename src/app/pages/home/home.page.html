@@ -9,28 +9,27 @@
     id="filtro"
     (filtersApplied)="onFiltersApplied($event)"
     (clearFilters)="onClearFilters()"
-    [absolute]="absoluteFilter && !isMobile"
-    class="scroll-mt-12 md:scroll-mt-[200px]"
+    [absolute]=" !isMobile"
+    class="scroll-mt-12 block md:hidden mb-16"
   ></app-property-filter>
 
   <div class="content-main">
+    <app-property-filter
+      id="filtro"
+      (filtersApplied)="onFiltersApplied($event)"
+      (clearFilters)="onClearFilters()"
+      [absolute]=" !isMobile"
+      class="scroll-mt-12 md:scroll-mt-[200px] hidden md:block"
+    ></app-property-filter>
+
     @if (hasSearched) {
     <section>
       <div class="mx-auto w-full max-w-7xl px-4 md:px-16">
-        <div
-          class="flex flex-col gap-1 mb-4"
-          [ngClass]="{'pt-16': isMobile, 'pt-48': !isMobile}"
-        >
-          <h2
-            class="text-2xl font-semibold text-white"
-            [style.text-align]="isMobile ? 'center' : 'left'"
-          >
+        <div class="flex flex-col gap-1 mb-4 pt-16 md:pt-[232px]">
+          <h2 class="text-2xl font-semibold text-white">
             {{ "HOME.SEARCH_RESULTS.TITLE" | translate }}
           </h2>
-          <p
-            class="text-sm text-text-secondary text-white mt-8"
-            [style.text-align]="isMobile ? 'center' : 'left'"
-          >
+          <p class="text-sm text-text-secondary text-white mt-8">
             {{ "HOME.SEARCH_RESULTS.COUNT" | translate: { count:
             filteredProperties.length } }}
           </p>
@@ -91,10 +90,12 @@
 
   <button
     type="button"
-    class="fixed bottom-6 right-8 z-50 inline-flex h-14 w-14 items-center justify-center rounded-full bg-accent text-white shadow-xl transition-colors hover:bg-secondary focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-background"
+    class="chatbot-fab fixed bottom-6 right-8 z-50 inline-flex h-14 w-14 items-center justify-center rounded-full bg-accent text-white shadow-xl transition-colors hover:bg-secondary focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-background"
     [attr.aria-label]="'HOME.CHAT.ARIA_OPEN' | translate"
     [attr.aria-expanded]="isChatOpen"
     (click)="toggleChat()"
+    [class.chat-pulse]="isChatPulseActive"
+    (animationend)="onChatPulseAnimationEnd($event)"
   >
     <ion-icon name="chatbubble-ellipses-outline" class="text-3xl"></ion-icon>
   </button>

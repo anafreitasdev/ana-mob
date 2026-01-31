@@ -8,6 +8,32 @@
   --chat-text: #e2e8f0;
   --chat-text-muted: #94a3b8;
   --chat-user-bubble: rgba(255, 255, 255, 0.06);
+  --chat-scrollbar-thumb: rgba(148, 163, 184, 0.4);
+  --chat-scrollbar-thumb-hover: rgba(148, 163, 184, 0.6);
+}
+
+ion-content::part(scroll) {
+  scrollbar-width: thin;
+  scrollbar-color: var(--chat-scrollbar-thumb) transparent;
+}
+
+ion-content::part(scroll)::-webkit-scrollbar {
+  width: 6px;
+}
+
+ion-content::part(scroll)::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+ion-content::part(scroll)::-webkit-scrollbar-thumb {
+  background: var(--chat-scrollbar-thumb);
+  border-radius: 9999px;
+  border: 1px solid transparent;
+  background-clip: padding-box;
+}
+
+ion-content::part(scroll)::-webkit-scrollbar-thumb:hover {
+  background: var(--chat-scrollbar-thumb-hover);
 }
 
 ion-input {
