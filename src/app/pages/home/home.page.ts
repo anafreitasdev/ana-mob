@@ -48,6 +48,9 @@ export class HomePage implements OnInit {
   isChatPulseActive = false;
   private chatPulseIntervalId?: ReturnType<typeof setInterval>;
 
+  isToastVisible = false;
+  private toastTimeoutId?: ReturnType<typeof setTimeout>;
+
   @ViewChild('imoveisRef') imoveisRef?: ElementRef;
 
   constructor() {}
@@ -85,6 +88,10 @@ export class HomePage implements OnInit {
     this.destroyRef.onDestroy(() => {
       if (this.chatPulseIntervalId) {
         clearInterval(this.chatPulseIntervalId);
+      }
+
+      if (this.toastTimeoutId) {
+        clearTimeout(this.toastTimeoutId);
       }
     });
 
@@ -175,5 +182,22 @@ export class HomePage implements OnInit {
       );
       this.seeMore = false;
     }, 600);
+  }
+
+  onMessageSent(): void {
+    this.showToast();
+  }
+
+  private showToast(durationMs = 3000): void {
+    this.isToastVisible = true;
+
+    if (this.toastTimeoutId) {
+      clearTimeout(this.toastTimeoutId);
+    }
+
+    this.toastTimeoutId = setTimeout(() => {
+      this.isToastVisible = false;
+      this.toastTimeoutId = undefined;
+    }, durationMs);
   }
 }

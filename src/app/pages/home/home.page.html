@@ -1,4 +1,28 @@
 <main class="bg-background text-text-white" id="main-home">
+  <div
+    *ngIf="isToastVisible"
+    id="toast-simple"
+    class="fixed right-6 top-6 z-[9999] flex w-full max-w-xs space-x-4 divide-x divide-black rounded-lg p-4 shadow-sm rtl:space-x-reverse bg-white rtl:divide-x-reverse"
+    role="alert"
+  >
+    <svg
+      class="h-5 w-5 rotate-45 text-primary"
+      aria-hidden="true"
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      viewBox="0 0 18 20"
+    >
+      <path
+        stroke="currentColor"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        d="m9 17 8 2L9 1 1 19l8-2Zm0 0V9"
+      />
+    </svg>
+    <div class="pl-2 text-sm font-normal">{{ 'HOME.TOAST.MESSAGE_SENT' | translate }}</div>
+  </div>
+
   <div class="hero-banner">
     <app-hero-banner
       (searchProperties)="scrollToFilter()"
@@ -36,6 +60,7 @@
         </div>
         <app-list-property
           [properties]="filteredProperties"
+          (messageSent)="onMessageSent()"
         ></app-list-property>
       </div>
     </section>
@@ -52,12 +77,15 @@
       "
     >
       <div class="mx-auto w-full max-w-7xl px-4 md:px-16">
-        <div class="flex gap-2 items-center mb-4">
+        <div class="flex gap-2 items-center mb-8">
           <h2 class="text-2xl font-semibold text-white">
             {{ 'HOME.FEATURED.TITLE' | translate }}
           </h2>
         </div>
-        <app-list-property [properties]="visibleProperties"></app-list-property>
+        <app-list-property
+          [properties]="visibleProperties"
+          (messageSent)="onMessageSent()"
+        ></app-list-property>
         @if (canLoadMoreProperties) {
         <ion-button
           type="button"

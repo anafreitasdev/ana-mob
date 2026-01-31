@@ -98,6 +98,9 @@
     "CHAT": {
       "ARIA_OPEN": "Open chat"
     },
+    "TOAST": {
+      "MESSAGE_SENT": "Message sent successfully."
+    },
     "SEARCH_RESULTS": {
       "TITLE": "Results found",
       "COUNT": "{{count}} result(s)"

@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import {
   CardPropertyComponent,
   PropertyCardProperty,
@@ -15,6 +15,7 @@ import { TranslateModule } from '@ngx-translate/core';
 export class ListPropertyComponent {
   @Input() properties?: PropertyCardProperty[] | null;
   @Input() loading = false;
+  @Output() messageSent = new EventEmitter<void>();
 
   readonly loadingItems = Array.from({ length: 6 });
 }

@@ -1,5 +1,5 @@
 <section
-  class="w-full items-center justify-center py-8 md:px-0"
+  class="w-full items-center justify-center md:px-0"
   [attr.aria-label]="'LIST_PROPERTY.ARIA.SECTION' | translate"
 >
   @if (loading) {
@@ -21,7 +21,10 @@
       class="grid items-stretch grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3"
     >
       @for (property of properties; track property.id) {
-        <app-card-property [property]="property"></app-card-property>
+        <app-card-property
+          [property]="property"
+          (messageSent)="messageSent.emit()"
+        ></app-card-property>
       }
     </div>
   }

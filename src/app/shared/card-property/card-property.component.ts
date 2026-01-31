@@ -1,4 +1,4 @@
-import { Component, inject, Input } from '@angular/core';
+import { Component, EventEmitter, inject, Input, Output } from '@angular/core';
 import {
   IonCard,
   IonCardContent,
@@ -31,6 +31,8 @@ import { RealEstateModalComponent } from '../real-estate-modal/real-estate-modal
 export class CardPropertyComponent {
   @Input() property?: PropertyCardProperty | null;
   @Input() loading = false;
+
+  @Output() messageSent = new EventEmitter<void>();
 
   private modalCtrl = inject(ModalController);
 
@@ -84,7 +86,10 @@ export class CardPropertyComponent {
 
     await modal.present();
 
-    await modal.onWillDismiss();
+    const { role } = await modal.onWillDismiss();
+    if (role === 'send') {
+      this.messageSent.emit();
+    }
   }
 }
 
