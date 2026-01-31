@@ -1,9 +1,11 @@
 <section
   id="inicio"
   [attr.aria-label]="'HOME.HERO_BANNER.ARIA.BANNER' | translate"
-  class="relative w-full max-w-full overflow-x-hidden"
+  class="relative w-full max-w-full"
 >
-  <div class="relative h-[52vh] w-full sm:h-[60vh] md:h-[68vh] lg:h-[72vh]">
+  <div
+    class="relative h-[54vh] sm:h[52vh] w-full sm:h-[60vh] md:h-[68vh] lg:h-[72vh]"
+  >
     <img
       class="absolute inset-0 h-full w-full max-w-full object-cover object-center"
       src="../../../../../assets/img/fundo_casa.jpg"
@@ -16,10 +18,10 @@
     ></div>
 
     <div
-      class="absolute inset-[15%] bottom-0 px-4 pb-12 pt-16 sm:pb-14 md:pb-16"
+      class="absolute inset-[15%] flex justify-center bottom-0 px-4 pb-12 pt-16 sm:pb-14 md:pb-16"
       [ngClass]="{ 'inset-48': !isMobile }"
     >
-      <div class="mx-auto w-full max-w-5xl text-center">
+      <div class="w-full max-w-5xl text-center">
         <h2 class="text-2xl font-semibold text-white md:text-4xl">
           {{ "HOME.TITLE_HOME" | translate }}
         </h2>
@@ -27,7 +29,9 @@
           {{ "HOME.SUBTITLE_HOME" | translate }}
         </p>
 
-        <div class="mt-6 flex flex-col gap-3 sm:flex-row sm:justify-center sm:gap-6">
+        <div
+          class="mt-6 flex flex-col gap-3 sm:flex-row sm:justify-center sm:gap-6"
+        >
           <ion-button
             type="button"
             class="w-full text-sm sm:w-[320px] sm:text-base text-white [--border-radius:0.75rem] [--background:var(--color-primary)] [--background-hover:var(--color-secondary)] [--background-activated:var(--color-secondary)]"
@@ -35,7 +39,10 @@
             (click)="searchProperties.emit()"
           >
             <span class="inline-flex items-center justify-center gap-2">
-              <ion-icon name="search-outline" class="h-5 w-5 sm:h-6 sm:w-6"></ion-icon>
+              <ion-icon
+                name="search-outline"
+                class="h-5 w-5 sm:h-6 sm:w-6"
+              ></ion-icon>
               {{ "HOME.SEARCH_PROPERTIES" | translate }}
             </span>
           </ion-button>
@@ -47,7 +54,10 @@
             (click)="talkToSpecialist.emit()"
           >
             <span class="inline-flex items-center justify-center gap-2">
-              <ion-icon name="call-outline" class="h-5 w-5 sm:h-6 sm:w-6"></ion-icon>
+              <ion-icon
+                name="call-outline"
+                class="h-5 w-5 sm:h-6 sm:w-6"
+              ></ion-icon>
               {{ "HOME.TALK_TO_SPECIALIST" | translate }}
             </span>
           </ion-button>
