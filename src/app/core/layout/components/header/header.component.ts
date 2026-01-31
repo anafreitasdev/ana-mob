@@ -27,7 +27,7 @@ const styled = {
   mobileOverlay:
     'fixed inset-0 z-50 bg-black/40 transition-opacity duration-200',
   mobilePanel:
-    'fixed inset-y-0 right-0 z-50 w-[85vw] max-w-sm bg-surface shadow-xl transition-transform duration-200 ',
+    'fixed inset-y-0 right-0 z-50 w-[85vw] max-w-sm bg-surface shadow-xl transition-transform duration-200',
   mobilePanelHeader:
     'flex items-center justify-between px-4 py-4 border-b border-border',
   mobileCloseButton:
