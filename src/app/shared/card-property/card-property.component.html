@@ -1,6 +1,6 @@
 @if (loading) {
   <ion-card
-    class="flex h-full w-full flex-col overflow-hidden rounded-2xl border border-border bg-surface shadow-sm"
+    class="flex m-0 h-full flex-col overflow-hidden rounded-2xl border border-border bg-surface shadow-sm"
   >
     <div class="flex min-h-[280px] flex-1 items-center justify-center px-4">
       <ion-spinner
@@ -12,7 +12,7 @@
   </ion-card>
 } @else if (property) {
   <ion-card
-    class="group flex h-full w-full flex-col overflow-hidden rounded-2xl border border-border bg-surface shadow-sm transition-transform duration-200 ease-out motion-reduce:transition-none hover:scale-[1.02]"
+    class="group m-0 h-full flex flex-col overflow-hidden rounded-2xl border border-border bg-surface shadow-sm transition-transform duration-200 ease-out motion-reduce:transition-none hover:scale-[1.02]"
     (click)="onCardClick(property)"
   >
     <div class="relative aspect-[16/9] w-full overflow-hidden bg-background">
@@ -26,7 +26,7 @@
         />
       } @else {
         <div
-          class="flex h-full w-full flex-col items-center justify-center gap-2 text-sm text-text-secondary"
+          class="flex flex-col items-center justify-center gap-2 text-sm text-text-secondary"
         >
           <ion-text class="text-sm text-text-secondary"
             >{{ "CARD_PROPERTY.NO_IMAGE" | translate }}</ion-text

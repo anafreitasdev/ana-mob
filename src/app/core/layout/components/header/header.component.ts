@@ -27,14 +27,14 @@ const styled = {
   mobileOverlay:
     'fixed inset-0 z-50 bg-black/40 transition-opacity duration-200',
   mobilePanel:
-    'fixed inset-y-0 right-0 z-50 w-[85vw] max-w-sm bg-surface shadow-xl transition-transform duration-200',
+    'fixed inset-y-0 right-0 z-50 w-[85vw] max-w-sm bg-surface shadow-xl transition-transform duration-200 ',
   mobilePanelHeader:
     'flex items-center justify-between px-4 py-4 border-b border-border',
   mobileCloseButton:
     'inline-flex items-center justify-center p-2 rounded-md hover:bg-background focus:outline-none focus:ring-2 focus:ring-primary',
   navListMobile: 'flex flex-col py-3',
   navItemMobile:
-    'w-full text-left px-4 py-2 text-sm font-medium text-text-primary hover:text-accent hover:bg-background',
+    'w-full text-left px-4 py-2 text-sm font-medium text-white hover:text-accent hover:bg-background',
 };
 
 @Component({

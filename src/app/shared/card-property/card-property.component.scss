@@ -11,7 +11,9 @@
 }
 
 ion-card:hover {
- cursor: pointer;
-box-shadow: #29b9d940 0px 54px 55px,#29b9d940 0px -12px 30px, #29b9d940 0px 4px 6px, #29b9d940 0px 12px 13px,#29b9d940 0px -3px 5px;
+  cursor: pointer;
+  transform: translateY(-4px);
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.04),
+    0 12px 30px rgba(0, 0, 0, 0.45);
 }
-

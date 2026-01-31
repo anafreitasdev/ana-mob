@@ -1,28 +1,37 @@
 <section
-  class="w-full list"
+  class="w-full items-center justify-center py-8 md:px-0"
   [attr.aria-label]="'LIST_PROPERTY.ARIA.SECTION' | translate"
 >
   @if (loading) {
     <div
-      class="grid items-stretch grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3"
+      class="grid items-stretch justify-center gap-6 grid-cols-[repeat(auto-fit,minmax(280px,320px))]"
     >
       @for (item of loadingItems; track $index) {
         <app-card-property [loading]="true"></app-card-property>
       }
     </div>
   } @else if (!properties?.length) {
-    <div class="flex min-h-[220px] items-center justify-center px-4">
+    <div class="flex min-h-[220px] items-center justify-center px-4 md:pt-16">
       <p class="text-sm text-text-secondary text-center">
         {{ "LIST_PROPERTY.EMPTY" | translate }}
       </p>
     </div>
   } @else {
-    <div
-      class="grid items-stretch grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3"
-    >
-      @for (property of properties; track property.id) {
-        <app-card-property [property]="property"></app-card-property>
-      }
+    <div class="mx-auto w-full max-w-7xl px-4 md:px-16">
+      <div
+        class="flex gap-2 items-center mb-4 mt-8"
+      >
+        <h2 class="text-2xl font-semibold text-white">
+          {{ "HOME.FEATURED.TITLE" | translate }}
+        </h2>
+      </div>
+      <div
+        class="grid gap-6 w-full grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3"
+      >
+        @for (property of properties; track property.id) {
+          <app-card-property [property]="property"></app-card-property>
+        }
+      </div>
     </div>
   }
 </section>
