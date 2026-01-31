@@ -65,7 +65,7 @@
 
       <button
         type="button"
-        class="absolute top-1/2 z-10 hidden h-12 w-12 -translate-y-1/2 items-center justify-center rounded-lg bg-accent text-white shadow-sm transition-opacity duration-200 hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 focus:ring-offset-surface disabled:pointer-events-none disabled:opacity-40 md:flex md:-left-14 xl:-left-16"
+        class="absolute top-[calc(50%-1.75rem)] z-10 hidden h-12 w-12 -translate-y-1/2 items-center justify-center rounded-lg bg-accent text-white shadow-sm transition-opacity duration-200 hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 focus:ring-offset-surface disabled:pointer-events-none disabled:opacity-40 md:flex md:top-[calc(50%-2rem)] md:-left-14 xl:-left-16"
         [attr.aria-label]="
           'HOME.REAL_ESTATE_BIN_BRAZIL.ARIA.PREVIOUS' | translate
         "
@@ -90,7 +90,7 @@
 
       <button
         type="button"
-        class="absolute top-1/2 z-10 hidden h-12 w-12 -translate-y-1/2 items-center justify-center rounded-lg bg-accent text-white shadow-sm transition-opacity duration-200 hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 focus:ring-offset-surface disabled:pointer-events-none disabled:opacity-40 md:flex md:-right-14 xl:-right-16"
+        class="absolute top-[calc(50%-1.75rem)] z-10 hidden h-12 w-12 -translate-y-1/2 items-center justify-center rounded-lg bg-accent text-white shadow-sm transition-opacity duration-200 hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 focus:ring-offset-surface disabled:pointer-events-none disabled:opacity-40 md:flex md:top-[calc(50%-2rem)] md:-right-14 xl:-right-16"
         [attr.aria-label]="'HOME.REAL_ESTATE_BIN_BRAZIL.ARIA.NEXT' | translate"
         [disabled]="isAtEnd"
         (click)="goToNext()"
