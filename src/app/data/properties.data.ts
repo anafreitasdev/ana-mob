@@ -125,7 +125,6 @@ export const PROPERTIES_MOCK: Property[] = [
     },
     featured: false,
     images: [
-      'https://images.unsplash.com/photo-1508919801845-fc2ae1bc2a28?w=1600&auto=format&fit=crop&q=80',
       'https://images.unsplash.com/photo-1555529771-835f59fc5efe?w=1600&auto=format&fit=crop&q=80',
     ],
   },
@@ -141,7 +140,6 @@ export const PROPERTIES_MOCK: Property[] = [
     },
     featured: false,
     images: [
-      'https://images.unsplash.com/photo-1502673530728-f79b4cab31b1?w=1600&auto=format&fit=crop&q=80',
       'https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=1600&auto=format&fit=crop&q=80',
     ],
   },
