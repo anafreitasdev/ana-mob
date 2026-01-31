@@ -1,6 +1,7 @@
 import {
   Component,
   DestroyRef,
+  ElementRef,
   inject,
   OnInit,
   ViewChild,
@@ -46,6 +47,8 @@ export class HomePage implements OnInit {
   isMobile = false;
   isChatPulseActive = false;
   private chatPulseIntervalId?: ReturnType<typeof setInterval>;
+
+  @ViewChild('imoveisRef') imoveisRef?: ElementRef;
 
   constructor() {}
 
@@ -148,10 +151,17 @@ export class HomePage implements OnInit {
 
   // Scroll to the property filter section
   scrollToFilter(): void {
-    document.getElementById('filtro')?.scrollIntoView({
-      behavior: 'smooth',
-      block: 'start',
-    });
+    if (this.isMobile) {
+      document.getElementById('filtro')?.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start',
+      });
+    } else {
+      this.imoveisRef?.nativeElement.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start',
+      });
+    }
   }
 
   loadMoreProperties(): void {
