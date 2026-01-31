@@ -161,6 +161,10 @@ export class RealEstateModalComponent implements AfterViewInit {
     });
   }
 
+  get validForm(): boolean {
+    return this.formFields.every((field) => this.form[field.model].trim());
+  }
+
   goToPrevious(): void {
     if (this.isAtStart) return;
     this.swiperInstance?.slidePrev?.();
